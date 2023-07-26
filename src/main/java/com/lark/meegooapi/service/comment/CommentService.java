@@ -1,0 +1,169 @@
+/*
+ * Copyright (c) 2023 Lark Technologies Pte. Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.lark.meegooapi.service.comment;
+
+import com.lark.meegooapi.core.Config;
+import com.lark.meegooapi.core.Transport;
+import com.lark.meegooapi.core.request.RequestOptions;
+import com.lark.meegooapi.core.response.RawResponse;
+import com.lark.meegooapi.core.utils.Jsons;
+import com.lark.meegooapi.core.utils.UnmarshalRespUtil;
+import com.lark.meegooapi.service.comment.builder.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.nio.charset.StandardCharsets;
+
+public class CommentService {
+
+    private static final Logger log = LoggerFactory.getLogger(CommentService.class);
+
+    private Config config;
+
+    public CommentService(Config config) {
+        this.config = config;
+    }
+
+    /*
+     *
+     */
+    public CreateCommentResp createComment(CreateCommentReq req, RequestOptions reqOptions) throws Exception {
+        // 请求参数选项
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        // 发起请求
+        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/create"
+                , false
+                , req);
+
+        // 反序列化
+        CreateCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateCommentResp.class);
+        if (resp == null) {
+            log.error(String.format(
+                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/create"
+                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
+                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
+                            StandardCharsets.UTF_8)));
+            throw new IllegalArgumentException("The result returned by the server is illegal");
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    /*
+     *
+     */
+    public DeleteCommentResp deleteComment(DeleteCommentReq req, RequestOptions reqOptions) throws Exception {
+        // 请求参数选项
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        // 发起请求
+        RawResponse httpResponse = Transport.send(config, reqOptions, "DELETE"
+                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
+                , false
+                , req);
+
+        // 反序列化
+        DeleteCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteCommentResp.class);
+        if (resp == null) {
+            log.error(String.format(
+                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
+                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
+                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
+                            StandardCharsets.UTF_8)));
+            throw new IllegalArgumentException("The result returned by the server is illegal");
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    /*
+     *
+     */
+    public QueryCommentsResp queryComments(QueryCommentsReq req, RequestOptions reqOptions) throws Exception {
+        // 请求参数选项
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        // 发起请求
+        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comments"
+                , false
+                , req);
+
+        // 反序列化
+        QueryCommentsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryCommentsResp.class);
+        if (resp == null) {
+            log.error(String.format(
+                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comments"
+                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
+                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
+                            StandardCharsets.UTF_8)));
+            throw new IllegalArgumentException("The result returned by the server is illegal");
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    /*
+     *
+     */
+    public UpdateCommentResp updateComment(UpdateCommentReq req, RequestOptions reqOptions) throws Exception {
+        // 请求参数选项
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        // 发起请求
+        RawResponse httpResponse = Transport.send(config, reqOptions, "PUT"
+                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
+                , false
+                , req);
+
+        // 反序列化
+        UpdateCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateCommentResp.class);
+        if (resp == null) {
+            log.error(String.format(
+                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
+                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
+                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
+                            StandardCharsets.UTF_8)));
+            throw new IllegalArgumentException("The result returned by the server is illegal");
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+}
