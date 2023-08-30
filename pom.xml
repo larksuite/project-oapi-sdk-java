@@ -100,5 +100,10 @@
         <robolectric.version>10-robolectric-5803371</robolectric.version>
         <slf4j.version>1.7.30</slf4j.version>
     </properties>
-
+    <distributionManagement>
+        <repository>
+            <id>meego</id>
+            <url>https://artifacts-cn-beijing.volces.com/repository/meego/</url>
+        </repository>
+    </distributionManagement>
 </project>

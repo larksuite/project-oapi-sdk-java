@@ -22,13 +22,37 @@
 
 - 运行环境：JDK 1.8及以上
 
-- 最新版本 maven 坐标
-
+- 请将以下配置复制并添加 settings.xml文件中：
+```shell
+<settings>
+  <profiles>
+    <profile>
+        <id>lark-project</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <repositories>
+            <repository>
+                <id>lark-project</id>
+                <url>https://artifacts-cn-beijing.volces.com/repository/meego/</url>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+            </repository>
+        </repositories>
+    </profile>
+  </profiles>
+</settings>
+```
+- 请将以下配置复制并添加到 pom.xml文件中：
 ```shell
 <dependency>
   <groupId>com.larksuite.project</groupId>
   <artifactId>oapi-sdk</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
@@ -207,11 +231,11 @@ public interface IHttpTransport {
 方法，获取空间下的工作项类型列表（注：请求头中的X-USER-KEY和X-IDEM-UUID参数可以通过ReqBuilder中的accessUser和uuid方法进行设置）：
 
 ``` go
-import com.lark.meegooapi.Client;
-import com.lark.meegooapi.core.request.RequestOptions;
-import com.lark.meegooapi.core.utils.Jsons;
-import com.lark.meegooapi.service.project.builder.ListProjectWorkItemTypeReq;
-import com.lark.meegooapi.service.project.builder.ListProjectWorkItemTypeResp;
+import com.lark.project.Client;
+import com.lark.project.core.request.RequestOptions;
+import com.lark.project.core.utils.Jsons;
+import com.lark.project.service.project.builder.ListProjectWorkItemTypeReq;
+import com.lark.project.service.project.builder.ListProjectWorkItemTypeResp;
 
 public class Sample {
 
@@ -246,12 +270,12 @@ public class Sample {
 开发者在每次发起 API 调用时，可以设置请求级别的一些参数，比如传递 UserPluginAccessToken ,自定义 Headers 等：
 
 ```go
-import com.lark.meegooapi.Client;
-import com.lark.meegooapi.core.request.RequestOptions;
-import com.lark.meegooapi.core.utils.Jsons;
-import com.lark.meegooapi.core.utils.Lists;
-import com.lark.meegooapi.service.project.builder.ListProjectWorkItemTypeReq;
-import com.lark.meegooapi.service.project.builder.ListProjectWorkItemTypeResp;
+import com.lark.project.Client;
+import com.lark.project.core.request.RequestOptions;
+import com.lark.project.core.utils.Jsons;
+import com.lark.project.core.utils.Lists;
+import com.lark.project.service.project.builder.ListProjectWorkItemTypeReq;
+import com.lark.project.service.project.builder.ListProjectWorkItemTypeResp;
 
 import java.util.HashMap;
 import java.util.List;
