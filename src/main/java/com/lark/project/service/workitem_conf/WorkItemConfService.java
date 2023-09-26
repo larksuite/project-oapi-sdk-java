@@ -38,22 +38,17 @@ public class WorkItemConfService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 新增流程类型配置
     public CreateTemplateDetailResp createTemplateDetail(CreateTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/template/v2/create_template"
                 , false
                 , req);
 
-        // 反序列化
         CreateTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateTemplateDetailResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -70,22 +65,17 @@ public class WorkItemConfService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 删除流程类型配置
     public DeleteTemplateDetailResp deleteTemplateDetail(DeleteTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/template/v2/delete_template/:project_key/:template_id"
                 , false
                 , req);
 
-        // 反序列化
         DeleteTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteTemplateDetailResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -102,22 +92,17 @@ public class WorkItemConfService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取流程类型配置详情
     public QueryTemplateDetailResp queryTemplateDetail(QueryTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/template_detail/:template_id"
                 , false
                 , req);
 
-        // 反序列化
         QueryTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryTemplateDetailResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -134,22 +119,44 @@ public class WorkItemConfService {
         return resp;
     }
 
-    /*
-     *
-     */
-    public QueryWorkItemTemplatesResp queryWorkItemTemplates(QueryWorkItemTemplatesReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
+    // 获取流程类型配置（wbs）
+    public QueryWbsTemplateConfResp queryWbsTemplateConf(QueryWbsTemplateConfReq req, RequestOptions reqOptions) throws Exception {
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/:project_key/wbs_template"
+                , false
+                , req);
+
+        QueryWbsTemplateConfResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWbsTemplateConfResp.class);
+        if (resp == null) {
+            log.error(String.format(
+                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/wbs_template"
+                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
+                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
+                            StandardCharsets.UTF_8)));
+            throw new IllegalArgumentException("The result returned by the server is illegal");
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 获取工作项下的流程类型
+    public QueryWorkItemTemplatesResp queryWorkItemTemplates(QueryWorkItemTemplatesReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/template_list/:work_item_type_key"
                 , false
                 , req);
 
-        // 反序列化
         QueryWorkItemTemplatesResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemTemplatesResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -166,22 +173,17 @@ public class WorkItemConfService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 更新流程类型配置
     public UpdateTemplateDetailResp updateTemplateDetail(UpdateTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/template/v2/update_template"
                 , false
                 , req);
 
-        // 反序列化
         UpdateTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateTemplateDetailResp.class);
         if (resp == null) {
             log.error(String.format(

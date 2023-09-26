@@ -46,18 +46,6 @@ public class StateFlowConfInfo {
     @SerializedName("authorized_roles")
     private List<String> authorizedRoles;
 
-    /**
-     *
-     */
-    @SerializedName("confirm_form_list")
-    private List<ConfirmForm> confirmFormList;
-
-    /**
-     *
-     */
-    @SerializedName("action")
-    private Long action;
-
     public String getStateKey() {
         return this.stateKey;
     }
@@ -88,22 +76,6 @@ public class StateFlowConfInfo {
 
     public void setAuthorizedRoles(List<String> authorizedRoles) {
         this.authorizedRoles = authorizedRoles;
-    }
-
-    public List<ConfirmForm> getConfirmFormList() {
-        return this.confirmFormList;
-    }
-
-    public void setConfirmFormList(List<ConfirmForm> confirmFormList) {
-        this.confirmFormList = confirmFormList;
-    }
-
-    public Long getAction() {
-        return this.action;
-    }
-
-    public void setAction(Long action) {
-        this.action = action;
     }
 
 }

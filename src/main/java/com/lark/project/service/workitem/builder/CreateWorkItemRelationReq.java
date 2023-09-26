@@ -17,15 +17,11 @@
 package com.lark.project.service.workitem.builder;
 
 import com.lark.project.core.annotation.Body;
-import com.lark.project.core.request.BaseRequest;
-import com.lark.project.core.utils.Lists;
 import com.lark.project.service.workitem.model.RelationDetail;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class CreateWorkItemRelationReq extends BaseRequest {
+public class CreateWorkItemRelationReq {
     @Body
     private CreateWorkItemRelationReqBody body;
 
@@ -36,8 +32,6 @@ public class CreateWorkItemRelationReq extends BaseRequest {
     public CreateWorkItemRelationReq(Builder builder) {
         this.body = builder.body;
 
-
-        this.setHeaders(builder.headers);
     }
 
     public static Builder newBuilder() {
@@ -53,29 +47,10 @@ public class CreateWorkItemRelationReq extends BaseRequest {
     }
 
     public static class Builder {
-
-        private Map<String, List<String>> headers;
         private CreateWorkItemRelationReqBody body;
 
         public Builder() {
-            headers = new HashMap<>();
             body = new CreateWorkItemRelationReqBody();
-        }
-
-        /**
-         * 请求头用户user_key
-         */
-        public Builder accessUser(String userKey) {
-            this.headers.put("X-USER-KEY", Lists.newArrayList(userKey));
-            return this;
-        }
-
-        /**
-         * 请求头接口的幂等串
-         */
-        public Builder uuid(String uuid) {
-            this.headers.put("X-IDEM-UUID", Lists.newArrayList(uuid));
-            return this;
         }
 
         public Builder projectKey(String projectKey) {

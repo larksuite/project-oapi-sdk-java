@@ -24,6 +24,8 @@ import com.lark.project.core.utils.Jsons;
 import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.user.builder.QueryUserDetailReq;
 import com.lark.project.service.user.builder.QueryUserDetailResp;
+import com.lark.project.service.user.builder.SearchUserReq;
+import com.lark.project.service.user.builder.SearchUserResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,26 +41,48 @@ public class UserService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 获取用户详情
     public QueryUserDetailResp queryUserDetail(QueryUserDetailReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/user/query"
                 , false
                 , req);
 
-        // 反序列化
         QueryUserDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryUserDetailResp.class);
         if (resp == null) {
             log.error(String.format(
                     "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/user/query"
+                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
+                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
+                            StandardCharsets.UTF_8)));
+            throw new IllegalArgumentException("The result returned by the server is illegal");
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 模糊查询指定空间的用户列表
+    public SearchUserResp searchUser(SearchUserReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/user/search"
+                , false
+                , req);
+
+        SearchUserResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, SearchUserResp.class);
+        if (resp == null) {
+            log.error(String.format(
+                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/user/search"
                     , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
                     httpResponse.getStatusCode(), new String(httpResponse.getBody(),
                             StandardCharsets.UTF_8)));

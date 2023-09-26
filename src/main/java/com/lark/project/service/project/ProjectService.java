@@ -38,22 +38,17 @@ public class ProjectService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 获取空间详情
     public GetProjectDetailResp getProjectDetail(GetProjectDetailReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/projects/detail"
                 , false
                 , req);
 
-        // 反序列化
         GetProjectDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetProjectDetailResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -70,22 +65,17 @@ public class ProjectService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取空间列表
     public ListProjectResp listProject(ListProjectReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/projects"
                 , false
                 , req);
 
-        // 反序列化
         ListProjectResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -102,22 +92,17 @@ public class ProjectService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取空间下业务线详情
     public ListProjectBusinessResp listProjectBusiness(ListProjectBusinessReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/business/all"
                 , false
                 , req);
 
-        // 反序列化
         ListProjectBusinessResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectBusinessResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -134,22 +119,17 @@ public class ProjectService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取空间下团队人员
     public ListProjectTeamResp listProjectTeam(ListProjectTeamReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/teams/all"
                 , false
                 , req);
 
-        // 反序列化
         ListProjectTeamResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectTeamResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -166,22 +146,17 @@ public class ProjectService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取空间下工作项类型
     public ListProjectWorkItemTypeResp listProjectWorkItemType(ListProjectWorkItemTypeReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/all-types"
                 , false
                 , req);
 
-        // 反序列化
         ListProjectWorkItemTypeResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectWorkItemTypeResp.class);
         if (resp == null) {
             log.error(String.format(

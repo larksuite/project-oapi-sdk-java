@@ -19,14 +19,8 @@ package com.lark.project.service.project_relation.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
-import com.lark.project.core.request.BaseRequest;
-import com.lark.project.core.utils.Lists;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-public class DeleteProjectRelationInstanceReq extends BaseRequest {
+public class DeleteProjectRelationInstanceReq {
     @Path
     @SerializedName("project_key")
     private String projectKey;
@@ -49,8 +43,6 @@ public class DeleteProjectRelationInstanceReq extends BaseRequest {
         this.workItemID = builder.workItemID;
         this.body = builder.body;
 
-
-        this.setHeaders(builder.headers);
     }
 
     public static Builder newBuilder() {
@@ -90,32 +82,13 @@ public class DeleteProjectRelationInstanceReq extends BaseRequest {
     }
 
     public static class Builder {
-
-        private Map<String, List<String>> headers;
         private String projectKey;
         private String workItemTypeKey;
         private Long workItemID;
         private DeleteProjectRelationInstanceReqBody body;
 
         public Builder() {
-            headers = new HashMap<>();
             body = new DeleteProjectRelationInstanceReqBody();
-        }
-
-        /**
-         * 请求头用户user_key
-         */
-        public Builder accessUser(String userKey) {
-            this.headers.put("X-USER-KEY", Lists.newArrayList(userKey));
-            return this;
-        }
-
-        /**
-         * 请求头接口的幂等串
-         */
-        public Builder uuid(String uuid) {
-            this.headers.put("X-IDEM-UUID", Lists.newArrayList(uuid));
-            return this;
         }
 
         public Builder projectKey(String projectKey) {

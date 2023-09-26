@@ -38,22 +38,17 @@ public class ProjectRelationService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 通过空间关联绑定关联工作项
     public CreateProjectRelationInstancesResp createProjectRelationInstances(CreateProjectRelationInstancesReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/relation/:work_item_type_key/:work_item_id/batch_bind"
                 , false
                 , req);
 
-        // 反序列化
         CreateProjectRelationInstancesResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateProjectRelationInstancesResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -70,22 +65,17 @@ public class ProjectRelationService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 通过空间关联解绑关联工作项
     public DeleteProjectRelationInstanceResp deleteProjectRelationInstance(DeleteProjectRelationInstanceReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/:project_key/relation/:work_item_type_key/:work_item_id"
                 , false
                 , req);
 
-        // 反序列化
         DeleteProjectRelationInstanceResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteProjectRelationInstanceResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -102,22 +92,17 @@ public class ProjectRelationService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取空间关联规则列表
     public QueryProjectRelationResp queryProjectRelation(QueryProjectRelationReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/relation/rules"
                 , false
                 , req);
 
-        // 反序列化
         QueryProjectRelationResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryProjectRelationResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -134,22 +119,17 @@ public class ProjectRelationService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取空间关联下的关联工作项列表
     public QueryProjectRelationInstanceResp queryProjectRelationInstance(QueryProjectRelationInstanceReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/relation/:work_item_type_key/:work_item_id/work_item_list"
                 , false
                 , req);
 
-        // 反序列化
         QueryProjectRelationInstanceResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryProjectRelationInstanceResp.class);
         if (resp == null) {
             log.error(String.format(

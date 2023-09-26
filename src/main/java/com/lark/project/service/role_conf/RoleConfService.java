@@ -39,22 +39,17 @@ public class RoleConfService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 获取流程角色配置详情
     public QueryRoleConfDetailsResp queryRoleConfDetails(QueryRoleConfDetailsReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/flow_roles/:work_item_type_key"
                 , false
                 , req);
 
-        // 反序列化
         QueryRoleConfDetailsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryRoleConfDetailsResp.class);
         if (resp == null) {
             log.error(String.format(

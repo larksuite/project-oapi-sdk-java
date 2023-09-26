@@ -38,22 +38,17 @@ public class FieldService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 创建自定义字段
     public CreateFieldResp createField(CreateFieldReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/field/:work_item_type_key/create"
                 , false
                 , req);
 
-        // 反序列化
         CreateFieldResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateFieldResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -70,22 +65,17 @@ public class FieldService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取空间字段
     public QueryProjectFieldsResp queryProjectFields(QueryProjectFieldsReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/field/all"
                 , false
                 , req);
 
-        // 反序列化
         QueryProjectFieldsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryProjectFieldsResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -102,22 +92,17 @@ public class FieldService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 更新自定义字段
     public UpdateFieldResp updateField(UpdateFieldReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/:project_key/field/:work_item_type_key"
                 , false
                 , req);
 
-        // 反序列化
         UpdateFieldResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateFieldResp.class);
         if (resp == null) {
             log.error(String.format(

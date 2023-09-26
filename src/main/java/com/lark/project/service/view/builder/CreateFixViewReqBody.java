@@ -26,6 +26,12 @@ public class CreateFixViewReqBody {
     private List<Long> workItemIDList;
     @SerializedName("name")
     private String name;
+    @SerializedName("cooperation_mode")
+    private Long cooperationMode;
+    @SerializedName("cooperation_user_keys")
+    private List<String> cooperationUserKeys;
+    @SerializedName("cooperation_team_ids")
+    private List<Long> cooperationTeamIDs;
 
     public List<Long> getWorkItemIDList() {
         return this.workItemIDList;
@@ -41,5 +47,29 @@ public class CreateFixViewReqBody {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getCooperationMode() {
+        return this.cooperationMode;
+    }
+
+    public void setCooperationMode(Long cooperationMode) {
+        this.cooperationMode = cooperationMode;
+    }
+
+    public List<String> getCooperationUserKeys() {
+        return this.cooperationUserKeys;
+    }
+
+    public void setCooperationUserKeys(List<String> cooperationUserKeys) {
+        this.cooperationUserKeys = cooperationUserKeys;
+    }
+
+    public List<Long> getCooperationTeamIDs() {
+        return this.cooperationTeamIDs;
+    }
+
+    public void setCooperationTeamIDs(List<Long> cooperationTeamIDs) {
+        this.cooperationTeamIDs = cooperationTeamIDs;
     }
 }

@@ -17,14 +17,10 @@
 package com.lark.project.service.workitem.builder;
 
 import com.lark.project.core.annotation.Body;
-import com.lark.project.core.request.BaseRequest;
-import com.lark.project.core.utils.Lists;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class CompositiveSearchReq extends BaseRequest {
+public class CompositiveSearchReq {
     @Body
     private CompositiveSearchReqBody body;
 
@@ -35,8 +31,6 @@ public class CompositiveSearchReq extends BaseRequest {
     public CompositiveSearchReq(Builder builder) {
         this.body = builder.body;
 
-
-        this.setHeaders(builder.headers);
     }
 
     public static Builder newBuilder() {
@@ -52,29 +46,10 @@ public class CompositiveSearchReq extends BaseRequest {
     }
 
     public static class Builder {
-
-        private Map<String, List<String>> headers;
         private CompositiveSearchReqBody body;
 
         public Builder() {
-            headers = new HashMap<>();
             body = new CompositiveSearchReqBody();
-        }
-
-        /**
-         * 请求头用户user_key
-         */
-        public Builder accessUser(String userKey) {
-            this.headers.put("X-USER-KEY", Lists.newArrayList(userKey));
-            return this;
-        }
-
-        /**
-         * 请求头接口的幂等串
-         */
-        public Builder uuid(String uuid) {
-            this.headers.put("X-IDEM-UUID", Lists.newArrayList(uuid));
-            return this;
         }
 
         public Builder projectKeys(List<String> projectKeys) {

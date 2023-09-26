@@ -38,22 +38,17 @@ public class TaskService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 创建子任务
     public CreateSubTaskResp createSubTask(CreateSubTaskReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/workflow/task"
                 , false
                 , req);
 
-        // 反序列化
         CreateSubTaskResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateSubTaskResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -70,22 +65,17 @@ public class TaskService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 删除子任务
     public DeleteSubTaskResp deleteSubTask(DeleteSubTaskReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/task/:task_id"
                 , false
                 , req);
 
-        // 反序列化
         DeleteSubTaskResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteSubTaskResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -102,22 +92,17 @@ public class TaskService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 子任务完成/回滚
     public ModifySubtaskResp modifySubtask(ModifySubtaskReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/subtask/modify"
                 , false
                 , req);
 
-        // 反序列化
         ModifySubtaskResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ModifySubtaskResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -134,22 +119,17 @@ public class TaskService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取指定的子任务列表（跨空间）
     public SearchSubtaskResp searchSubtask(SearchSubtaskReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/work_item/subtask/search"
                 , false
                 , req);
 
-        // 反序列化
         SearchSubtaskResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, SearchSubtaskResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -166,22 +146,17 @@ public class TaskService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取子任务详情
     public TaskDetailResp taskDetail(TaskDetailReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/workflow/task"
                 , false
                 , req);
 
-        // 反序列化
         TaskDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, TaskDetailResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -198,22 +173,17 @@ public class TaskService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 更新子任务
     public UpdateSubTaskResp updateSubTask(UpdateSubTaskReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/workflow/:node_id/task/:task_id"
                 , false
                 , req);
 
-        // 反序列化
         UpdateSubTaskResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateSubTaskResp.class);
         if (resp == null) {
             log.error(String.format(

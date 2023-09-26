@@ -17,14 +17,8 @@
 package com.lark.project.service.workitem_conf.builder;
 
 import com.lark.project.core.annotation.Body;
-import com.lark.project.core.request.BaseRequest;
-import com.lark.project.core.utils.Lists;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-public class CreateTemplateDetailReq extends BaseRequest {
+public class CreateTemplateDetailReq {
     @Body
     private CreateTemplateDetailReqBody body;
 
@@ -35,8 +29,6 @@ public class CreateTemplateDetailReq extends BaseRequest {
     public CreateTemplateDetailReq(Builder builder) {
         this.body = builder.body;
 
-
-        this.setHeaders(builder.headers);
     }
 
     public static Builder newBuilder() {
@@ -52,29 +44,10 @@ public class CreateTemplateDetailReq extends BaseRequest {
     }
 
     public static class Builder {
-
-        private Map<String, List<String>> headers;
         private CreateTemplateDetailReqBody body;
 
         public Builder() {
-            headers = new HashMap<>();
             body = new CreateTemplateDetailReqBody();
-        }
-
-        /**
-         * 请求头用户user_key
-         */
-        public Builder accessUser(String userKey) {
-            this.headers.put("X-USER-KEY", Lists.newArrayList(userKey));
-            return this;
-        }
-
-        /**
-         * 请求头接口的幂等串
-         */
-        public Builder uuid(String uuid) {
-            this.headers.put("X-IDEM-UUID", Lists.newArrayList(uuid));
-            return this;
         }
 
         public Builder projectKey(String projectKey) {

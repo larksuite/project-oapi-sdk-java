@@ -19,12 +19,8 @@ package com.lark.project.service.field.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
-import com.lark.project.core.request.BaseRequest;
-import com.lark.project.core.utils.Lists;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class CreateFieldReq {
     @Path
@@ -44,6 +40,7 @@ public class CreateFieldReq {
         this.projectKey = builder.projectKey;
         this.workItemTypeKey = builder.workItemTypeKey;
         this.body = builder.body;
+
     }
 
     public static Builder newBuilder() {
@@ -75,7 +72,6 @@ public class CreateFieldReq {
     }
 
     public static class Builder {
-
         private String projectKey;
         private String workItemTypeKey;
         private CreateFieldReqBody body;

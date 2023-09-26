@@ -22,8 +22,7 @@ public enum AccessTokenType {
 
     AccessTokenTypeVirtualPlugin(1),
 
-    AccessTokenTypeUserPlugin(0);
-    ;
+    AccessTokenTypeUserPlugin(0);;
 
     private final int value;
 

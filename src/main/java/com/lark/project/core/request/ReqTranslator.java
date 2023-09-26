@@ -18,11 +18,8 @@ import com.lark.project.core.Constants;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
 import com.lark.project.core.annotation.Query;
-import com.lark.project.core.exception.IllegalAccessTokenTypeException;
-import com.lark.project.core.token.AccessTokenType;
 import com.lark.project.core.token.GlobalTokenManager;
 import com.lark.project.core.utils.Lists;
-import com.lark.project.core.utils.Strings;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -65,8 +62,8 @@ public class ReqTranslator {
 
         // 获取并缓存token
         if (!skipAuth) {
-            List<String> values=headers.get(Constants.HTTP_HEADER_ACCESS_TOKEN);
-            if(!config.isDisableTokenCache()&&values==null){
+            List<String> values = headers.get(Constants.HTTP_HEADER_ACCESS_TOKEN);
+            if (!config.isDisableTokenCache() && values == null) {
                 headers.put("X-PLUGIN-TOKEN", Lists.newArrayList(GlobalTokenManager.getTokenManager()
                         .getAccessTokenThenCache(config)));
             }

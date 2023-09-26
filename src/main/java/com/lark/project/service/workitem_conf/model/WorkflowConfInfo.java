@@ -118,30 +118,6 @@ public class WorkflowConfInfo {
     @SerializedName("done_allocate_owner")
     private Boolean doneAllocateOwner;
 
-    /**
-     *
-     */
-    @SerializedName("action")
-    private Long action;
-
-    /**
-     *
-     */
-    @SerializedName("pre_node_state_key")
-    private List<String> preNodeStateKey;
-
-    /**
-     *
-     */
-    @SerializedName("completion_tips")
-    private String completionTips;
-
-    /**
-     *
-     */
-    @SerializedName("task_confs")
-    private List<TaskConf> taskConfs;
-
     public String getStateKey() {
         return this.stateKey;
     }
@@ -268,38 +244,6 @@ public class WorkflowConfInfo {
 
     public void setDoneAllocateOwner(Boolean doneAllocateOwner) {
         this.doneAllocateOwner = doneAllocateOwner;
-    }
-
-    public Long getAction() {
-        return this.action;
-    }
-
-    public void setAction(Long action) {
-        this.action = action;
-    }
-
-    public List<String> getPreNodeStateKey() {
-        return this.preNodeStateKey;
-    }
-
-    public void setPreNodeStateKey(List<String> preNodeStateKey) {
-        this.preNodeStateKey = preNodeStateKey;
-    }
-
-    public String getCompletionTips() {
-        return this.completionTips;
-    }
-
-    public void setCompletionTips(String completionTips) {
-        this.completionTips = completionTips;
-    }
-
-    public List<TaskConf> getTaskConfs() {
-        return this.taskConfs;
-    }
-
-    public void setTaskConfs(List<TaskConf> taskConfs) {
-        this.taskConfs = taskConfs;
     }
 
 }

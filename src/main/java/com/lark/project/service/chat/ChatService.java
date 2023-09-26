@@ -39,22 +39,17 @@ public class ChatService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 拉机器人入群
     public BotJoinChatResp botJoinChat(BotJoinChatReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_id/bot_join_chat"
                 , false
                 , req);
 
-        // 反序列化
         BotJoinChatResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, BotJoinChatResp.class);
         if (resp == null) {
             log.error(String.format(

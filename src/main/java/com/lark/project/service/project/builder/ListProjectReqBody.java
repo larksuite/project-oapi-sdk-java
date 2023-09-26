@@ -18,6 +18,8 @@ package com.lark.project.service.project.builder;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 
 public class ListProjectReqBody {
     @SerializedName("user_key")
@@ -26,6 +28,8 @@ public class ListProjectReqBody {
     private Long tenantGroupID;
     @SerializedName("asset_key")
     private String assetKey;
+    @SerializedName("order")
+    private List<String> order;
 
     public String getUserKey() {
         return this.userKey;
@@ -49,5 +53,13 @@ public class ListProjectReqBody {
 
     public void setAssetKey(String assetKey) {
         this.assetKey = assetKey;
+    }
+
+    public List<String> getOrder() {
+        return this.order;
+    }
+
+    public void setOrder(List<String> order) {
+        this.order = order;
     }
 }

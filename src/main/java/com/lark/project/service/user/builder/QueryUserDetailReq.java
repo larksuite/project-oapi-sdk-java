@@ -17,14 +17,10 @@
 package com.lark.project.service.user.builder;
 
 import com.lark.project.core.annotation.Body;
-import com.lark.project.core.request.BaseRequest;
-import com.lark.project.core.utils.Lists;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class QueryUserDetailReq extends BaseRequest {
+public class QueryUserDetailReq {
     @Body
     private QueryUserDetailReqBody body;
 
@@ -35,8 +31,6 @@ public class QueryUserDetailReq extends BaseRequest {
     public QueryUserDetailReq(Builder builder) {
         this.body = builder.body;
 
-
-        this.setHeaders(builder.headers);
     }
 
     public static Builder newBuilder() {
@@ -52,29 +46,10 @@ public class QueryUserDetailReq extends BaseRequest {
     }
 
     public static class Builder {
-
-        private Map<String, List<String>> headers;
         private QueryUserDetailReqBody body;
 
         public Builder() {
-            headers = new HashMap<>();
             body = new QueryUserDetailReqBody();
-        }
-
-        /**
-         * 请求头用户user_key
-         */
-        public Builder accessUser(String userKey) {
-            this.headers.put("X-USER-KEY", Lists.newArrayList(userKey));
-            return this;
-        }
-
-        /**
-         * 请求头接口的幂等串
-         */
-        public Builder uuid(String uuid) {
-            this.headers.put("X-IDEM-UUID", Lists.newArrayList(uuid));
-            return this;
         }
 
         public Builder userKeys(List<String> userKeys) {

@@ -24,13 +24,12 @@ public interface Constants {
     String JSON_CONTENT_TYPE = APPLICATION_JSON + "; charset=utf-8";
     String HTTP_HEADER_KEY_REQUEST_ID = "X-Request-Id";
     String HTTP_HEADER_KEY_LOG_ID = "X-Tt-Logid";
-    String CUSTOM_REQUEST_ID = "Oapi-Sdk-Request-Id";
 
     String HTTP_HEADER_USER_KEY = "X-USER-KEY";
 
-    String 	HTTP_HEADER_ACCESS_TOKEN  = "X-PLUGIN-TOKEN";
+    String HTTP_HEADER_ACCESS_TOKEN = "X-PLUGIN-TOKEN";
 
-    String 	HTTP_HEADER_IDEM_UUID     = "X-IDEM-UUID";
+    String HTTP_HEADER_IDEM_UUID = "X-IDEM-UUID";
     String VERSION = "v1.0.0";
 
 }

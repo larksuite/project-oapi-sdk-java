@@ -12,11 +12,9 @@
 
 package com.lark.project.core;
 
-import com.lark.project.core.exception.ClientTimeoutException;
 import com.lark.project.core.exception.ServerTimeoutException;
 import com.lark.project.core.httpclient.IHttpTransport;
 import com.lark.project.core.httpclient.OkHttpTransport;
-import com.lark.project.core.request.BaseRequest;
 import com.lark.project.core.request.RawRequest;
 import com.lark.project.core.request.ReqTranslator;
 import com.lark.project.core.request.RequestOptions;
@@ -26,7 +24,6 @@ import com.lark.project.core.utils.OKHttps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.InterruptedIOException;
 import java.nio.charset.StandardCharsets;
 
 public class Transport {
@@ -53,45 +50,45 @@ public class Transport {
     }
 
     public static RawResponse doSend(Config config, RequestOptions requestOptions, String httpMethod, String httpPath, boolean skipAuth,
-                                      Object req) throws Exception {
-            try {
-                // 参数转换
-                RawRequest request = REQ_TRANSLATOR.translate(req, config, httpMethod,
-                        httpPath, skipAuth, requestOptions);
+                                     Object req) throws Exception {
+        try {
+            // 参数转换
+            RawRequest request = REQ_TRANSLATOR.translate(req, config, httpMethod,
+                    httpPath, skipAuth, requestOptions);
 
-                // 打印日志
-                if (config.isLogReqAtDebug()) {
-                    logReq(request, httpPath, requestOptions.isSupportUpload());
-                }
-
-                // 执行调用
-                IHttpTransport httpTransport = config.getHttpTransport();
-                if (httpTransport == null) {
-                    httpTransport = new OkHttpTransport(OKHttps.defaultClient);
-                }
-                RawResponse rawResponse = httpTransport.execute(request);
-
-                // 打印日志
-                if (config.isLogReqAtDebug() || !skipAuth) {
-                    if (requestOptions.isSupportDownLoad()) {
-                        log.debug("resp,path:{},code:{},header:{}", httpPath, rawResponse.getStatusCode(),
-                                rawResponse.getHeaders());
-                    } else {
-                        log.debug("resp,path:{},code:{},header:{},body:{}", httpPath,
-                                rawResponse.getStatusCode(), rawResponse.getHeaders(),
-                                new String(rawResponse.getBody(), StandardCharsets.UTF_8));
-                    }
-                }
-
-                // 服务端超时
-                if (rawResponse.getStatusCode() == 504) {
-                    log.error(String.format("httpMethod:%s,httpPath:%s, server time out,reqId:%s", httpMethod,
-                            httpPath, rawResponse.getRequestID()));
-                    throw new ServerTimeoutException();
-                }
-                return rawResponse;
-            } catch (Exception e) {
-                    throw e;
+            // 打印日志
+            if (config.isLogReqAtDebug()) {
+                logReq(request, httpPath, requestOptions.isSupportUpload());
             }
+
+            // 执行调用
+            IHttpTransport httpTransport = config.getHttpTransport();
+            if (httpTransport == null) {
+                httpTransport = new OkHttpTransport(OKHttps.defaultClient);
+            }
+            RawResponse rawResponse = httpTransport.execute(request);
+
+            // 打印日志
+            if (config.isLogReqAtDebug() || !skipAuth) {
+                if (requestOptions.isSupportDownLoad()) {
+                    log.debug("resp,path:{},code:{},header:{}", httpPath, rawResponse.getStatusCode(),
+                            rawResponse.getHeaders());
+                } else {
+                    log.debug("resp,path:{},code:{},header:{},body:{}", httpPath,
+                            rawResponse.getStatusCode(), rawResponse.getHeaders(),
+                            new String(rawResponse.getBody(), StandardCharsets.UTF_8));
+                }
+            }
+
+            // 服务端超时
+            if (rawResponse.getStatusCode() == 504) {
+                log.error(String.format("httpMethod:%s,httpPath:%s, server time out,reqId:%s", httpMethod,
+                        httpPath, rawResponse.getRequestID()));
+                throw new ServerTimeoutException();
+            }
+            return rawResponse;
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }

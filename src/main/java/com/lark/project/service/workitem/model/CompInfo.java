@@ -70,6 +70,12 @@ public class CompInfo {
     @SerializedName("ViewScopeKey")
     private String viewScopeKey;
 
+    /**
+     *
+     */
+    @SerializedName("ProjectKeys")
+    private List<String> projectKeys;
+
     public String getID() {
         return this.id;
     }
@@ -132,6 +138,14 @@ public class CompInfo {
 
     public void setViewScopeKey(String viewScopeKey) {
         this.viewScopeKey = viewScopeKey;
+    }
+
+    public List<String> getProjectKeys() {
+        return this.projectKeys;
+    }
+
+    public void setProjectKeys(List<String> projectKeys) {
+        this.projectKeys = projectKeys;
     }
 
 }

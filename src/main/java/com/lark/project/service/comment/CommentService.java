@@ -38,22 +38,17 @@ public class CommentService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 添加评论
     public CreateCommentResp createComment(CreateCommentReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/create"
                 , false
                 , req);
 
-        // 反序列化
         CreateCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateCommentResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -70,22 +65,17 @@ public class CommentService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 删除评论
     public DeleteCommentResp deleteComment(DeleteCommentReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
                 , false
                 , req);
 
-        // 反序列化
         DeleteCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteCommentResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -102,22 +92,17 @@ public class CommentService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 查询评论
     public QueryCommentsResp queryComments(QueryCommentsReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comments"
                 , false
                 , req);
 
-        // 反序列化
         QueryCommentsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryCommentsResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -134,22 +119,17 @@ public class CommentService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 更新评论
     public UpdateCommentResp updateComment(UpdateCommentReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
                 , false
                 , req);
 
-        // 反序列化
         UpdateCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateCommentResp.class);
         if (resp == null) {
             log.error(String.format(

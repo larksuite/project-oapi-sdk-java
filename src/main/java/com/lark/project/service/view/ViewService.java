@@ -38,22 +38,17 @@ public class ViewService {
         this.config = config;
     }
 
-    /*
-     *
-     */
+    // 创建固定视图
     public CreateFixViewResp createFixView(CreateFixViewReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/:work_item_type_key/fix_view"
                 , false
                 , req);
 
-        // 反序列化
         CreateFixViewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateFixViewResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -70,22 +65,17 @@ public class ViewService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 删除固定视图
     public DeleteFixViewResp deleteFixView(DeleteFixViewReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/:project_key/fix_view/:view_id"
                 , false
                 , req);
 
-        // 反序列化
         DeleteFixViewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteFixViewResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -102,22 +92,17 @@ public class ViewService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取视图下工作项列表（全景视图）
     public QueryWorkItemDetailsByViewIDResp queryWorkItemDetailsByViewID(QueryWorkItemDetailsByViewIDReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/view/:view_id"
                 , false
                 , req);
 
-        // 反序列化
         QueryWorkItemDetailsByViewIDResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemDetailsByViewIDResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -134,22 +119,17 @@ public class ViewService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 更新固定视图
     public UpdateFixViewResp updateFixView(UpdateFixViewReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/:work_item_type_key/fix_view/:view_id"
                 , false
                 , req);
 
-        // 反序列化
         UpdateFixViewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateFixViewResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -166,22 +146,17 @@ public class ViewService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取视图列表
     public ViewListResp viewList(ViewListReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/view_conf/list"
                 , false
                 , req);
 
-        // 反序列化
         ViewListResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ViewListResp.class);
         if (resp == null) {
             log.error(String.format(
@@ -198,22 +173,17 @@ public class ViewService {
         return resp;
     }
 
-    /*
-     *
-     */
+    // 获取视图下工作项列表
     public WorkItemListResp workItemList(WorkItemListReq req, RequestOptions reqOptions) throws Exception {
-        // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
         }
 
-        // 发起请求
         RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/fix_view/:view_id"
                 , false
                 , req);
 
-        // 反序列化
         WorkItemListResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, WorkItemListResp.class);
         if (resp == null) {
             log.error(String.format(

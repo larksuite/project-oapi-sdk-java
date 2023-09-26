@@ -16,6 +16,7 @@
     - [设置请求选项](#设置请求选项)
 - [错误自查](#错误自查)
 - [FAQ](#FAQ)
+
 <!-- tocstop -->
 
 ## 安装
@@ -23,6 +24,7 @@
 - 运行环境：JDK 1.8及以上
 
 - 请将以下配置复制并添加 settings.xml文件中：
+
 ```shell
 <settings>
   <profiles>
@@ -47,7 +49,9 @@
   </profiles>
 </settings>
 ```
+
 - 请将以下配置复制并添加到 pom.xml文件中：
+
 ```shell
 <dependency>
   <groupId>com.larksuite.project</groupId>
@@ -392,7 +396,6 @@ public class Sample {
 
   </tbody>
 </table>
-
 
 ## 错误自查
 

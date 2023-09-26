@@ -18,14 +18,8 @@ package com.lark.project.service.task.builder;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Path;
-import com.lark.project.core.request.BaseRequest;
-import com.lark.project.core.utils.Lists;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-public class DeleteSubTaskReq extends BaseRequest {
+public class DeleteSubTaskReq {
     @Path
     @SerializedName("project_key")
     private String projectKey;
@@ -47,8 +41,6 @@ public class DeleteSubTaskReq extends BaseRequest {
         this.workItemID = builder.workItemID;
         this.workItemTypeKey = builder.workItemTypeKey;
         this.taskID = builder.taskID;
-
-        this.setHeaders(builder.headers);
     }
 
     public static Builder newBuilder() {
@@ -88,31 +80,12 @@ public class DeleteSubTaskReq extends BaseRequest {
     }
 
     public static class Builder {
-
-        private Map<String, List<String>> headers;
         private String projectKey;
         private Long workItemID;
         private String workItemTypeKey;
         private Long taskID;
 
         public Builder() {
-            headers = new HashMap<>();
-        }
-
-        /**
-         * 请求头用户user_key
-         */
-        public Builder accessUser(String userKey) {
-            this.headers.put("X-USER-KEY", Lists.newArrayList(userKey));
-            return this;
-        }
-
-        /**
-         * 请求头接口的幂等串
-         */
-        public Builder uuid(String uuid) {
-            this.headers.put("X-IDEM-UUID", Lists.newArrayList(uuid));
-            return this;
         }
 
         public Builder projectKey(String projectKey) {

@@ -26,6 +26,12 @@ public class UpdateFixViewReqBody {
     private List<Long> addWorkItemIDs;
     @SerializedName("remove_work_item_ids")
     private List<Long> removeWorkItemIDs;
+    @SerializedName("cooperation_mode")
+    private Long cooperationMode;
+    @SerializedName("cooperation_user_keys")
+    private List<String> cooperationUserKeys;
+    @SerializedName("cooperation_team_ids")
+    private List<Long> cooperationTeamIDs;
 
     public List<Long> getAddWorkItemIDs() {
         return this.addWorkItemIDs;
@@ -41,5 +47,29 @@ public class UpdateFixViewReqBody {
 
     public void setRemoveWorkItemIDs(List<Long> removeWorkItemIDs) {
         this.removeWorkItemIDs = removeWorkItemIDs;
+    }
+
+    public Long getCooperationMode() {
+        return this.cooperationMode;
+    }
+
+    public void setCooperationMode(Long cooperationMode) {
+        this.cooperationMode = cooperationMode;
+    }
+
+    public List<String> getCooperationUserKeys() {
+        return this.cooperationUserKeys;
+    }
+
+    public void setCooperationUserKeys(List<String> cooperationUserKeys) {
+        this.cooperationUserKeys = cooperationUserKeys;
+    }
+
+    public List<Long> getCooperationTeamIDs() {
+        return this.cooperationTeamIDs;
+    }
+
+    public void setCooperationTeamIDs(List<Long> cooperationTeamIDs) {
+        this.cooperationTeamIDs = cooperationTeamIDs;
     }
 }

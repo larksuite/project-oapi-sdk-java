@@ -56,6 +56,7 @@ public class RequestOptions {
     public void setSupportDownLoad(boolean supportDownLoad) {
         this.supportDownLoad = supportDownLoad;
     }
+
     public Map<String, List<String>> getHeaders() {
         return headers;
     }
@@ -70,19 +71,19 @@ public class RequestOptions {
         private boolean supportDownLoad;
         private Map<String, List<String>> headers;
 
-        private Builder(){
+        private Builder() {
             headers = new HashMap<>();
         }
 
         public Builder headers(Map<String, List<String>> headers) {
-            if(headers!=null) {
-                for(Map.Entry<String, List<String>> header:headers.entrySet()) {
-                    List<String> values=this.headers.get(header.getKey());
-                    if(values==null){
-                        values=new ArrayList<>();
-                        this.headers.put(header.getKey(),values);
+            if (headers != null) {
+                for (Map.Entry<String, List<String>> header : headers.entrySet()) {
+                    List<String> values = this.headers.get(header.getKey());
+                    if (values == null) {
+                        values = new ArrayList<>();
+                        this.headers.put(header.getKey(), values);
                     }
-                    for(String value:header.getValue()){
+                    for (String value : header.getValue()) {
                         values.add(value);
                     }
                 }
