@@ -49,7 +49,7 @@ public class ChatService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_id/bot_join_chat"
                 , false
                 , req);

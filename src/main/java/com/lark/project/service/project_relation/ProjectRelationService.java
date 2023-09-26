@@ -48,7 +48,7 @@ public class ProjectRelationService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/relation/:work_item_type_key/:work_item_id/batch_bind"
                 , false
                 , req);
@@ -80,7 +80,7 @@ public class ProjectRelationService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "DELETE"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/:project_key/relation/:work_item_type_key/:work_item_id"
                 , false
                 , req);
@@ -112,7 +112,7 @@ public class ProjectRelationService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/relation/rules"
                 , false
                 , req);
@@ -144,7 +144,7 @@ public class ProjectRelationService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/relation/:work_item_type_key/:work_item_id/work_item_list"
                 , false
                 , req);

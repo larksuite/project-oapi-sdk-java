@@ -49,7 +49,7 @@ public class RoleConfService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/flow_roles/:work_item_type_key"
                 , false
                 , req);

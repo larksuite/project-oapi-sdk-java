@@ -48,7 +48,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "PUT"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/abort"
                 , false
                 , req);
@@ -80,7 +80,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/compositive_search"
                 , false
                 , req);
@@ -112,7 +112,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/create"
                 , false
                 , req);
@@ -144,7 +144,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/work_item/relation/create"
                 , false
                 , req);
@@ -176,7 +176,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "DELETE"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id"
                 , false
                 , req);
@@ -208,7 +208,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "DELETE"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/work_item/relation/delete"
                 , false
                 , req);
@@ -240,7 +240,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/filter"
                 , false
                 , req);
@@ -272,7 +272,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/work_items/filter_across_project"
                 , false
                 , req);
@@ -304,7 +304,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/:work_item_type_key/meta"
                 , false
                 , req);
@@ -336,7 +336,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/workflow/:work_item_type_key/:work_item_id/node/:node_id/operate"
                 , false
                 , req);
@@ -368,7 +368,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/workflow/:work_item_type_key/:work_item_id/node/state_change"
                 , false
                 , req);
@@ -400,7 +400,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "PUT"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/:project_key/workflow/:work_item_type_key/:work_item_id/node/:node_id"
                 , false
                 , req);
@@ -432,7 +432,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/query"
                 , false
                 , req);
@@ -464,7 +464,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/relation"
                 , false
                 , req);
@@ -496,7 +496,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/workflow/query"
                 , false
                 , req);
@@ -528,7 +528,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/search/params"
                 , false
                 , req);
@@ -560,7 +560,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/search_by_relation"
                 , false
                 , req);
@@ -592,7 +592,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/update/multi_signal"
                 , false
                 , req);
@@ -624,7 +624,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "PUT"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id"
                 , false
                 , req);
@@ -656,7 +656,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/work_item/relation/update"
                 , false
                 , req);
@@ -688,7 +688,7 @@ public class WorkItemService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/wbs_view"
                 , false
                 , req);

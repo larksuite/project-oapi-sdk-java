@@ -15,6 +15,7 @@ package com.lark.project.core.token;
 import com.lark.project.core.Config;
 import com.lark.project.core.Transport;
 import com.lark.project.core.cache.ICache;
+import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.GetAccessTokenResp;
 import com.lark.project.core.response.RawResponse;
 import com.lark.project.core.utils.Jsons;
@@ -32,8 +33,7 @@ public class TokenManager {
 
     private static final Logger log = LoggerFactory.getLogger(TokenManager.class);
     private static final int expiryDeltaOfSecond = 3 * 60;
-    private static final String pluginAccessTokenKeyPrefix = "plugin_access_token";
-    private static final String virtualPluginAccessTokenKeyPrefix = "virtual_plugin_access_token";
+    private static final String accessTokenKeyPrefix = "access_token";
 
     private ICache cache;
 
@@ -41,59 +41,36 @@ public class TokenManager {
         this.cache = cache;
     }
 
-    private String getPluginAccessTokenKey(String pluginID) {
-        return String.format("%s-%s", pluginAccessTokenKeyPrefix, pluginID);
+    private String getAccessTokenKey(String pluginID) {
+        return String.format("%s-%s", accessTokenKeyPrefix, pluginID);
     }
 
-    public String getPluginAccessTokenThenCache(Config config) throws Exception {
-        // 缓存里存在则直接返回
-        String token = cache.get(getPluginAccessTokenKey(config.getPluginID()));
+    public String getAccessTokenThenCache(Config config) throws Exception {
+        String token = cache.get(getAccessTokenKey(config.getPluginID()));
         if (Strings.isNotEmpty(token)) {
             return token;
         }
 
-        GetAccessTokenResp resp = getInternalAccessToken(config, 0);
+        GetAccessTokenResp resp = getInternalAccessToken(config, config.getAccessTokenType().getValue());
         token = resp.getToken();
         int timeOut = resp.getExpireTime();
-        // 缓存
-        cache.set(getPluginAccessTokenKey(config.getPluginID()), token, timeOut - expiryDeltaOfSecond,
+        cache.set(getAccessTokenKey(config.getPluginID()), token, timeOut - expiryDeltaOfSecond,
                 TimeUnit.SECONDS);
-        return token;
-    }
-
-    private String getVirtualPluginAccessTokenKey(String pluginID) {
-        return String.format("%s-%s", virtualPluginAccessTokenKeyPrefix, pluginID);
-    }
-
-    public String getVirtualPluginAccessTokenThenCache(Config config) throws Exception {
-        // 缓存中存在，则直接返回
-        String token = cache.get(getVirtualPluginAccessTokenKey(config.getPluginID()));
-        if (Strings.isNotEmpty(token)) {
-            return token;
-        }
-
-        GetAccessTokenResp resp = getInternalAccessToken(config, 1);
-        token = resp.getToken();
-        int timeOut = resp.getExpireTime();
-        cache.set(getVirtualPluginAccessTokenKey(config.getPluginID()), token,
-                timeOut - expiryDeltaOfSecond, TimeUnit.SECONDS);
         return token;
     }
 
     public GetAccessTokenResp getInternalAccessToken(Config config, int type) throws Exception {
 
-        // 创建请求对象
         GetPluginTokenReq req = GetPluginTokenReq.newBuilder()
                 .pluginID(config.getPluginID())
                 .pluginSecret(config.getPluginSecret())
                 .type(type)
                 .build();
-        RawResponse httpResponse = Transport.send(config, null, "POST"
+        RawResponse httpResponse = Transport.doSend(config, new RequestOptions(), "POST"
                 , "/open_api/authen/plugin_token"
                 , true
                 , req);
 
-        // 反序列化
         GetPluginTokenResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetPluginTokenResp.class);
         if (resp == null) {
             log.error(String.format(

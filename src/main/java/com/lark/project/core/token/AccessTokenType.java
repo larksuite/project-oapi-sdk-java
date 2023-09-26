@@ -18,20 +18,21 @@ package com.lark.project.core.token;
 
 public enum AccessTokenType {
 
-    AccessTokenTypePlugin("plugin_access_token"),
+    AccessTokenTypePlugin(0),
 
-    AccessTokenTypeVirtualPlugin("virtual_plugin_access_token"),
+    AccessTokenTypeVirtualPlugin(1),
 
-    AccessTokenTypeUserPlugin("user_plugin_access_token");
+    AccessTokenTypeUserPlugin(0);
+    ;
 
-    private final String value;
+    private final int value;
 
-    AccessTokenType(String value) {
+    AccessTokenType(int value) {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
+
+    public int getValue() {
         return value;
     }
 }

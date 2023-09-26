@@ -48,7 +48,7 @@ public class FieldService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/field/:work_item_type_key/create"
                 , false
                 , req);
@@ -80,7 +80,7 @@ public class FieldService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/field/all"
                 , false
                 , req);
@@ -112,7 +112,7 @@ public class FieldService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "PUT"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/:project_key/field/:work_item_type_key"
                 , false
                 , req);

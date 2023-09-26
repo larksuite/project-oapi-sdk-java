@@ -34,36 +34,6 @@ public class Transport {
     private static final Logger log = LoggerFactory.getLogger(Transport.class);
     private static final ReqTranslator REQ_TRANSLATOR = new ReqTranslator();
 
-    public static RawResponse send(Config config
-            , RequestOptions requestOptions
-            , String methodType
-            , String path
-            , boolean skipAuth
-            , BaseRequest req) throws Exception {
-        try {
-            // 避免NPE
-            if (requestOptions == null) {
-                requestOptions = new RequestOptions();
-            }
-            if (requestOptions.getHeaders() == null) {
-                requestOptions.setHeaders(req.getHeaders());
-            } else if (req.getHeaders() != null) {
-                requestOptions.getHeaders().putAll(req.getHeaders());
-            }
-            // 具体处理
-            return doSend(config, methodType, path, req, skipAuth, requestOptions);
-        } catch (InterruptedIOException e) {
-            log.error("send error:{},{}", methodType, path, e);
-            if ("timeout".equals(e.getMessage())) {
-                throw new ClientTimeoutException();
-            }
-            throw e;
-
-        } catch (Throwable e) {
-            throw e;
-        }
-    }
-
     private static void logReq(RawRequest req, String httpPath, boolean isUpload) {
         try {
             if (null == req) {
@@ -82,10 +52,8 @@ public class Transport {
         }
     }
 
-    private static RawResponse doSend(Config config, String httpMethod, String httpPath,
-                                      Object req, boolean skipAuth, RequestOptions requestOptions) throws Exception {
-        Exception error = null;
-        for (int i = 0; i < 2; i++) {
+    public static RawResponse doSend(Config config, RequestOptions requestOptions, String httpMethod, String httpPath, boolean skipAuth,
+                                      Object req) throws Exception {
             try {
                 // 参数转换
                 RawRequest request = REQ_TRANSLATOR.translate(req, config, httpMethod,
@@ -123,12 +91,7 @@ public class Transport {
                 }
                 return rawResponse;
             } catch (Exception e) {
-                error = e;
-                if (!skipAuth) {
                     throw e;
-                }
             }
-        }
-        throw error;
     }
 }

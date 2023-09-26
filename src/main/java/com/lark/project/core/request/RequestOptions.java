@@ -12,44 +12,33 @@
 
 package com.lark.project.core.request;
 
+import com.lark.project.core.Constants;
+import com.lark.project.core.utils.Lists;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class RequestOptions {
-
-    private String pluginAccessToken;
-    private String virtualPluginAccessToken;
-    private String userPluginAccessToken;
-    private String requestId;
     private boolean supportUpload;
+
     private boolean supportDownLoad;
-    private Boolean supportLong2String;
+
     private Map<String, List<String>> headers;
 
     public RequestOptions() {
+        this.headers = new HashMap<>();
     }
 
     public RequestOptions(Builder builder) {
-        this.pluginAccessToken = builder.pluginAccessToken;
-        this.virtualPluginAccessToken = builder.virtualPluginAccessToken;
-        this.userPluginAccessToken = builder.userPluginAccessToken;
-        this.requestId = builder.requestId;
         this.supportDownLoad = builder.supportDownLoad;
         this.supportUpload = builder.supportUpload;
         this.headers = builder.headers;
-        this.supportLong2String = builder.supportLong2String;
     }
 
     public static Builder newBuilder() {
         return new Builder();
-    }
-
-    public void setSupportLong2String(boolean supportLong2String) {
-        this.supportLong2String = supportLong2String;
-    }
-
-    public Boolean isSupportLong2String() {
-        return supportLong2String;
     }
 
     public boolean isSupportUpload() {
@@ -67,39 +56,6 @@ public class RequestOptions {
     public void setSupportDownLoad(boolean supportDownLoad) {
         this.supportDownLoad = supportDownLoad;
     }
-
-    public String getPluginAccessToken() {
-        return pluginAccessToken;
-    }
-
-    public void setPluginAccessToken(String pluginAccessToken) {
-        this.pluginAccessToken = pluginAccessToken;
-    }
-
-    public String getVirtualPluginAccessToken() {
-        return virtualPluginAccessToken;
-    }
-
-    public void setVirtualPluginAccessToken(String virtualPluginAccessToken) {
-        this.virtualPluginAccessToken = virtualPluginAccessToken;
-    }
-
-    public String getUserPluginAccessToken() {
-        return userPluginAccessToken;
-    }
-
-    public void setUserPluginAccessToken(String appAccessToken) {
-        this.userPluginAccessToken = userPluginAccessToken;
-    }
-
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     public Map<String, List<String>> getHeaders() {
         return headers;
     }
@@ -110,37 +66,42 @@ public class RequestOptions {
 
     public static final class Builder {
 
-        private String pluginAccessToken;
-        private String virtualPluginAccessToken;
-        private String userPluginAccessToken;
-        private String requestId;
         private boolean supportUpload;
         private boolean supportDownLoad;
-        private Boolean supportLong2String;
         private Map<String, List<String>> headers;
 
-        public Builder supportLong2String(Boolean supportLong2String) {
-            this.supportLong2String = supportLong2String;
+        private Builder(){
+            headers = new HashMap<>();
+        }
+
+        public Builder headers(Map<String, List<String>> headers) {
+            if(headers!=null) {
+                for(Map.Entry<String, List<String>> header:headers.entrySet()) {
+                    List<String> values=this.headers.get(header.getKey());
+                    if(values==null){
+                        values=new ArrayList<>();
+                        this.headers.put(header.getKey(),values);
+                    }
+                    for(String value:header.getValue()){
+                        values.add(value);
+                    }
+                }
+            }
             return this;
         }
 
-        public Builder pluginAccessToken(String pluginAccessToken) {
-            this.pluginAccessToken = pluginAccessToken;
+        public Builder userKey(String userKey) {
+            headers.put(Constants.HTTP_HEADER_USER_KEY, Lists.newArrayList(userKey));
             return this;
         }
 
-        public Builder virtualPluginAccessToken(String virtualPluginAccessToken) {
-            this.virtualPluginAccessToken = virtualPluginAccessToken;
+        public Builder accessToken(String accessToken) {
+            headers.put(Constants.HTTP_HEADER_ACCESS_TOKEN, Lists.newArrayList(accessToken));
             return this;
         }
 
-        public Builder userPluginAccessToken(String userPluginAccessToken) {
-            this.userPluginAccessToken = userPluginAccessToken;
-            return this;
-        }
-
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
+        public Builder idemUUID(String idemUUID) {
+            headers.put(Constants.HTTP_HEADER_IDEM_UUID, Lists.newArrayList(idemUUID));
             return this;
         }
 
@@ -151,11 +112,6 @@ public class RequestOptions {
 
         public Builder supportDownLoad() {
             this.supportDownLoad = true;
-            return this;
-        }
-
-        public Builder headers(Map<String, List<String>> headers) {
-            this.headers = headers;
             return this;
         }
 

@@ -48,7 +48,7 @@ public class ProjectService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/projects/detail"
                 , false
                 , req);
@@ -80,7 +80,7 @@ public class ProjectService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/projects"
                 , false
                 , req);
@@ -112,7 +112,7 @@ public class ProjectService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/business/all"
                 , false
                 , req);
@@ -144,7 +144,7 @@ public class ProjectService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/teams/all"
                 , false
                 , req);
@@ -176,7 +176,7 @@ public class ProjectService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/all-types"
                 , false
                 , req);

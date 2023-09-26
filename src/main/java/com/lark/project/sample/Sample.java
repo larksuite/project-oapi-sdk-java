@@ -35,7 +35,6 @@ public class Sample {
                 .openBaseUrl("https://project.feishu.cn/").build();
         // 创建请求对象
         ListProjectWorkItemTypeReq req = ListProjectWorkItemTypeReq.newBuilder()
-                .accessUser("user_key")
                 .projectKey("project_key")
                 .build();
 
@@ -46,7 +45,7 @@ public class Sample {
 
         // 发起请求
         ListProjectWorkItemTypeResp resp = client.project().listProjectWorkItemType(req, RequestOptions.newBuilder()
-                .userPluginAccessToken("u-xse2378sdjkuhw34t3t") // 传递用户token
+                .accessToken("u-xse2378sdjkuhw34t3t") // 传递用户token
                 .headers(headers) // 传递自定义 Headers
                 .build());
 

@@ -48,7 +48,7 @@ public class CommentService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/create"
                 , false
                 , req);
@@ -80,7 +80,7 @@ public class CommentService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "DELETE"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
                 , false
                 , req);
@@ -112,7 +112,7 @@ public class CommentService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "GET"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comments"
                 , false
                 , req);
@@ -144,7 +144,7 @@ public class CommentService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "PUT"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
                 , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
                 , false
                 , req);

@@ -23,9 +23,7 @@ public class PluginService {
         this.config = config;
     }
 
-    /* 获取plugin_token
-     *
-     */
+    // 获取plugin_token
     public GetPluginTokenResp GetPluginToken(GetPluginTokenReq req, RequestOptions reqOptions) throws Exception {
         // 请求参数选项
         if (reqOptions == null) {
@@ -33,7 +31,7 @@ public class PluginService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/authen/plugin_token"
                 , true
                 , req);
@@ -55,9 +53,7 @@ public class PluginService {
         return resp;
     }
 
-    /* 获取user_plugin_token
-     *
-     */
+    // 获取user_plugin_token
     public GetUserPluginTokenResp GetUserPluginToken(GetUserPluginTokenReq req, RequestOptions reqOptions) throws Exception {
         // 请求参数选项
         if (reqOptions == null) {
@@ -65,7 +61,7 @@ public class PluginService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/authen/user_plugin_token"
                 , false
                 , req);
@@ -87,9 +83,7 @@ public class PluginService {
         return resp;
     }
 
-    /* 刷新Token（目前刷新token仅支持刷新user_plugin_token）
-     *
-     */
+    // 刷新Token（目前刷新token仅支持刷新user_plugin_token）
     public RefreshTokenResp RefreshToken(RefreshTokenReq req, RequestOptions reqOptions) throws Exception {
         // 请求参数选项
         if (reqOptions == null) {
@@ -97,7 +91,7 @@ public class PluginService {
         }
 
         // 发起请求
-        RawResponse httpResponse = Transport.send(config, reqOptions, "POST"
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
                 , "/open_api/authen/refresh_token"
                 , false
                 , req);

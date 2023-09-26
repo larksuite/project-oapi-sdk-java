@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CreateFieldReq extends BaseRequest {
+public class CreateFieldReq {
     @Path
     @SerializedName("project_key")
     private String projectKey;
@@ -44,9 +44,6 @@ public class CreateFieldReq extends BaseRequest {
         this.projectKey = builder.projectKey;
         this.workItemTypeKey = builder.workItemTypeKey;
         this.body = builder.body;
-
-
-        this.setHeaders(builder.headers);
     }
 
     public static Builder newBuilder() {
@@ -79,30 +76,12 @@ public class CreateFieldReq extends BaseRequest {
 
     public static class Builder {
 
-        private Map<String, List<String>> headers;
         private String projectKey;
         private String workItemTypeKey;
         private CreateFieldReqBody body;
 
         public Builder() {
-            headers = new HashMap<>();
             body = new CreateFieldReqBody();
-        }
-
-        /**
-         * 请求头用户user_key
-         */
-        public Builder accessUser(String userKey) {
-            this.headers.put("X-USER-KEY", Lists.newArrayList(userKey));
-            return this;
-        }
-
-        /**
-         * 请求头接口的幂等串
-         */
-        public Builder uuid(String uuid) {
-            this.headers.put("X-IDEM-UUID", Lists.newArrayList(uuid));
-            return this;
         }
 
         public Builder projectKey(String projectKey) {

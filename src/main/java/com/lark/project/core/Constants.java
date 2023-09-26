@@ -22,20 +22,15 @@ public interface Constants {
     String CONTENT_TYPE = "Content-Type";
     String APPLICATION_JSON = "application/json";
     String JSON_CONTENT_TYPE = APPLICATION_JSON + "; charset=utf-8";
-
-    String HTTP_HEADER = "HTTP_HEADER";
     String HTTP_HEADER_KEY_REQUEST_ID = "X-Request-Id";
-    String HTTP_HEADER_REQUEST_ID = "Request-Id";
     String HTTP_HEADER_KEY_LOG_ID = "X-Tt-Logid";
-    String HTTP_KEY_STATUS_CODE = "http_status_code";
-    String URL_VERIFICATION = "url_verification";
     String CUSTOM_REQUEST_ID = "Oapi-Sdk-Request-Id";
 
+    String HTTP_HEADER_USER_KEY = "X-USER-KEY";
 
-    public static final String X_LARK_REQUEST_TIMESTAMP = "X-Lark-Request-Timestamp";
-    public static final String X_LARK_REQUEST_NONCE = "X-Lark-Request-Nonce";
-    public static final String X_LARK_SIGNATURE = "X-Lark-Signature";
-    public static final String X_REFRESH_TOKEN = "X-Refresh-Token";
+    String 	HTTP_HEADER_ACCESS_TOKEN  = "X-PLUGIN-TOKEN";
+
+    String 	HTTP_HEADER_IDEM_UUID     = "X-IDEM-UUID";
     String VERSION = "v1.0.0";
 
 }

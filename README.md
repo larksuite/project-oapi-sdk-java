@@ -14,8 +14,8 @@
 - [API调用](#api调用)
     - [基本用法](#基本用法)
     - [设置请求选项](#设置请求选项)
-- [加入答疑群](#加入答疑群)
-
+- [错误自查](#错误自查)
+- [FAQ](#FAQ)
 <!-- tocstop -->
 
 ## 安装
@@ -63,6 +63,8 @@
 ### 创建API Client
 
 ```go
+import com.lark.project.Client;
+
 // 默认插件身份凭证
 Client client = Client.newBuilder("pluginID", "pluginSecret").build();
 ```
@@ -72,6 +74,8 @@ Client client = Client.newBuilder("pluginID", "pluginSecret").build();
 创建 API Client 时，可对 API Client 进行一定的配置，比如我们可以在创建 API Client 时设置日志级别、设置 http 请求超时时间等等：
 
 ```go
+import com.lark.project.Client;
+
 Client client = Client.newBuilder("pluginID", "pluginSecret")
                 .openBaseUrl("https://project.feishu.cn/") // 设置域名
                 .requestTimeout(3, TimeUnit.SECONDS) // 设置httpclient 超时时间，默认永不超时
@@ -136,7 +140,6 @@ Client client = Client.newBuilder("pluginID", "pluginSecret")
 
 - AccessTokenTypePlugin（插件身份凭证）
 - AccessTokenTypeVirtualPlugin（虚拟plugin_token）
-- AccessTokenTypeUserPlugin（用户身份凭证）
 
 </td>
 </tr>
@@ -228,7 +231,7 @@ public interface IHttpTransport {
 ### 基本用法
 
 如下示例我们通过 client 调用空间业务的 ListProjectWorkItemType
-方法，获取空间下的工作项类型列表（注：请求头中的X-USER-KEY和X-IDEM-UUID参数可以通过ReqBuilder中的accessUser和uuid方法进行设置）：
+方法，获取空间下的工作项类型列表：
 
 ``` go
 import com.lark.project.Client;
@@ -240,16 +243,17 @@ import com.lark.project.service.project.builder.ListProjectWorkItemTypeResp;
 public class Sample {
 
     public static void main(String[] args) throws Exception {
-// 构建client
+        // 构建client
         Client client = Client.newBuilder("pluginID", "pluginSecret")
                 .openBaseUrl("https://project.feishu.cn/").build();
         // 创建请求对象
         ListProjectWorkItemTypeReq req = ListProjectWorkItemTypeReq.newBuilder()
-                .accessUser("user_key")
                 .projectKey("project_key")
                 .build();
         // 发起请求
-        ListProjectWorkItemTypeResp resp = client.project().listProjectWorkItemType(req, RequestOptions.newBuilder().build());
+        ListProjectWorkItemTypeResp resp = client.project().listProjectWorkItemType(req, RequestOptions.newBuilder()
+                .userKey("user_key")
+                .build());
 
         // 处理服务端错误
         if (!resp.success()) {
@@ -284,12 +288,11 @@ import java.util.Map;
 public class Sample {
 
     public static void main(String[] args) throws Exception {
-// 构建client
+        // 构建client
         Client client = Client.newBuilder("pluginID", "pluginSecret")
                 .openBaseUrl("https://project.feishu.cn/").build();
         // 创建请求对象
         ListProjectWorkItemTypeReq req = ListProjectWorkItemTypeReq.newBuilder()
-                .accessUser("user_key")
                 .projectKey("project_key")
                 .build();
 
@@ -300,7 +303,7 @@ public class Sample {
         
         // 发起请求
         ListProjectWorkItemTypeResp resp = client.project().listProjectWorkItemType(req, RequestOptions.newBuilder()
-                .userPluginAccessToken("u-xse2378sdjkuhw34t3t") // 传递用户token
+                .accessToken("u-xse2378sdjkuhw34t3t") // 传递用户token
                 .headers(headers) // 传递自定义 Headers
                 .build());
 
@@ -350,39 +353,39 @@ public class Sample {
 
 <tr>
       <th>
-        <code>pluginAccessToken</code>
+        <code>accessToken</code>
       </th>
       <td>
-        <code>requestOptions.pluginAccessToken(String pluginAccessToken)</code>
+        <code>requestOptions.accessToken(String accessToken)</code>
       </td>
       <td>
-设置plugin_token。
+设置token。
 
 </td>
 </tr>
 
 <tr>
       <th>
-        <code>virtualPluginAccessToken</code>
+        <code>userKey</code>
       </th>
       <td>
-        <code>requestOptions.virtualPluginAccessToken(String virtualPluginAccessToken)</code>
+        <code>requestOptions.userKey(String userKey)</code>
       </td>
       <td>
-设置虚拟plugin_token。
+设置X-USER-KEY。
 
 </td>
 </tr>
 
 <tr>
       <th>
-        <code>userPluginAccessToken</code>
+        <code>idemUUID</code>
       </th>
       <td>
-        <code>requestOptions.userPluginAccessToken(String userPluginAccessToken)</code>
+        <code>requestOptions.idemUUID(String idemUUID)</code>
       </td>
       <td>
-设置user_plugin_token。
+设置X-IDEM-UUID。
 </td>
 </tr>
 
@@ -390,5 +393,23 @@ public class Sample {
   </tbody>
 </table>
 
+
+## 错误自查
+
+[查看错误码](https://bytedance.feishu.cn/docs/doccn3CyRRA52nL9HiYR2v9XC8K)
+
+## FAQ
+
+### project_key如何获取
+
+飞书项目中双击空间名称，如下图所示
+
+![img_1.png](src/main/resources/static/img_1.png)
+
+### user_key如何获取
+
+飞书项目左下角双击个人头像，如下图所示
+
+![img_2.png](src/main/resources/static/img_2.png)
 
 

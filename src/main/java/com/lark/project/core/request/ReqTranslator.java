@@ -19,6 +19,7 @@ import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
 import com.lark.project.core.annotation.Query;
 import com.lark.project.core.exception.IllegalAccessTokenTypeException;
+import com.lark.project.core.token.AccessTokenType;
 import com.lark.project.core.token.GlobalTokenManager;
 import com.lark.project.core.utils.Lists;
 import com.lark.project.core.utils.Strings;
@@ -61,15 +62,14 @@ public class ReqTranslator {
 
         headers.put("User-Agent", Lists.newArrayList("oapi-sdk-java/" + Constants.VERSION));
 
-        if (Strings.isNotEmpty(requestOptions.getRequestId())) {
-            headers.put(Constants.CUSTOM_REQUEST_ID, Lists.newArrayList(requestOptions.getRequestId()));
-        }
 
         // 获取并缓存token
         if (!skipAuth) {
-            String token = getToken(config,
-                    requestOptions);
-            headers.put("X-PLUGIN-TOKEN", Lists.newArrayList(token));
+            List<String> values=headers.get(Constants.HTTP_HEADER_ACCESS_TOKEN);
+            if(!config.isDisableTokenCache()&&values==null){
+                headers.put("X-PLUGIN-TOKEN", Lists.newArrayList(GlobalTokenManager.getTokenManager()
+                        .getAccessTokenThenCache(config)));
+            }
         }
 
         RawRequest rawRequest = new RawRequest();
@@ -79,40 +79,7 @@ public class ReqTranslator {
         rawRequest.setHttpMethod(httpMethod);
         rawRequest.setConfig(config);
         rawRequest.setSupportDownLoad(requestOptions.isSupportUpload());
-        rawRequest.setSupportLong2String(requestOptions.isSupportLong2String() == null ? false
-                : requestOptions.isSupportLong2String());
         return rawRequest;
-    }
-
-    private String getToken(Config config,
-                            RequestOptions requestOptions) throws Exception {
-        switch (config.getAccessTokenType()) {
-            case AccessTokenTypePlugin:
-                if (config.isDisableTokenCache()) {
-                    return requestOptions.getPluginAccessToken();
-                }
-
-                if (Strings.isNotEmpty(requestOptions.getPluginAccessToken())) {
-                    return requestOptions.getPluginAccessToken();
-                }
-                return GlobalTokenManager.getTokenManager()
-                        .getPluginAccessTokenThenCache(config);
-
-            case AccessTokenTypeVirtualPlugin:
-                if (config.isDisableTokenCache()) {
-                    return requestOptions.getVirtualPluginAccessToken();
-                }
-                if (Strings.isNotEmpty(requestOptions.getVirtualPluginAccessToken())) {
-                    return requestOptions.getVirtualPluginAccessToken();
-                }
-                return GlobalTokenManager.getTokenManager()
-                        .getVirtualPluginAccessTokenThenCache(config);
-
-            case AccessTokenTypeUserPlugin:
-                return requestOptions.getUserPluginAccessToken();
-            default:
-                throw new IllegalAccessTokenTypeException();
-        }
     }
 
     private ParsedReq parseInput(Object req, RequestOptions requestOptions)
@@ -281,8 +248,6 @@ public class ReqTranslator {
     }
 
     private class ParsedReq {
-
-        private HashMap<String, Object> headerMap = new HashMap<>();
         private HashMap<String, Object> pathMap = new HashMap<>();
         private HashMap<String, Object> queryMap = new HashMap<>();
         private Object body;
