@@ -13,14 +13,14 @@
 package com.lark.project.core;
 
 import com.lark.project.core.exception.ServerTimeoutException;
+import com.lark.project.core.httpclient.HttpTransport;
 import com.lark.project.core.httpclient.IHttpTransport;
-import com.lark.project.core.httpclient.OkHttpTransport;
 import com.lark.project.core.request.RawRequest;
 import com.lark.project.core.request.ReqTranslator;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.RawResponse;
 import com.lark.project.core.utils.Jsons;
-import com.lark.project.core.utils.OKHttps;
+import org.apache.http.impl.client.HttpClients;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,7 +64,7 @@ public class Transport {
             // 执行调用
             IHttpTransport httpTransport = config.getHttpTransport();
             if (httpTransport == null) {
-                httpTransport = new OkHttpTransport(OKHttps.defaultClient);
+                httpTransport = new HttpTransport(HttpClients.createDefault());
             }
             RawResponse rawResponse = httpTransport.execute(request);
 

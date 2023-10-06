@@ -18,9 +18,6 @@ import java.util.Collections;
 
 public class Lists {
 
-    public Lists() {
-    }
-
     public static <E> ArrayList<E> newArrayList() {
         return new ArrayList();
     }

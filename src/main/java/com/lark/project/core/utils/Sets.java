@@ -19,9 +19,6 @@ import java.util.TreeSet;
 
 public class Sets {
 
-    public Sets() {
-    }
-
     public static <K> HashSet<K> newHashSet() {
         return new HashSet();
     }

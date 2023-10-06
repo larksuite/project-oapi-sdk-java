@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 
 public class PluginService {
 
-    private static final Logger log = LoggerFactory.getLogger(ProjectService.class);
+    private static final Logger log = LoggerFactory.getLogger(PluginService.class);
 
     private Config config;
 
@@ -24,7 +24,7 @@ public class PluginService {
     }
 
     // 获取plugin_token
-    public GetPluginTokenResp GetPluginToken(GetPluginTokenReq req, RequestOptions reqOptions) throws Exception {
+    public GetPluginTokenResp getPluginToken(GetPluginTokenReq req, RequestOptions reqOptions) throws Exception {
         // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
@@ -54,7 +54,7 @@ public class PluginService {
     }
 
     // 获取user_plugin_token
-    public GetUserPluginTokenResp GetUserPluginToken(GetUserPluginTokenReq req, RequestOptions reqOptions) throws Exception {
+    public GetUserPluginTokenResp getUserPluginToken(GetUserPluginTokenReq req, RequestOptions reqOptions) throws Exception {
         // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
@@ -84,7 +84,7 @@ public class PluginService {
     }
 
     // 刷新Token（目前刷新token仅支持刷新user_plugin_token）
-    public RefreshTokenResp RefreshToken(RefreshTokenReq req, RequestOptions reqOptions) throws Exception {
+    public RefreshTokenResp refreshToken(RefreshTokenReq req, RequestOptions reqOptions) throws Exception {
         // 请求参数选项
         if (reqOptions == null) {
             reqOptions = new RequestOptions();

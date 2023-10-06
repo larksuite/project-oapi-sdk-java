@@ -194,10 +194,10 @@ public interface ICache {
         <code>requestTimeout</code>
       </th>
       <td>
-        <code>client.requestTimeout(long timeout, TimeUnit timeUnit)</code>
+        <code>client.requestTimeout(long timeout)</code>
       </td>
       <td>
-设置 SDK 内置的 Http Client 的请求超时时间，默认为0代表永不超时。
+设置 SDK 内置的 Http Client 的请求超时时间单位为毫秒，默认为0代表永不超时。
 </td>
 </tr>
 
@@ -307,7 +307,7 @@ public class Sample {
         
         // 发起请求
         ListProjectWorkItemTypeResp resp = client.project().listProjectWorkItemType(req, RequestOptions.newBuilder()
-                .accessToken("u-xse2378sdjkuhw34t3t") // 传递用户token
+                .accessToken("user_token") // 传递用户token
                 .headers(headers) // 传递自定义 Headers
                 .build());
 

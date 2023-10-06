@@ -32,4 +32,7 @@ public interface Constants {
     String HTTP_HEADER_IDEM_UUID = "X-IDEM-UUID";
     String VERSION = "v1.0.0";
 
+    String BASE_URL = "https://project.feishu.cn";
+
+
 }

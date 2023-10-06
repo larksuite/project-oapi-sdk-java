@@ -17,14 +17,14 @@
 package com.lark.project;
 
 import com.lark.project.core.Config;
+import com.lark.project.core.Constants;
 import com.lark.project.core.cache.ICache;
 import com.lark.project.core.cache.LocalCache;
+import com.lark.project.core.httpclient.HttpTransport;
 import com.lark.project.core.httpclient.IHttpTransport;
-import com.lark.project.core.httpclient.OkHttpTransport;
 import com.lark.project.core.token.AccessTokenType;
 import com.lark.project.core.token.GlobalTokenManager;
 import com.lark.project.core.token.TokenManager;
-import com.lark.project.core.utils.OKHttps;
 import com.lark.project.service.chat.ChatService;
 import com.lark.project.service.comment.CommentService;
 import com.lark.project.service.field.FieldService;
@@ -35,6 +35,9 @@ import com.lark.project.service.user.UserService;
 import com.lark.project.service.view.ViewService;
 import com.lark.project.service.workitem.WorkItemService;
 import com.lark.project.service.workitem_conf.WorkItemConfService;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
 
 import java.util.concurrent.TimeUnit;
 
@@ -71,43 +74,43 @@ public class Client {
         this.config = config;
     }
 
-    public PluginService plugin() {
+    public PluginService getPluginService() {
         return plugin;
     }
 
-    public ProjectService project() {
+    public ProjectService getProjectService() {
         return project;
     }
 
-    public UserService user() {
+    public UserService getUserService() {
         return user;
     }
 
-    public WorkItemService workItem() {
+    public WorkItemService getWorkItemService() {
         return workItem;
     }
 
-    public TaskService task() {
+    public TaskService getTaskService() {
         return task;
     }
 
-    public ViewService view() {
+    public ViewService getViewService() {
         return view;
     }
 
-    public FieldService field() {
+    public FieldService getFieldService() {
         return field;
     }
 
-    public ChatService chat() {
+    public ChatService getChatService() {
         return chat;
     }
 
-    public CommentService comment() {
+    public CommentService getCommentService() {
         return comment;
     }
 
-    public WorkItemConfService workItemConf() {
+    public WorkItemConfService getWorkItemConfService() {
         return workItemConf;
     }
 
@@ -119,6 +122,7 @@ public class Client {
             config.setPluginSecret(pluginSecret);
             config.setDisableTokenCache(false);
             config.setAccessTokenType(AccessTokenType.AccessTokenTypePlugin);
+            config.setBaseUrl(Constants.BASE_URL);
         }
 
         public Builder disableTokenCache() {
@@ -146,9 +150,8 @@ public class Client {
             return this;
         }
 
-        public Builder requestTimeout(long timeout, TimeUnit timeUnit) {
+        public Builder requestTimeout(long timeout) {
             config.setRequestTimeOut(timeout);
-            config.setTimeOutTimeUnit(timeUnit);
             return this;
         }
 
@@ -169,9 +172,12 @@ public class Client {
         private void initHttpTransport(Config config) {
             if (config.getHttpTransport() == null) {
                 if (config.getRequestTimeOut() > 0) {
-                    config.setHttpTransport(new OkHttpTransport(OKHttps.create(config.getRequestTimeOut(), config.getTimeOutTimeUnit())));
+                    HttpClientBuilder builder=HttpClientBuilder.create();
+                    RequestConfig requestConfig =  RequestConfig.custom().setSocketTimeout((int)config.getRequestTimeOut()).build();
+                    builder.setDefaultRequestConfig(requestConfig);
+                    config.setHttpTransport(new HttpTransport(builder.build()));
                 } else {
-                    config.setHttpTransport(new OkHttpTransport(OKHttps.defaultClient));
+                    config.setHttpTransport(new HttpTransport(HttpClients.createDefault()));
                 }
             }
         }

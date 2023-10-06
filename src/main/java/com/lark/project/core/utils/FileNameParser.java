@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//org.springframework.http.converter.ResourceHttpMessageConverter
 public class FileNameParser {
 
     private static final Pattern BASE64_ENCODED_PATTERN = Pattern.compile(

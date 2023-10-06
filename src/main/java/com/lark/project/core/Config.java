@@ -25,9 +25,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Config {
 
-    private String baseUrl = "https://project.feishu.cn";
+    private String baseUrl;
     private long requestTimeOut;
-    private TimeUnit timeOutTimeUnit;
     private ICache cache;
     private boolean disableTokenCache;
     private String tokenCache;
@@ -63,15 +62,6 @@ public class Config {
     public void setRequestTimeOut(long requestTimeOut) {
         this.requestTimeOut = requestTimeOut;
     }
-
-    public TimeUnit getTimeOutTimeUnit() {
-        return timeOutTimeUnit;
-    }
-
-    public void setTimeOutTimeUnit(TimeUnit timeOutTimeUnit) {
-        this.timeOutTimeUnit = timeOutTimeUnit;
-    }
-
     public ICache getCache() {
         return cache;
     }

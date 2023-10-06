@@ -32,8 +32,8 @@ import java.util.concurrent.TimeUnit;
 public class TokenManager {
 
     private static final Logger log = LoggerFactory.getLogger(TokenManager.class);
-    private static final int expiryDeltaOfSecond = 3 * 60;
-    private static final String accessTokenKeyPrefix = "access_token";
+    private static final int EXPIRY_DELTA_OF_SECOND = 3 * 60;
+    private static final String ACCESS_TOKEN_KEY_PREFIX = "access_token";
 
     private ICache cache;
 
@@ -42,7 +42,7 @@ public class TokenManager {
     }
 
     private String getAccessTokenKey(String pluginID) {
-        return String.format("%s-%s", accessTokenKeyPrefix, pluginID);
+        return String.format("%s-%s", ACCESS_TOKEN_KEY_PREFIX, pluginID);
     }
 
     public String getAccessTokenThenCache(Config config) throws Exception {
@@ -54,7 +54,7 @@ public class TokenManager {
         GetAccessTokenResp resp = getInternalAccessToken(config, config.getAccessTokenType().getValue());
         token = resp.getToken();
         int timeOut = resp.getExpireTime();
-        cache.set(getAccessTokenKey(config.getPluginID()), token, timeOut - expiryDeltaOfSecond,
+        cache.set(getAccessTokenKey(config.getPluginID()), token, timeOut - EXPIRY_DELTA_OF_SECOND,
                 TimeUnit.SECONDS);
         return token;
     }
