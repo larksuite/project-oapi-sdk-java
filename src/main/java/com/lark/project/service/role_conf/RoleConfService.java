@@ -20,14 +20,12 @@ import com.lark.project.core.Config;
 import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Jsons;
+import com.lark.project.core.utils.Logs;
 import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.role_conf.builder.QueryRoleConfDetailsReq;
 import com.lark.project.service.role_conf.builder.QueryRoleConfDetailsResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.charset.StandardCharsets;
 
 public class RoleConfService {
 
@@ -52,11 +50,7 @@ public class RoleConfService {
 
         QueryRoleConfDetailsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryRoleConfDetailsResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/flow_roles/:work_item_type_key"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 

@@ -21,8 +21,6 @@ import com.lark.project.core.cache.ICache;
 import com.lark.project.core.httpclient.IHttpTransport;
 import com.lark.project.core.token.AccessTokenType;
 
-import java.util.concurrent.TimeUnit;
-
 public class Config {
 
     private String baseUrl;
@@ -62,6 +60,7 @@ public class Config {
     public void setRequestTimeOut(long requestTimeOut) {
         this.requestTimeOut = requestTimeOut;
     }
+
     public ICache getCache() {
         return cache;
     }

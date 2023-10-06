@@ -17,15 +17,11 @@
 package com.lark.project.sample;
 
 import com.lark.project.Client;
-import com.lark.project.core.httpclient.HttpTransport;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.utils.Jsons;
 import com.lark.project.core.utils.Lists;
-import com.lark.project.service.project.builder.GetProjectDetailReq;
-import com.lark.project.service.project.builder.GetProjectDetailResp;
 import com.lark.project.service.project.builder.ListProjectWorkItemTypeReq;
 import com.lark.project.service.project.builder.ListProjectWorkItemTypeResp;
-import org.apache.http.impl.client.HttpClients;
 
 import java.util.HashMap;
 import java.util.List;

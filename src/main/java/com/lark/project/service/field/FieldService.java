@@ -20,13 +20,11 @@ import com.lark.project.core.Config;
 import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Jsons;
+import com.lark.project.core.utils.Logs;
 import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.field.builder.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.charset.StandardCharsets;
 
 public class FieldService {
 
@@ -51,11 +49,7 @@ public class FieldService {
 
         CreateFieldResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateFieldResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/field/:work_item_type_key/create"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -78,11 +72,7 @@ public class FieldService {
 
         QueryProjectFieldsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryProjectFieldsResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/field/all"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -105,11 +95,7 @@ public class FieldService {
 
         UpdateFieldResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateFieldResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/field/:work_item_type_key"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 

@@ -20,7 +20,7 @@ import com.lark.project.core.Config;
 import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Jsons;
+import com.lark.project.core.utils.Logs;
 import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.user.builder.QueryUserDetailReq;
 import com.lark.project.service.user.builder.QueryUserDetailResp;
@@ -28,8 +28,6 @@ import com.lark.project.service.user.builder.SearchUserReq;
 import com.lark.project.service.user.builder.SearchUserResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.charset.StandardCharsets;
 
 public class UserService {
 
@@ -54,11 +52,7 @@ public class UserService {
 
         QueryUserDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryUserDetailResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/user/query"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -81,11 +75,7 @@ public class UserService {
 
         SearchUserResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, SearchUserResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/user/search"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 

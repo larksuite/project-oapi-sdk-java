@@ -20,13 +20,11 @@ import com.lark.project.core.Config;
 import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Jsons;
+import com.lark.project.core.utils.Logs;
 import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.workitem.builder.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.charset.StandardCharsets;
 
 public class WorkItemService {
 
@@ -51,11 +49,7 @@ public class WorkItemService {
 
         AbortWorkItemResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, AbortWorkItemResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/abort"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -78,11 +72,7 @@ public class WorkItemService {
 
         CompositiveSearchResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CompositiveSearchResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/compositive_search"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -105,11 +95,7 @@ public class WorkItemService {
 
         CreateWorkItemResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateWorkItemResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/create"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -132,11 +118,7 @@ public class WorkItemService {
 
         CreateWorkItemRelationResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateWorkItemRelationResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/work_item/relation/create"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -159,11 +141,7 @@ public class WorkItemService {
 
         CreateWorkingHourRecordResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateWorkingHourRecordResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/work_hour_record"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -186,11 +164,7 @@ public class WorkItemService {
 
         DeleteWorkItemResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteWorkItemResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -213,11 +187,7 @@ public class WorkItemService {
 
         DeleteWorkItemRelationResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteWorkItemRelationResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/work_item/relation/delete"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -240,11 +210,7 @@ public class WorkItemService {
 
         DeleteWorkingHourRecordResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteWorkingHourRecordResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/work_hour_record"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -267,11 +233,7 @@ public class WorkItemService {
 
         FilterResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, FilterResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/filter"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -294,11 +256,7 @@ public class WorkItemService {
 
         FilterAcrossProjectResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, FilterAcrossProjectResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/work_items/filter_across_project"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -321,11 +279,7 @@ public class WorkItemService {
 
         GetMetaResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetMetaResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/meta"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -348,11 +302,7 @@ public class WorkItemService {
 
         GetWorkItemManHourRecordsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetWorkItemManHourRecordsResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/work_item/man_hour/records"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -375,11 +325,7 @@ public class WorkItemService {
 
         GetWorkItemTypeInfoByKeyResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetWorkItemTypeInfoByKeyResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/type/:work_item_type_key"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -402,11 +348,7 @@ public class WorkItemService {
 
         NodeOperateResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, NodeOperateResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/workflow/:work_item_type_key/:work_item_id/node/:node_id/operate"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -429,11 +371,7 @@ public class WorkItemService {
 
         NodeStateChangeResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, NodeStateChangeResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/workflow/:work_item_type_key/:work_item_id/node/state_change"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -456,11 +394,7 @@ public class WorkItemService {
 
         NodeUpdateResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, NodeUpdateResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/workflow/:work_item_type_key/:work_item_id/node/:node_id"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -483,11 +417,7 @@ public class WorkItemService {
 
         QueryWorkItemDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemDetailResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/query"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -510,11 +440,7 @@ public class WorkItemService {
 
         QueryWorkItemRelationResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemRelationResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/relation"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -537,11 +463,7 @@ public class WorkItemService {
 
         QueryWorkflowResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkflowResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/workflow/query"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -564,11 +486,7 @@ public class WorkItemService {
 
         SearchByParamsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, SearchByParamsResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/search/params"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -591,11 +509,7 @@ public class WorkItemService {
 
         SearchByRelationResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, SearchByRelationResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/search_by_relation"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -618,11 +532,7 @@ public class WorkItemService {
 
         UpdateMultiSignalResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateMultiSignalResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/update/multi_signal"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -645,11 +555,7 @@ public class WorkItemService {
 
         UpdateWorkItemResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateWorkItemResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -672,11 +578,7 @@ public class WorkItemService {
 
         UpdateWorkItemRelationResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateWorkItemRelationResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/work_item/relation/update"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -699,11 +601,7 @@ public class WorkItemService {
 
         UpdateWorkItemTypeInfoResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateWorkItemTypeInfoResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/type/:work_item_type_key"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -726,11 +624,7 @@ public class WorkItemService {
 
         UpdateWorkingHourRecordResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateWorkingHourRecordResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/work_hour_record"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -753,11 +647,7 @@ public class WorkItemService {
 
         WbsViewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, WbsViewResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/wbs_view"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 

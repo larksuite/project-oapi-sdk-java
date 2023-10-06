@@ -39,8 +39,6 @@ import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
-import java.util.concurrent.TimeUnit;
-
 
 public class Client {
 
@@ -172,8 +170,8 @@ public class Client {
         private void initHttpTransport(Config config) {
             if (config.getHttpTransport() == null) {
                 if (config.getRequestTimeOut() > 0) {
-                    HttpClientBuilder builder=HttpClientBuilder.create();
-                    RequestConfig requestConfig =  RequestConfig.custom().setSocketTimeout((int)config.getRequestTimeOut()).build();
+                    HttpClientBuilder builder = HttpClientBuilder.create();
+                    RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout((int) config.getRequestTimeOut()).build();
                     builder.setDefaultRequestConfig(requestConfig);
                     config.setHttpTransport(new HttpTransport(builder.build()));
                 } else {

@@ -20,14 +20,11 @@ import com.lark.project.core.Config;
 import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Jsons;
 import com.lark.project.core.utils.Logs;
 import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.project.builder.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.charset.StandardCharsets;
 
 public class ProjectService {
 
@@ -52,11 +49,7 @@ public class ProjectService {
 
         GetProjectDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetProjectDetailResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/projects/detail"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -79,11 +72,7 @@ public class ProjectService {
 
         ListProjectResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/projects"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -106,11 +95,7 @@ public class ProjectService {
 
         ListProjectBusinessResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectBusinessResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/business/all"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -133,11 +118,7 @@ public class ProjectService {
 
         ListProjectTeamResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectTeamResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/:project_key/teams/all"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 
@@ -160,7 +141,7 @@ public class ProjectService {
 
         ListProjectWorkItemTypeResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListProjectWorkItemTypeResp.class);
         if (resp == null) {
-            log.error(Logs.formatReq(req,httpResponse));
+            log.error(Logs.formatReq(req, httpResponse));
             throw new IllegalArgumentException("The result returned by the server is illegal");
         }
 

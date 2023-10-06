@@ -19,7 +19,10 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HttpTransport implements IHttpTransport {
 
@@ -49,15 +52,15 @@ public class HttpTransport implements IHttpTransport {
         return new StringEntity(Jsons.DEFAULT.toJson(request.getBody()));
     }
 
-    private Map<String,List<String>> convertRespHeader(Header[] allHeaders){
-        Map<String,List<String>> respHeaders=new HashMap<>();
+    private Map<String, List<String>> convertRespHeader(Header[] allHeaders) {
+        Map<String, List<String>> respHeaders = new HashMap<>();
         for (int i = 0; i < allHeaders.length; i++) {
             String name = allHeaders[i].getName();
             String value = allHeaders[i].getValue();
-            List<String> values=respHeaders.get(name);
-            if(values==null){
-                values=new ArrayList<>();
-                respHeaders.put(name,values);
+            List<String> values = respHeaders.get(name);
+            if (values == null) {
+                values = new ArrayList<>();
+                respHeaders.put(name, values);
             }
             values.add(value);
         }
@@ -66,7 +69,7 @@ public class HttpTransport implements IHttpTransport {
 
     @Override
     public RawResponse execute(RawRequest request) throws Exception {
-        RequestBuilder requestBuilder=RequestBuilder.create(request.getHttpMethod()).setUri(request.getReqUrl()).
+        RequestBuilder requestBuilder = RequestBuilder.create(request.getHttpMethod()).setUri(request.getReqUrl()).
                 setEntity(buildHttpEntity(request));
         // 设置请求header
         for (Map.Entry<String, List<String>> entry : request.getHeaders().entrySet()) {
@@ -78,18 +81,18 @@ public class HttpTransport implements IHttpTransport {
         if (!(request.getBody() instanceof FormData)) {
             requestBuilder.setHeader("content-type", "application/json; charset=utf-8");
         }
-        HttpResponse httpResponse=httpClient.execute(requestBuilder.build());
+        HttpResponse httpResponse = httpClient.execute(requestBuilder.build());
         RawResponse rawResponse = new RawResponse();
         rawResponse.setStatusCode(httpResponse.getStatusLine().getStatusCode());
         rawResponse.setHeaders(convertRespHeader(httpResponse.getAllHeaders()));
         if (request.isSupportDownLoad()) {
-            HttpEntity entity=httpResponse.getEntity();
-            if(entity!=null){
+            HttpEntity entity = httpResponse.getEntity();
+            if (entity != null) {
                 rawResponse.setBody(IOs.readAll(entity.getContent()));
             }
         } else {
-            HttpEntity entity=httpResponse.getEntity();
-            if(entity!=null){
+            HttpEntity entity = httpResponse.getEntity();
+            if (entity != null) {
                 rawResponse.setBody(EntityUtils.toByteArray(entity));
             }
         }
