@@ -85,14 +85,12 @@ public class HttpTransport implements IHttpTransport {
         RawResponse rawResponse = new RawResponse();
         rawResponse.setStatusCode(httpResponse.getStatusLine().getStatusCode());
         rawResponse.setHeaders(convertRespHeader(httpResponse.getAllHeaders()));
-        if (request.isSupportDownLoad()) {
-            HttpEntity entity = httpResponse.getEntity();
-            if (entity != null) {
+
+        HttpEntity entity = httpResponse.getEntity();
+        if (entity != null) {
+            if (request.isSupportDownLoad()) {
                 rawResponse.setBody(IOs.readAll(entity.getContent()));
-            }
-        } else {
-            HttpEntity entity = httpResponse.getEntity();
-            if (entity != null) {
+            } else {
                 rawResponse.setBody(EntityUtils.toByteArray(entity));
             }
         }
