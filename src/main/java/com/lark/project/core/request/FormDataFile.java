@@ -20,7 +20,6 @@ public class FormDataFile {
     private String fieldName;
     private String fileName;
     private String type;
-    private String filePath;
     private File file;
 
     public File getFile() {
@@ -44,7 +43,7 @@ public class FormDataFile {
     }
 
     public FormDataFile setFileName(String name) {
-        this.fieldName = name;
+        this.fileName = name;
         return this;
     }
 
