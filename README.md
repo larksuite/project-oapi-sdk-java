@@ -56,7 +56,7 @@
 <dependency>
   <groupId>com.larksuite.project</groupId>
   <artifactId>oapi-sdk</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
 </dependency>
 ```
 
@@ -66,26 +66,36 @@
 
 ### 创建API Client
 
-```go
+```java
 import com.lark.project.Client;
 
-// 默认插件身份凭证
-Client client = Client.newBuilder("pluginID", "pluginSecret").build();
+public class Sample {
+
+    public static void main(String[] args) throws Exception {
+        // 默认插件身份凭证
+        Client client = Client.newBuilder("pluginID", "pluginSecret").build();
+    }
+}
 ```
 
 ### 配置API Client
 
 创建 API Client 时，可对 API Client 进行一定的配置，比如我们可以在创建 API Client 时设置日志级别、设置 http 请求超时时间等等：
 
-```go
+```java
 import com.lark.project.Client;
 
-Client client = Client.newBuilder("pluginID", "pluginSecret")
+public class Sample {
+
+    public static void main(String[] args) throws Exception {
+        Client client = Client.newBuilder("pluginID", "pluginSecret")
                 .openBaseUrl("https://project.feishu.cn/") // 设置域名
-                .requestTimeout(3, TimeUnit.SECONDS) // 设置httpclient 超时时间，默认永不超时
+                .requestTimeout(3000) // 设置httpclient 超时时间，默认永不超时
                 .disableTokenCache() // 禁用token管理，禁用后需要开发者自己传递token
                 .logReqAtDebug(true) // 在 debug 模式下会打印 http 请求和响应的 headers,body 等信息。
                 .build();
+    }
+}
 ```
 
 每个配置选项的具体含义，如下表格：
@@ -160,14 +170,14 @@ Client client = Client.newBuilder("pluginID", "pluginSecret")
 
 如开发者想要定制 token 缓存器，需实现下面 Cache 接口:
 
-```go
+```java
 public interface ICache {
 
-  // 获取缓存值
-  String get(String key);
+    // 获取缓存值
+    String get(String key);
 
-  // 设置缓存值
-  void set(String key, String value, int expire, TimeUnit timeUnit);
+    // 设置缓存值
+    void set(String key, String value, int expire, TimeUnit timeUnit);
 }
 ```
 
@@ -212,10 +222,10 @@ public interface ICache {
 设置传输层实现，用于替换 SDK 提供的默认实现。
 开发者可通过实现下面的 IHttpTransport 接口来设置自定义的 传输实现:
 
-```go
+```java
 public interface IHttpTransport {
 
-  RawResponse execute(RawRequest request) throws Exception;
+    RawResponse execute(RawRequest request) throws Exception;
 }
 
 ```
@@ -237,7 +247,7 @@ public interface IHttpTransport {
 如下示例我们通过 client 调用空间业务的 ListProjectWorkItemType
 方法，获取空间下的工作项类型列表：
 
-``` go
+``` java
 import com.lark.project.Client;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.utils.Jsons;
@@ -255,7 +265,7 @@ public class Sample {
                 .projectKey("project_key")
                 .build();
         // 发起请求
-        ListProjectWorkItemTypeResp resp = client.project().listProjectWorkItemType(req, RequestOptions.newBuilder()
+        ListProjectWorkItemTypeResp resp = client.getProjectService().listProjectWorkItemType(req, RequestOptions.newBuilder()
                 .userKey("user_key")
                 .build());
 
@@ -277,7 +287,7 @@ public class Sample {
 
 开发者在每次发起 API 调用时，可以设置请求级别的一些参数，比如传递 UserPluginAccessToken ,自定义 Headers 等：
 
-```go
+```java
 import com.lark.project.Client;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.utils.Jsons;
@@ -304,9 +314,9 @@ public class Sample {
         Map<String, List<String>> headers = new HashMap<>();
         headers.put("key1", Lists.newArrayList("value1"));
         headers.put("key2", Lists.newArrayList("value2"));
-        
+
         // 发起请求
-        ListProjectWorkItemTypeResp resp = client.project().listProjectWorkItemType(req, RequestOptions.newBuilder()
+        ListProjectWorkItemTypeResp resp = client.getProjectService().listProjectWorkItemType(req, RequestOptions.newBuilder()
                 .accessToken("user_token") // 传递用户token
                 .headers(headers) // 传递自定义 Headers
                 .build());
