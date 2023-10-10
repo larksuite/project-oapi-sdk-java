@@ -23,45 +23,24 @@ import java.util.List;
 
 
 public class WbsViewResponse {
-    /**
-     *
-     */
     @SerializedName("template_key")
     private String templateKey;
 
-    /**
-     *
-     */
     @SerializedName("related_sub_work_items")
     private List<WBSWorkItem> relatedSubWorkItems;
 
-    /**
-     *
-     */
     @SerializedName("template_version")
     private Long templateVersion;
 
-    /**
-     *
-     */
     @SerializedName("template_name")
     private String templateName;
 
-    /**
-     *
-     */
     @SerializedName("template_id")
     private String templateID;
 
-    /**
-     *
-     */
     @SerializedName("related_parent_work_item")
     private WBSParentWorkItem relatedParentWorkItem;
 
-    /**
-     *
-     */
     @SerializedName("user_details")
     private List<UserDetail> userDetails;
 

@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class OwnerConf {
-    /**
-     *
-     */
     @SerializedName("owner_usage_mode")
     private String ownerUsageMode;
 
-    /**
-     *
-     */
     @SerializedName("owner_roles")
     private List<String> ownerRoles;
 
-    /**
-     *
-     */
     @SerializedName("user_keys")
     private List<String> userKeys;
 

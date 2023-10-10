@@ -22,75 +22,39 @@ import java.util.List;
 
 
 public class WBSParentWorkItem {
-    /**
-     *
-     */
     @SerializedName("is_top")
     private Boolean isTop;
 
-    /**
-     *
-     */
     @SerializedName("work_item_id")
     private Long workItemID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("template_id")
     private String templateID;
 
-    /**
-     *
-     */
     @SerializedName("template_key")
     private String templateKey;
 
-    /**
-     *
-     */
     @SerializedName("template_name")
     private String templateName;
 
-    /**
-     *
-     */
     @SerializedName("template_version")
     private Long templateVersion;
 
-    /**
-     *
-     */
     @SerializedName("relation_node_id")
     private String relationNodeID;
 
-    /**
-     *
-     */
     @SerializedName("relation_node_name")
     private String relationNodeName;
 
-    /**
-     *
-     */
     @SerializedName("relation_node_tags")
     private List<String> relationNodeTags;
 
-    /**
-     *
-     */
     @SerializedName("relation_node_uuid")
     private String relationNodeUUID;
 

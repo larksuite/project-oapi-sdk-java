@@ -20,33 +20,18 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class MultiSignalDetail {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("title")
     private String title;
 
-    /**
-     *
-     */
     @SerializedName("status")
     private String status;
 
-    /**
-     *
-     */
     @SerializedName("view_link")
     private String viewLink;
 
-    /**
-     *
-     */
     @SerializedName("query_link")
     private QueryLink queryLink;
 

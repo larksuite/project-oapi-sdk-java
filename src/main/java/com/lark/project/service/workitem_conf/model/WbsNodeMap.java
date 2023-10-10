@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class WbsNodeMap {
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("status_name")
     private String statusName;
 

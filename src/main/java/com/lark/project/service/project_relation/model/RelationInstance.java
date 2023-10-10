@@ -20,51 +20,27 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class RelationInstance {
-    /**
-     *
-     */
     @SerializedName("relation_work_item_id")
     private Long relationWorkItemID;
 
-    /**
-     *
-     */
     @SerializedName("relation_work_item_name")
     private String relationWorkItemName;
 
-    /**
-     *
-     */
     @SerializedName("relation_work_item_type_name")
     private String relationWorkItemTypeName;
 
-    /**
-     *
-     */
     @SerializedName("relation_work_item_type_key")
     private String relationWorkItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("project_relation_rule_id")
     private String projectRelationRuleID;
 
-    /**
-     *
-     */
     @SerializedName("project_relation_rule_name")
     private String projectRelationRuleName;
 
-    /**
-     *
-     */
     @SerializedName("relation_project_key")
     private String relationProjectKey;
 
-    /**
-     *
-     */
     @SerializedName("relation_project_name")
     private String relationProjectName;
 

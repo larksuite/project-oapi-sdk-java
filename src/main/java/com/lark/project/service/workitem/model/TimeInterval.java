@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class TimeInterval {
-    /**
-     *
-     */
     @SerializedName("start")
     private Long start;
 
-    /**
-     *
-     */
     @SerializedName("end")
     private Long end;
 

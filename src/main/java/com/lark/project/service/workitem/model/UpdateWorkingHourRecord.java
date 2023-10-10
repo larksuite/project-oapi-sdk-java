@@ -20,21 +20,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class UpdateWorkingHourRecord {
-    /**
-     *
-     */
     @SerializedName("id")
     private Long id;
 
-    /**
-     *
-     */
     @SerializedName("work_time")
     private String workTime;
 
-    /**
-     *
-     */
     @SerializedName("work_description")
     private String workDescription;
 

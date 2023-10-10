@@ -20,63 +20,33 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class RelationRule {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("disabled")
     private Long disabled;
 
-    /**
-     *
-     */
     @SerializedName("work_item_relation_id")
     private String workItemRelationID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_relation_name")
     private String workItemRelationName;
 
-    /**
-     *
-     */
     @SerializedName("current_work_item_type_key")
     private String currentWorkItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("current_work_item_type_name")
     private String currentWorkItemTypeName;
 
-    /**
-     *
-     */
     @SerializedName("remote_work_item_type_key")
     private String remoteWorkItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("remote_work_item_type_name")
     private String remoteWorkItemTypeName;
 
-    /**
-     *
-     */
     @SerializedName("chat_group_merge")
     private Long chatGroupMerge;
 

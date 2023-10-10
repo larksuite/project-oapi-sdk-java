@@ -22,27 +22,15 @@ import java.util.List;
 
 
 public class NodeBasicInfo {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("owners")
     private List<String> owners;
 
-    /**
-     *
-     */
     @SerializedName("milestone")
     private Boolean milestone;
 

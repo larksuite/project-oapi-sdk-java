@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class SearchUser {
-    /**
-     *
-     */
     @SerializedName("user_keys")
     private List<String> userKeys;
 
-    /**
-     *
-     */
     @SerializedName("field_key")
     private String fieldKey;
 
-    /**
-     *
-     */
     @SerializedName("role")
     private String role;
 

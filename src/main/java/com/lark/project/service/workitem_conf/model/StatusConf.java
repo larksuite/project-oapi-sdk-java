@@ -20,21 +20,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class StatusConf {
-    /**
-     *
-     */
     @SerializedName("status_key")
     private String statusKey;
 
-    /**
-     *
-     */
     @SerializedName("status_name")
     private String statusName;
 
-    /**
-     *
-     */
     @SerializedName("status_order_index")
     private Integer statusOrderIndex;
 

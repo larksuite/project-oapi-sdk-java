@@ -25,87 +25,45 @@ import java.util.Map;
 
 
 public class WBSWorkItem {
-    /**
-     *
-     */
     @SerializedName("node_uuid")
     private String nodeUUID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_id")
     private Long workItemID;
 
-    /**
-     *
-     */
     @SerializedName("type")
     private String type;
 
-    /**
-     *
-     */
     @SerializedName("wbs_status")
     private String wbsStatus;
 
-    /**
-     *
-     */
     @SerializedName("wbs_status_map")
     private Map<String, String> wbsStatusMap;
 
-    /**
-     *
-     */
     @SerializedName("sub_work_item")
     private List<WBSWorkItem> subWorkItem;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("deliverable")
     private List<FieldValuePair> deliverable;
 
-    /**
-     *
-     */
     @SerializedName("schedule")
     private Schedule schedule;
 
-    /**
-     *
-     */
     @SerializedName("schedules")
     private List<Schedule> schedules;
 
-    /**
-     *
-     */
     @SerializedName("points")
     private Float points;
 
-    /**
-     *
-     */
     @SerializedName("role_owners")
     private List<RoleOwner> roleOwners;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("milestone")
     private Boolean milestone;
 

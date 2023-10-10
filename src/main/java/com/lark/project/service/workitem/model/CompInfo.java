@@ -22,57 +22,30 @@ import java.util.List;
 
 
 public class CompInfo {
-    /**
-     *
-     */
     @SerializedName("ID")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("WorkItemTypeKey")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("ProjectKey")
     private String projectKey;
 
-    /**
-     *
-     */
     @SerializedName("CreatedBy")
     private String createdBy;
 
-    /**
-     *
-     */
     @SerializedName("CreatedAt")
     private Long createdAt;
 
-    /**
-     *
-     */
     @SerializedName("SearchHit")
     private List<String> searchHit;
 
-    /**
-     *
-     */
     @SerializedName("ViewScopeKey")
     private String viewScopeKey;
 
-    /**
-     *
-     */
     @SerializedName("ProjectKeys")
     private List<String> projectKeys;
 

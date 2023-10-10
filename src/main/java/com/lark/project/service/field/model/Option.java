@@ -22,27 +22,15 @@ import java.util.List;
 
 
 public class Option {
-    /**
-     *
-     */
     @SerializedName("label")
     private String label;
 
-    /**
-     *
-     */
     @SerializedName("value")
     private String value;
 
-    /**
-     *
-     */
     @SerializedName("children")
     private List<Option> children;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 

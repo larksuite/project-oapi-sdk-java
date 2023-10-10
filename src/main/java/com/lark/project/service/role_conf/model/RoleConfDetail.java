@@ -22,57 +22,30 @@ import java.util.List;
 
 
 public class RoleConfDetail {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("is_owner")
     private Boolean isOwner;
 
-    /**
-     *
-     */
     @SerializedName("role_appear_mode")
     private Long roleAppearMode;
 
-    /**
-     *
-     */
     @SerializedName("deletable")
     private Boolean deletable;
 
-    /**
-     *
-     */
     @SerializedName("auto_enter_group")
     private Boolean autoEnterGroup;
 
-    /**
-     *
-     */
     @SerializedName("member_assign_mode")
     private Long memberAssignMode;
 
-    /**
-     *
-     */
     @SerializedName("members")
     private List<String> members;
 
-    /**
-     *
-     */
     @SerializedName("key")
     private String key;
 

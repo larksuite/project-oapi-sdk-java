@@ -20,81 +20,42 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class ManHourRecord {
-    /**
-     *
-     */
     @SerializedName("id")
     private Long id;
 
-    /**
-     *
-     */
     @SerializedName("related_work_item_id")
     private Long relatedWorkItemID;
 
-    /**
-     *
-     */
     @SerializedName("related_work_item_type_key")
     private String relatedWorkItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("related_work_item_name")
     private String relatedWorkItemName;
 
-    /**
-     *
-     */
     @SerializedName("resource_type")
     private String resourceType;
 
-    /**
-     *
-     */
     @SerializedName("resource_id")
     private String resourceID;
 
-    /**
-     *
-     */
     @SerializedName("work_description")
     private String workDescription;
 
-    /**
-     *
-     */
     @SerializedName("work_time")
     private Float workTime;
 
-    /**
-     *
-     */
     @SerializedName("work_user_key")
     private String workUserKey;
 
-    /**
-     *
-     */
     @SerializedName("created_at")
     private Long createdAt;
 
-    /**
-     *
-     */
     @SerializedName("updated_at")
     private Long updatedAt;
 
-    /**
-     *
-     */
     @SerializedName("resource_name")
     private String resourceName;
 
-    /**
-     *
-     */
     @SerializedName("work_date")
     private Long workDate;
 

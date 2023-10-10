@@ -20,27 +20,15 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class RelationDetail {
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_name")
     private String workItemTypeName;
 
-    /**
-     *
-     */
     @SerializedName("project_key")
     private String projectKey;
 
-    /**
-     *
-     */
     @SerializedName("project_name")
     private String projectName;
 

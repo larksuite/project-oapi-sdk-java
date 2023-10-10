@@ -22,27 +22,15 @@ import java.util.List;
 
 
 public class Team {
-    /**
-     *
-     */
     @SerializedName("team_id")
     private Long teamID;
 
-    /**
-     *
-     */
     @SerializedName("team_name")
     private String teamName;
 
-    /**
-     *
-     */
     @SerializedName("user_keys")
     private List<String> userKeys;
 
-    /**
-     *
-     */
     @SerializedName("administrators")
     private List<String> administrators;
 

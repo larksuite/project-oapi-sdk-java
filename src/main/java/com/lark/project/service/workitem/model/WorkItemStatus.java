@@ -22,39 +22,21 @@ import java.util.List;
 
 
 public class WorkItemStatus {
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("is_archived_state")
     private Boolean isArchivedState;
 
-    /**
-     *
-     */
     @SerializedName("is_init_state")
     private Boolean isInitState;
 
-    /**
-     *
-     */
     @SerializedName("updated_at")
     private Long updatedAt;
 
-    /**
-     *
-     */
     @SerializedName("updated_by")
     private String updatedBy;
 
-    /**
-     *
-     */
     @SerializedName("history")
     private List<WorkItemStatus> history;
 

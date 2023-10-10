@@ -22,63 +22,33 @@ import java.util.List;
 
 
 public class UserBasicInfo {
-    /**
-     *
-     */
     @SerializedName("user_id")
     private Long userID;
 
-    /**
-     *
-     */
     @SerializedName("user_key")
     private String userKey;
 
-    /**
-     *
-     */
     @SerializedName("username")
     private String username;
 
-    /**
-     *
-     */
     @SerializedName("email")
     private String email;
 
-    /**
-     *
-     */
     @SerializedName("avatar_url")
     private String avatarUrl;
 
-    /**
-     *
-     */
     @SerializedName("name_cn")
     private String nameCn;
 
-    /**
-     *
-     */
     @SerializedName("name_en")
     private String nameEn;
 
-    /**
-     *
-     */
     @SerializedName("out_id")
     private String outID;
 
-    /**
-     *
-     */
     @SerializedName("channels")
     private List<Channel> channels;
 
-    /**
-     *
-     */
     @SerializedName("status")
     private String status;
 

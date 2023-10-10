@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Channel {
-    /**
-     *
-     */
     @SerializedName("tenant_name")
     private String tenantName;
 
-    /**
-     *
-     */
     @SerializedName("tenant_group_id")
     private Long tenantGroupID;
 

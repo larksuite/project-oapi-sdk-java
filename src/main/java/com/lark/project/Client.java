@@ -31,10 +31,16 @@ import com.lark.project.service.comment.CommentService;
 import com.lark.project.service.comment.CommentServiceImpl;
 import com.lark.project.service.field.FieldService;
 import com.lark.project.service.field.FieldServiceImpl;
+import com.lark.project.service.measure.MeasureService;
+import com.lark.project.service.measure.MeasureServiceImpl;
 import com.lark.project.service.plugin.PluginService;
 import com.lark.project.service.plugin.PluginServiceImpl;
 import com.lark.project.service.project.ProjectService;
 import com.lark.project.service.project.ProjectServiceImpl;
+import com.lark.project.service.project_relation.ProjectRelationService;
+import com.lark.project.service.project_relation.ProjectRelationServiceImpl;
+import com.lark.project.service.role_conf.RoleConfService;
+import com.lark.project.service.role_conf.RoleConfServiceImpl;
 import com.lark.project.service.task.TaskService;
 import com.lark.project.service.task.TaskServiceImpl;
 import com.lark.project.service.user.UserService;
@@ -73,6 +79,12 @@ public class Client {
     private CommentService comment; // 评论
 
     private WorkItemConfService workItemConf; // 工作项配置
+
+    private ProjectRelationService projectRelation; // 空间关联
+
+    private MeasureService measure; // 度量
+
+    private RoleConfService roleConf; // 角色
 
     public static Builder newBuilder(String pluginId, String pluginSecret) {
         return new Builder(pluginId, pluginSecret);
@@ -120,6 +132,18 @@ public class Client {
 
     public WorkItemConfService getWorkItemConfService() {
         return workItemConf;
+    }
+
+    public ProjectRelationService getProjectRelationService() {
+        return projectRelation;
+    }
+
+    public MeasureService getMeasureService() {
+        return measure;
+    }
+
+    public RoleConfService getRoleConfService() {
+        return roleConf;
     }
 
     public static final class Builder {
@@ -205,6 +229,9 @@ public class Client {
             client.comment = new CommentServiceImpl(config);
             client.workItemConf = new WorkItemConfServiceImpl(config);
             client.chat = new ChatServiceImpl(config);
+            client.projectRelation = new ProjectRelationServiceImpl(config);
+            client.measure = new MeasureServiceImpl(config);
+            client.roleConf = new RoleConfServiceImpl(config);
             return client;
         }
     }

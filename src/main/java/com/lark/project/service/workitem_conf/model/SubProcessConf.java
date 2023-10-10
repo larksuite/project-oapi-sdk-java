@@ -20,33 +20,18 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class SubProcessConf {
-    /**
-     *
-     */
     @SerializedName("template_key")
     private String templateKey;
 
-    /**
-     *
-     */
     @SerializedName("template_name")
     private String templateName;
 
-    /**
-     *
-     */
     @SerializedName("template_id")
     private String templateID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("flow_mode")
     private String flowMode;
 

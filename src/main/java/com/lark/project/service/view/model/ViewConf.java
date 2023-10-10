@@ -22,57 +22,30 @@ import java.util.List;
 
 
 public class ViewConf {
-    /**
-     *
-     */
     @SerializedName("view_id")
     private String viewID;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("view_url")
     private String viewUrl;
 
-    /**
-     *
-     */
     @SerializedName("view_type")
     private Integer viewType;
 
-    /**
-     *
-     */
     @SerializedName("auth")
     private Integer auth;
 
-    /**
-     *
-     */
     @SerializedName("system_view")
     private Integer systemView;
 
-    /**
-     *
-     */
     @SerializedName("collaborators")
     private List<String> collaborators;
 
-    /**
-     *
-     */
     @SerializedName("created_at")
     private Long createdAt;
 
-    /**
-     *
-     */
     @SerializedName("created_by")
     private String createdBy;
 

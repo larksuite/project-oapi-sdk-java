@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class ConfirmForm {
-    /**
-     *
-     */
     @SerializedName("action")
     private Long action;
 
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 

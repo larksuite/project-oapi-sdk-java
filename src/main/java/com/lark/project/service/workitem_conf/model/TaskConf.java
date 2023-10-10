@@ -20,39 +20,21 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class TaskConf {
-    /**
-     *
-     */
     @SerializedName("action")
     private Long action;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("deliverable_field_id")
     private String deliverableFieldID;
 
-    /**
-     *
-     */
     @SerializedName("pass_mode")
     private Long passMode;
 
-    /**
-     *
-     */
     @SerializedName("node_pass_required_mode")
     private Long nodePassRequiredMode;
 

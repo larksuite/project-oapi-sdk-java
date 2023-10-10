@@ -20,21 +20,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Checker {
-    /**
-     *
-     */
     @SerializedName("checked_time")
     private Long checkedTime;
 
-    /**
-     *
-     */
     @SerializedName("owner")
     private String owner;
 
-    /**
-     *
-     */
     @SerializedName("status")
     private Integer status;
 

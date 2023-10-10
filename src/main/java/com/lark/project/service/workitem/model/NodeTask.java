@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class NodeTask {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("sub_tasks")
     private List<SubTask> subTasks;
 

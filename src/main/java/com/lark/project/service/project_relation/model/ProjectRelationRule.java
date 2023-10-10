@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class ProjectRelationRule {
-    /**
-     *
-     */
     @SerializedName("remote_project_key")
     private String remoteProjectKey;
 
-    /**
-     *
-     */
     @SerializedName("remote_project_name")
     private String remoteProjectName;
 
-    /**
-     *
-     */
     @SerializedName("rules")
     private List<RelationRule> rules;
 

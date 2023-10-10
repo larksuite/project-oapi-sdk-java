@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class TargetState {
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("transition_id")
     private Long transitionID;
 

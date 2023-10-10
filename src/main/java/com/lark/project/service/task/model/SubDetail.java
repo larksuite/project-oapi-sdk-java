@@ -21,27 +21,15 @@ import com.lark.project.service.workitem.model.SubTask;
 
 
 public class SubDetail {
-    /**
-     *
-     */
     @SerializedName("work_item_id")
     private Long workItemID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_name")
     private String workItemName;
 
-    /**
-     *
-     */
     @SerializedName("node_id")
     private String nodeID;
 
-    /**
-     *
-     */
     @SerializedName("sub_task")
     private SubTask subTask;
 

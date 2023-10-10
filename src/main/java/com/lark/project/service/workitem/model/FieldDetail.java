@@ -20,21 +20,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class FieldDetail {
-    /**
-     *
-     */
     @SerializedName("story_id")
     private Long storyID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("project_key")
     private String projectKey;
 

@@ -24,81 +24,42 @@ import java.util.List;
 
 
 public class SubTask {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("schedules")
     private List<Schedule> schedules;
 
-    /**
-     *
-     */
     @SerializedName("order")
     private Float order;
 
-    /**
-     *
-     */
     @SerializedName("details")
     private String details;
 
-    /**
-     *
-     */
     @SerializedName("passed")
     private Boolean passed;
 
-    /**
-     *
-     */
     @SerializedName("owners")
     private List<String> owners;
 
-    /**
-     *
-     */
     @SerializedName("note")
     private String note;
 
-    /**
-     *
-     */
     @SerializedName("actual_begin_time")
     private String actualBeginTime;
 
-    /**
-     *
-     */
     @SerializedName("actual_finish_time")
     private String actualFinishTime;
 
-    /**
-     *
-     */
     @SerializedName("assignee")
     private List<String> assignee;
 
-    /**
-     *
-     */
     @SerializedName("role_assignee")
     private List<RoleOwner> roleAssignee;
 
-    /**
-     *
-     */
     @SerializedName("deliverable")
     private List<FieldValuePair> deliverable;
 

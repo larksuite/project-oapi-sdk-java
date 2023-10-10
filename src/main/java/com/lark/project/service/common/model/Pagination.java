@@ -20,21 +20,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Pagination {
-    /**
-     *
-     */
     @SerializedName("page_num")
     private Long pageNum;
 
-    /**
-     *
-     */
     @SerializedName("page_size")
     private Long pageSize;
 
-    /**
-     *
-     */
     @SerializedName("total")
     private Long total;
 

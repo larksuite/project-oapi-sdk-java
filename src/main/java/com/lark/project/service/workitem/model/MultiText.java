@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class MultiText {
-    /**
-     *
-     */
     @SerializedName("field_key")
     private String fieldKey;
 
-    /**
-     *
-     */
     @SerializedName("field_value")
     private MultiTextDetail fieldValue;
 

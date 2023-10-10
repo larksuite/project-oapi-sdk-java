@@ -24,147 +24,75 @@ import java.util.List;
 
 
 public class WorkItemInfo {
-    /**
-     *
-     */
     @SerializedName("id")
     private Long id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("project_key")
     private String projectKey;
 
-    /**
-     *
-     */
     @SerializedName("template_type")
     private String templateType;
 
-    /**
-     *
-     */
     @SerializedName("pattern")
     private String pattern;
 
-    /**
-     *
-     */
     @SerializedName("sub_stage")
     private String subStage;
 
-    /**
-     *
-     */
     @SerializedName("current_nodes")
     private List<NodeBasicInfo> currentNodes;
 
-    /**
-     *
-     */
     @SerializedName("created_by")
     private String createdBy;
 
-    /**
-     *
-     */
     @SerializedName("updated_by")
     private String updatedBy;
 
-    /**
-     *
-     */
     @SerializedName("created_at")
     private Long createdAt;
 
-    /**
-     *
-     */
     @SerializedName("updated_at")
     private Long updatedAt;
 
-    /**
-     *
-     */
     @SerializedName("fields")
     private List<FieldValuePair> fields;
 
-    /**
-     *
-     */
     @SerializedName("work_item_status")
     private WorkItemStatus workItemStatus;
 
-    /**
-     *
-     */
     @SerializedName("deleted_by")
     private String deletedBy;
 
-    /**
-     *
-     */
     @SerializedName("deleted_at")
     private Long deletedAt;
 
-    /**
-     *
-     */
     @SerializedName("simple_name")
     private String simpleName;
 
-    /**
-     *
-     */
     @SerializedName("template_id")
     private Long templateID;
 
-    /**
-     *
-     */
     @SerializedName("workflow_infos")
     private NodesConnections workflowInfos;
 
-    /**
-     *
-     */
     @SerializedName("state_times")
     private List<StateTime> stateTimes;
 
-    /**
-     *
-     */
     @SerializedName("multi_texts")
     private List<MultiText> multiTexts;
 
-    /**
-     *
-     */
     @SerializedName("relation_fields_detail")
     private List<RelationFieldDetail> relationFieldsDetail;
 
-    /**
-     *
-     */
     @SerializedName("user_details")
     private List<UserDetail> userDetails;
 
-    /**
-     *
-     */
     @SerializedName("sub_task_parent_info")
     private SubTaskParentInfo subTaskParentInfo;
 

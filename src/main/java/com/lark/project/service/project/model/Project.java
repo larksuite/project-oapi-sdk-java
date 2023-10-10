@@ -22,27 +22,15 @@ import java.util.List;
 
 
 public class Project {
-    /**
-     *
-     */
     @SerializedName("project_key")
     private String projectKey;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("simple_name")
     private String simpleName;
 
-    /**
-     *
-     */
     @SerializedName("administrators")
     private List<String> administrators;
 

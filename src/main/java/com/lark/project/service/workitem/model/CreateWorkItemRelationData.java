@@ -20,9 +20,6 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class CreateWorkItemRelationData {
-    /**
-     *
-     */
     @SerializedName("relation_id")
     private String relationID;
 

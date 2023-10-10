@@ -20,27 +20,15 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class StateTime {
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("start_time")
     private Long startTime;
 
-    /**
-     *
-     */
     @SerializedName("end_time")
     private Long endTime;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 

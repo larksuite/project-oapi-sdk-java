@@ -22,39 +22,21 @@ import java.util.List;
 
 
 public class MultiTextDetail {
-    /**
-     *
-     */
     @SerializedName("doc")
     private String doc;
 
-    /**
-     *
-     */
     @SerializedName("doc_text")
     private String docText;
 
-    /**
-     *
-     */
     @SerializedName("is_empty")
     private Boolean isEmpty;
 
-    /**
-     *
-     */
     @SerializedName("notify_user_list")
     private List<String> notifyUserList;
 
-    /**
-     *
-     */
     @SerializedName("notify_user_type")
     private String notifyUserType;
 
-    /**
-     *
-     */
     @SerializedName("doc_html")
     private String docHTML;
 

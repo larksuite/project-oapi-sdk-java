@@ -22,63 +22,33 @@ import java.util.List;
 
 
 public class NodeConf {
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("node_name")
     private String nodeName;
 
-    /**
-     *
-     */
     @SerializedName("node_tags")
     private List<String> nodeTags;
 
-    /**
-     *
-     */
     @SerializedName("node_type")
     private String nodeType;
 
-    /**
-     *
-     */
     @SerializedName("is_visibility")
     private Integer isVisibility;
 
-    /**
-     *
-     */
     @SerializedName("need_schedule")
     private Boolean needSchedule;
 
-    /**
-     *
-     */
     @SerializedName("owner")
     private OwnerConf owner;
 
-    /**
-     *
-     */
     @SerializedName("wbs_status_map")
     private WbsStatusMap wbsStatusMap;
 
-    /**
-     *
-     */
     @SerializedName("node_sub_process")
     private SubProcessConf nodeSubProcess;
 
-    /**
-     *
-     */
     @SerializedName("wbs_node_map")
     private WbsNodeMap wbsNodeMap;
 

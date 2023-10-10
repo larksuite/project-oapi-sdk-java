@@ -20,33 +20,18 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class QueryLink {
-    /**
-     *
-     */
     @SerializedName("url")
     private String url;
 
-    /**
-     *
-     */
     @SerializedName("method")
     private String method;
 
-    /**
-     *
-     */
     @SerializedName("headers")
     private Object headers;
 
-    /**
-     *
-     */
     @SerializedName("body")
     private Object body;
 
-    /**
-     *
-     */
     @SerializedName("params")
     private Object params;
 

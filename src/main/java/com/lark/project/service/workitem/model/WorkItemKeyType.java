@@ -20,27 +20,15 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class WorkItemKeyType {
-    /**
-     *
-     */
     @SerializedName("type_key")
     private String typeKey;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("is_disable")
     private Integer isDisable;
 
-    /**
-     *
-     */
     @SerializedName("api_name")
     private String aPIName;
 

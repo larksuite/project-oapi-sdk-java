@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class RoleOwner {
-    /**
-     *
-     */
     @SerializedName("role")
     private String role;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("owners")
     private List<String> owners;
 

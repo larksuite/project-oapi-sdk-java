@@ -22,33 +22,18 @@ import java.util.List;
 
 
 public class MeasureData {
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("chart_id")
     private String chartID;
 
-    /**
-     *
-     */
     @SerializedName("chart_data_list")
     private List<List<ChartData>> chartDataList;
 
-    /**
-     *
-     */
     @SerializedName("dim_titles")
     private List<String> dimTitles;
 
-    /**
-     *
-     */
     @SerializedName("quota_titles")
     private List<String> quotaTitles;
 

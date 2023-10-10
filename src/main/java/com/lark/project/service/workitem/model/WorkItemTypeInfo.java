@@ -23,93 +23,48 @@ import java.util.List;
 
 
 public class WorkItemTypeInfo {
-    /**
-     *
-     */
     @SerializedName("type_key")
     private String typeKey;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("flow_mode")
     private String flowMode;
 
-    /**
-     *
-     */
     @SerializedName("api_name")
     private String aPIName;
 
-    /**
-     *
-     */
     @SerializedName("description")
     private String description;
 
-    /**
-     *
-     */
     @SerializedName("is_disabled")
     private Boolean isDisabled;
 
-    /**
-     *
-     */
     @SerializedName("is_pinned")
     private Boolean isPinned;
 
-    /**
-     *
-     */
     @SerializedName("enable_schedule")
     private Boolean enableSchedule;
 
-    /**
-     *
-     */
     @SerializedName("schedule_field_key")
     private String scheduleFieldKey;
 
-    /**
-     *
-     */
     @SerializedName("schedule_field_name")
     private String scheduleFieldName;
 
-    /**
-     *
-     */
     @SerializedName("estimate_point_field_key")
     private String estimatePointFieldKey;
 
-    /**
-     *
-     */
     @SerializedName("estimate_point_field_name")
     private String estimatePointFieldName;
 
-    /**
-     *
-     */
     @SerializedName("actual_work_time_field_key")
     private String actualWorkTimeFieldKey;
 
-    /**
-     *
-     */
     @SerializedName("actual_work_time_field_name")
     private String actualWorkTimeFieldName;
 
-    /**
-     *
-     */
     @SerializedName("belong_roles")
     private List<SimpleRoleConf> belongRoles;
 

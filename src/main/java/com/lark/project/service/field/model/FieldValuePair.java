@@ -20,33 +20,18 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class FieldValuePair {
-    /**
-     *
-     */
     @SerializedName("field_key")
     private String fieldKey;
 
-    /**
-     *
-     */
     @SerializedName("field_value")
     private Object fieldValue;
 
-    /**
-     *
-     */
     @SerializedName("target_state")
     private TargetState targetState;
 
-    /**
-     *
-     */
     @SerializedName("field_type_key")
     private String fieldTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("field_alias")
     private String fieldAlias;
 

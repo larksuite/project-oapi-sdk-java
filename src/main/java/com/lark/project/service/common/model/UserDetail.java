@@ -20,33 +20,18 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class UserDetail {
-    /**
-     *
-     */
     @SerializedName("user_key")
     private String userKey;
 
-    /**
-     *
-     */
     @SerializedName("username")
     private String username;
 
-    /**
-     *
-     */
     @SerializedName("email")
     private String email;
 
-    /**
-     *
-     */
     @SerializedName("name_cn")
     private String nameCn;
 
-    /**
-     *
-     */
     @SerializedName("name_en")
     private String nameEn;
 

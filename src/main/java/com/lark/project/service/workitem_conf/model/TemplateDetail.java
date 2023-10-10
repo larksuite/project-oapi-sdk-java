@@ -23,45 +23,24 @@ import java.util.List;
 
 
 public class TemplateDetail {
-    /**
-     *
-     */
     @SerializedName("workflow_confs")
     private List<WorkflowConfInfo> workflowConfs;
 
-    /**
-     *
-     */
     @SerializedName("state_flow_confs")
     private List<StateFlowConfInfo> stateFlowConfs;
 
-    /**
-     *
-     */
     @SerializedName("connections")
     private List<Connection> connections;
 
-    /**
-     *
-     */
     @SerializedName("template_id")
     private Long templateID;
 
-    /**
-     *
-     */
     @SerializedName("template_name")
     private String templateName;
 
-    /**
-     *
-     */
     @SerializedName("version")
     private Long version;
 
-    /**
-     *
-     */
     @SerializedName("is_disabled")
     private Long isDisabled;
 

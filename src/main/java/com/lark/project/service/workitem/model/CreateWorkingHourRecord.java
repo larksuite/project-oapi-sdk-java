@@ -20,27 +20,15 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class CreateWorkingHourRecord {
-    /**
-     *
-     */
     @SerializedName("resource_type")
     private String resourceType;
 
-    /**
-     *
-     */
     @SerializedName("resource_id")
     private String resourceID;
 
-    /**
-     *
-     */
     @SerializedName("work_time")
     private String workTime;
 
-    /**
-     *
-     */
     @SerializedName("work_description")
     private String workDescription;
 

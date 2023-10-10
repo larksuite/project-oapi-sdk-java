@@ -24,99 +24,51 @@ import java.util.List;
 
 
 public class WorkflowNode {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("status")
     private Integer status;
 
-    /**
-     *
-     */
     @SerializedName("fields")
     private List<FieldValuePair> fields;
 
-    /**
-     *
-     */
     @SerializedName("owners")
     private List<String> owners;
 
-    /**
-     *
-     */
     @SerializedName("node_schedule")
     private Schedule nodeSchedule;
 
-    /**
-     *
-     */
     @SerializedName("schedules")
     private List<Schedule> schedules;
 
-    /**
-     *
-     */
     @SerializedName("sub_tasks")
     private List<SubTask> subTasks;
 
-    /**
-     *
-     */
     @SerializedName("actual_begin_time")
     private String actualBeginTime;
 
-    /**
-     *
-     */
     @SerializedName("actual_finish_time")
     private String actualFinishTime;
 
-    /**
-     *
-     */
     @SerializedName("role_assignee")
     private List<RoleOwner> roleAssignee;
 
-    /**
-     *
-     */
     @SerializedName("different_schedule")
     private Boolean differentSchedule;
 
-    /**
-     *
-     */
     @SerializedName("sub_status")
     private List<Checker> subStatus;
 
-    /**
-     *
-     */
     @SerializedName("milestone")
     private Boolean milestone;
 
-    /**
-     *
-     */
     @SerializedName("participants")
     private List<String> participants;
 

@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Connection {
-    /**
-     *
-     */
     @SerializedName("source_state_key")
     private String sourceStateKey;
 
-    /**
-     *
-     */
     @SerializedName("target_state_key")
     private String targetStateKey;
 

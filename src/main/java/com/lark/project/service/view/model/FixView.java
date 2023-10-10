@@ -22,45 +22,24 @@ import java.util.List;
 
 
 public class FixView {
-    /**
-     *
-     */
     @SerializedName("view_id")
     private String viewID;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("created_by")
     private String createdBy;
 
-    /**
-     *
-     */
     @SerializedName("created_at")
     private Long createdAt;
 
-    /**
-     *
-     */
     @SerializedName("modified_by")
     private String modifiedBy;
 
-    /**
-     *
-     */
     @SerializedName("work_item_id_list")
     private List<Long> workItemIDList;
 
-    /**
-     *
-     */
     @SerializedName("editable")
     private Boolean editable;
 

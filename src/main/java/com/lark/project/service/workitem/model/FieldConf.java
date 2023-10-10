@@ -23,75 +23,39 @@ import java.util.List;
 
 
 public class FieldConf {
-    /**
-     *
-     */
     @SerializedName("is_required")
     private Integer isRequired;
 
-    /**
-     *
-     */
     @SerializedName("is_visibility")
     private Integer isVisibility;
 
-    /**
-     *
-     */
     @SerializedName("role_assign")
     private List<RoleAssign> roleAssign;
 
-    /**
-     *
-     */
     @SerializedName("field_name")
     private String fieldName;
 
-    /**
-     *
-     */
     @SerializedName("field_key")
     private String fieldKey;
 
-    /**
-     *
-     */
     @SerializedName("field_alias")
     private String fieldAlias;
 
-    /**
-     *
-     */
     @SerializedName("field_type_key")
     private String fieldTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("default_value")
     private DefaultValue defaultValue;
 
-    /**
-     *
-     */
     @SerializedName("options")
     private List<OptionConf> options;
 
-    /**
-     *
-     */
     @SerializedName("compound_fields")
     private List<FieldConf> compoundFields;
 
-    /**
-     *
-     */
     @SerializedName("is_validity")
     private Integer isValidity;
 
-    /**
-     *
-     */
     @SerializedName("label")
     private String label;
 

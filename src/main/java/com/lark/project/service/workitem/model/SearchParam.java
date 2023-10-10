@@ -20,21 +20,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class SearchParam {
-    /**
-     *
-     */
     @SerializedName("param_key")
     private String paramKey;
 
-    /**
-     *
-     */
     @SerializedName("value")
     private Object value;
 
-    /**
-     *
-     */
     @SerializedName("operator")
     private String operator;
 

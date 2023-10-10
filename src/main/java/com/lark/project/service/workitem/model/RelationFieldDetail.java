@@ -22,15 +22,9 @@ import java.util.List;
 
 
 public class RelationFieldDetail {
-    /**
-     *
-     */
     @SerializedName("field_key")
     private String fieldKey;
 
-    /**
-     *
-     */
     @SerializedName("detail")
     private List<FieldDetail> detail;
 

@@ -20,27 +20,15 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class RelationBindInstance {
-    /**
-     *
-     */
     @SerializedName("project_key")
     private String projectKey;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("work_item_id")
     private Long workItemID;
 
-    /**
-     *
-     */
     @SerializedName("chat_group_merge")
     private Long chatGroupMerge;
 

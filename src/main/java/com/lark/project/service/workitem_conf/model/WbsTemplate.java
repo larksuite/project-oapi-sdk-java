@@ -20,39 +20,21 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class WbsTemplate {
-    /**
-     *
-     */
     @SerializedName("template_key")
     private String templateKey;
 
-    /**
-     *
-     */
     @SerializedName("template_name")
     private String templateName;
 
-    /**
-     *
-     */
     @SerializedName("template_id")
     private String templateID;
 
-    /**
-     *
-     */
     @SerializedName("is_disabled")
     private Boolean isDisabled;
 
-    /**
-     *
-     */
     @SerializedName("version")
     private Long version;
 
-    /**
-     *
-     */
     @SerializedName("workflow_conf")
     private WorkflowConf workflowConf;
 

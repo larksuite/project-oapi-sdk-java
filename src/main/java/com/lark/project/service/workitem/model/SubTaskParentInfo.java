@@ -20,27 +20,15 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class SubTaskParentInfo {
-    /**
-     *
-     */
     @SerializedName("work_item_id")
     private Long workItemID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_name")
     private String workItemName;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("node_id")
     private String nodeID;
 

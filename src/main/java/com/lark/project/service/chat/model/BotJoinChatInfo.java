@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class BotJoinChatInfo {
-    /**
-     *
-     */
     @SerializedName("chat_id")
     private String chatID;
 
-    /**
-     *
-     */
     @SerializedName("success_members")
     private List<String> successMembers;
 
-    /**
-     *
-     */
     @SerializedName("failed_members")
     private List<String> failedMembers;
 

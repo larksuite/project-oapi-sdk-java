@@ -22,15 +22,9 @@ import java.util.List;
 
 
 public class MultiSignal {
-    /**
-     *
-     */
     @SerializedName("status")
     private String status;
 
-    /**
-     *
-     */
     @SerializedName("detail")
     private List<MultiSignalDetail> detail;
 

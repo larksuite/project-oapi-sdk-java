@@ -20,21 +20,12 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class SimpleRoleConf {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("key")
     private String key;
 

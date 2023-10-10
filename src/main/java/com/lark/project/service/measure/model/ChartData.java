@@ -22,15 +22,9 @@ import java.util.Map;
 
 
 public class ChartData {
-    /**
-     *
-     */
     @SerializedName("dim")
     private Map<Integer, String> dim;
 
-    /**
-     *
-     */
     @SerializedName("value")
     private Map<Integer, String> value;
 

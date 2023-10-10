@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class WorkflowConf {
-    /**
-     *
-     */
     @SerializedName("status_infos")
     private List<StatusConf> statusInfos;
 
-    /**
-     *
-     */
     @SerializedName("node_infos")
     private List<NodeConf> nodeInfos;
 
-    /**
-     *
-     */
     @SerializedName("connections")
     private List<Connection> connections;
 

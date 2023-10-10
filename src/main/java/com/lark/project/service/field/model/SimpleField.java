@@ -22,63 +22,33 @@ import java.util.List;
 
 
 public class SimpleField {
-    /**
-     *
-     */
     @SerializedName("field_key")
     private String fieldKey;
 
-    /**
-     *
-     */
     @SerializedName("field_type_key")
     private String fieldTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("options")
     private List<Option> options;
 
-    /**
-     *
-     */
     @SerializedName("compound_fields")
     private List<SimpleField> compoundFields;
 
-    /**
-     *
-     */
     @SerializedName("field_alias")
     private String fieldAlias;
 
-    /**
-     *
-     */
     @SerializedName("field_name")
     private String fieldName;
 
-    /**
-     *
-     */
     @SerializedName("is_custom_field")
     private Boolean isCustomField;
 
-    /**
-     *
-     */
     @SerializedName("is_obsoleted")
     private Boolean isObsoleted;
 
-    /**
-     *
-     */
     @SerializedName("work_item_scopes")
     private List<String> workItemScopes;
 
-    /**
-     *
-     */
     @SerializedName("value_generate_mode")
     private String valueGenerateMode;
 

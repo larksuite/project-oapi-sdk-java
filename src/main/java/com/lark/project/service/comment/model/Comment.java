@@ -20,39 +20,21 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Comment {
-    /**
-     *
-     */
     @SerializedName("id")
     private Long id;
 
-    /**
-     *
-     */
     @SerializedName("work_item_id")
     private Long workItemID;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("created_at")
     private Long createdAt;
 
-    /**
-     *
-     */
     @SerializedName("operator")
     private String operator;
 
-    /**
-     *
-     */
     @SerializedName("content")
     private String content;
 

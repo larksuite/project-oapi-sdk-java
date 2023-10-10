@@ -22,33 +22,18 @@ import java.util.List;
 
 
 public class Schedule {
-    /**
-     *
-     */
     @SerializedName("points")
     private Float points;
 
-    /**
-     *
-     */
     @SerializedName("estimate_start_date")
     private Long estimateStartDate;
 
-    /**
-     *
-     */
     @SerializedName("estimate_end_date")
     private Long estimateEndDate;
 
-    /**
-     *
-     */
     @SerializedName("owners")
     private List<String> owners;
 
-    /**
-     *
-     */
     @SerializedName("actual_work_time")
     private Float actualWorkTime;
 

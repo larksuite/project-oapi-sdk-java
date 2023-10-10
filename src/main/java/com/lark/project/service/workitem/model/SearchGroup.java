@@ -22,21 +22,12 @@ import java.util.List;
 
 
 public class SearchGroup {
-    /**
-     *
-     */
     @SerializedName("search_params")
     private List<SearchParam> searchParams;
 
-    /**
-     *
-     */
     @SerializedName("conjunction")
     private String conjunction;
 
-    /**
-     *
-     */
     @SerializedName("search_groups")
     private List<SearchGroup> searchGroups;
 

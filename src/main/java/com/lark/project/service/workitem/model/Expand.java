@@ -20,33 +20,18 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class Expand {
-    /**
-     *
-     */
     @SerializedName("need_workflow")
     private Boolean needWorkflow;
 
-    /**
-     *
-     */
     @SerializedName("relation_fields_detail")
     private Boolean relationFieldsDetail;
 
-    /**
-     *
-     */
     @SerializedName("need_multi_text")
     private Boolean needMultiText;
 
-    /**
-     *
-     */
     @SerializedName("need_user_detail")
     private Boolean needUserDetail;
 
-    /**
-     *
-     */
     @SerializedName("need_sub_task_parent")
     private Boolean needSubTaskParent;
 

@@ -20,15 +20,9 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class DefaultValue {
-    /**
-     *
-     */
     @SerializedName("default_appear")
     private Integer defaultAppear;
 
-    /**
-     *
-     */
     @SerializedName("value")
     private Object value;
 

@@ -22,39 +22,21 @@ import java.util.List;
 
 
 public class WorkItemRelation {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("disabled")
     private Boolean disabled;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
-    /**
-     *
-     */
     @SerializedName("work_item_type_name")
     private String workItemTypeName;
 
-    /**
-     *
-     */
     @SerializedName("relation_details")
     private List<RelationDetail> relationDetails;
 

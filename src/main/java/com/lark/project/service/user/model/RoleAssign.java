@@ -22,39 +22,21 @@ import java.util.List;
 
 
 public class RoleAssign {
-    /**
-     *
-     */
     @SerializedName("role")
     private String role;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("default_appear")
     private Integer defaultAppear;
 
-    /**
-     *
-     */
     @SerializedName("deletable")
     private Integer deletable;
 
-    /**
-     *
-     */
     @SerializedName("member_assign")
     private Integer memberAssign;
 
-    /**
-     *
-     */
     @SerializedName("members")
     private List<String> members;
 

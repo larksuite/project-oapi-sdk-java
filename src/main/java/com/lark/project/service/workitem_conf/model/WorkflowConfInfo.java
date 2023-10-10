@@ -22,125 +22,53 @@ import java.util.List;
 
 
 public class WorkflowConfInfo {
-    /**
-     *
-     */
     @SerializedName("state_key")
     private String stateKey;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("tags")
     private List<String> tags;
 
-    /**
-     *
-     */
     @SerializedName("owner_usage_mode")
     private Long ownerUsageMode;
 
-    /**
-     *
-     */
     @SerializedName("owner_roles")
     private List<String> ownerRoles;
 
-    /**
-     *
-     */
     @SerializedName("owners")
     private List<String> owners;
 
-    /**
-     *
-     */
     @SerializedName("need_schedule")
     private Boolean needSchedule;
 
-    /**
-     *
-     */
     @SerializedName("different_schedule")
     private Boolean differentSchedule;
 
-    /**
-     *
-     */
     @SerializedName("visibility_usage_mode")
     private Long visibilityUsageMode;
 
-    /**
-     *
-     */
     @SerializedName("deletable")
     private Boolean deletable;
 
-    /**
-     *
-     */
     @SerializedName("deletable_operation_role")
     private List<String> deletableOperationRole;
 
-    /**
-     *
-     */
     @SerializedName("pass_mode")
     private Long passMode;
 
-    /**
-     *
-     */
     @SerializedName("is_limit_node")
     private Boolean isLimitNode;
 
-    /**
-     *
-     */
     @SerializedName("done_operation_role")
     private List<String> doneOperationRole;
 
-    /**
-     *
-     */
     @SerializedName("done_schedule")
     private Boolean doneSchedule;
 
-    /**
-     *
-     */
     @SerializedName("done_allocate_owner")
     private Boolean doneAllocateOwner;
-
-    /**
-     *
-     */
-    @SerializedName("action")
-    private Long action;
-
-    /**
-     *
-     */
-    @SerializedName("pre_node_state_key")
-    private List<String> preNodeStateKey;
-
-    /**
-     *
-     */
-    @SerializedName("completion_tips")
-    private String completionTips;
-
-    /**
-     *
-     */
-    @SerializedName("task_confs")
-    private List<TaskConf> taskConfs;
 
     public String getStateKey() {
         return this.stateKey;
@@ -268,38 +196,6 @@ public class WorkflowConfInfo {
 
     public void setDoneAllocateOwner(Boolean doneAllocateOwner) {
         this.doneAllocateOwner = doneAllocateOwner;
-    }
-
-    public Long getAction() {
-        return this.action;
-    }
-
-    public void setAction(Long action) {
-        this.action = action;
-    }
-
-    public List<String> getPreNodeStateKey() {
-        return this.preNodeStateKey;
-    }
-
-    public void setPreNodeStateKey(List<String> preNodeStateKey) {
-        this.preNodeStateKey = preNodeStateKey;
-    }
-
-    public String getCompletionTips() {
-        return this.completionTips;
-    }
-
-    public void setCompletionTips(String completionTips) {
-        this.completionTips = completionTips;
-    }
-
-    public List<TaskConf> getTaskConfs() {
-        return this.taskConfs;
-    }
-
-    public void setTaskConfs(List<TaskConf> taskConfs) {
-        this.taskConfs = taskConfs;
     }
 
 }

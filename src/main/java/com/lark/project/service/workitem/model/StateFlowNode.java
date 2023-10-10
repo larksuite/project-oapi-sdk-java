@@ -24,45 +24,24 @@ import java.util.List;
 
 
 public class StateFlowNode {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("role_owners")
     private List<RoleOwner> roleOwners;
 
-    /**
-     *
-     */
     @SerializedName("status")
     private Integer status;
 
-    /**
-     *
-     */
     @SerializedName("actual_begin_time")
     private String actualBeginTime;
 
-    /**
-     *
-     */
     @SerializedName("actual_finish_time")
     private String actualFinishTime;
 
-    /**
-     *
-     */
     @SerializedName("fields")
     private List<FieldValuePair> fields;
 

@@ -22,33 +22,18 @@ import java.util.List;
 
 
 public class OptionConf {
-    /**
-     *
-     */
     @SerializedName("label")
     private String label;
 
-    /**
-     *
-     */
     @SerializedName("value")
     private String value;
 
-    /**
-     *
-     */
     @SerializedName("is_disabled")
     private Integer isDisabled;
 
-    /**
-     *
-     */
     @SerializedName("is_visibility")
     private Integer isVisibility;
 
-    /**
-     *
-     */
     @SerializedName("children")
     private List<OptionConf> children;
 

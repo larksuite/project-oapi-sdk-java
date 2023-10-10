@@ -24,75 +24,39 @@ import java.util.Map;
 
 
 public class Business {
-    /**
-     *
-     */
     @SerializedName("id")
     private String id;
 
-    /**
-     *
-     */
     @SerializedName("name")
     private String name;
 
-    /**
-     *
-     */
     @SerializedName("project")
     private String project;
 
-    /**
-     *
-     */
     @SerializedName("labels")
     private List<String> labels;
 
-    /**
-     *
-     */
     @SerializedName("role_owners")
     private Map<String, RoleOwner> roleOwners;
 
-    /**
-     *
-     */
     @SerializedName("watchers")
     private List<String> watchers;
 
-    /**
-     *
-     */
     @SerializedName("order")
     private Float order;
 
-    /**
-     *
-     */
     @SerializedName("super_masters")
     private List<String> superMasters;
 
-    /**
-     *
-     */
     @SerializedName("parent")
     private String parent;
 
-    /**
-     *
-     */
     @SerializedName("disabled")
     private Boolean disabled;
 
-    /**
-     *
-     */
     @SerializedName("level_id")
     private Long levelID;
 
-    /**
-     *
-     */
     @SerializedName("children")
     private List<Business> children;
 

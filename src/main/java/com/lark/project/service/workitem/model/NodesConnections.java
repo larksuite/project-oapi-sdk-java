@@ -23,27 +23,15 @@ import java.util.List;
 
 
 public class NodesConnections {
-    /**
-     *
-     */
     @SerializedName("workflow_nodes")
     private List<WorkflowNode> workflowNodes;
 
-    /**
-     *
-     */
     @SerializedName("connections")
     private List<Connection> connections;
 
-    /**
-     *
-     */
     @SerializedName("state_flow_nodes")
     private List<StateFlowNode> stateFlowNodes;
 
-    /**
-     *
-     */
     @SerializedName("user_details")
     private List<UserDetail> userDetails;
 

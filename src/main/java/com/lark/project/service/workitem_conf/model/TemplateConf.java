@@ -20,39 +20,21 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class TemplateConf {
-    /**
-     *
-     */
     @SerializedName("template_id")
     private String templateID;
 
-    /**
-     *
-     */
     @SerializedName("template_name")
     private String templateName;
 
-    /**
-     *
-     */
     @SerializedName("is_disabled")
     private Integer isDisabled;
 
-    /**
-     *
-     */
     @SerializedName("version")
     private Long version;
 
-    /**
-     *
-     */
     @SerializedName("unique_key")
     private String uniqueKey;
 
-    /**
-     *
-     */
     @SerializedName("template_key")
     private String templateKey;
 
