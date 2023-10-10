@@ -33,6 +33,7 @@ import com.lark.project.service.field.FieldService;
 import com.lark.project.service.field.FieldServiceImpl;
 import com.lark.project.service.plugin.PluginService;
 import com.lark.project.service.plugin.PluginServiceImpl;
+import com.lark.project.service.project.ProjectService;
 import com.lark.project.service.project.ProjectServiceImpl;
 import com.lark.project.service.task.TaskService;
 import com.lark.project.service.task.TaskServiceImpl;
@@ -55,7 +56,7 @@ public class Client {
 
     private PluginService plugin; // token
 
-    private ProjectServiceImpl project; // 空间
+    private ProjectService project; // 空间
 
     private UserService user; // 用户
 
@@ -85,7 +86,7 @@ public class Client {
         return plugin;
     }
 
-    public ProjectServiceImpl getProjectService() {
+    public ProjectService getProjectService() {
         return project;
     }
 
