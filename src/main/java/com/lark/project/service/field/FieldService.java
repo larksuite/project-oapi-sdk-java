@@ -16,93 +16,18 @@
 
 package com.lark.project.service.field;
 
-import com.lark.project.core.Config;
-import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
-import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Logs;
-import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.field.builder.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class FieldService {
-
-    private static final Logger log = LoggerFactory.getLogger(FieldService.class);
-
-    private Config config;
-
-    public FieldService(Config config) {
-        this.config = config;
-    }
+public interface FieldService {
 
     // 创建自定义字段
-    public CreateFieldResp createField(CreateFieldReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
-                , "/open_api/:project_key/field/:work_item_type_key/create"
-                , false
-                , req);
-
-        CreateFieldResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateFieldResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public CreateFieldResp createField(CreateFieldReq req, RequestOptions reqOptions) throws Exception;
 
     // 获取空间字段
-    public QueryProjectFieldsResp queryProjectFields(QueryProjectFieldsReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
-                , "/open_api/:project_key/field/all"
-                , false
-                , req);
-
-        QueryProjectFieldsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryProjectFieldsResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public QueryProjectFieldsResp queryProjectFields(QueryProjectFieldsReq req, RequestOptions reqOptions) throws Exception;
 
     // 更新自定义字段
-    public UpdateFieldResp updateField(UpdateFieldReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
-                , "/open_api/:project_key/field/:work_item_type_key"
-                , false
-                , req);
-
-        UpdateFieldResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateFieldResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public UpdateFieldResp updateField(UpdateFieldReq req, RequestOptions reqOptions) throws Exception;
 
 }

@@ -16,116 +16,21 @@
 
 package com.lark.project.service.comment;
 
-import com.lark.project.core.Config;
-import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
-import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Logs;
-import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.comment.builder.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class CommentService {
-
-    private static final Logger log = LoggerFactory.getLogger(CommentService.class);
-
-    private Config config;
-
-    public CommentService(Config config) {
-        this.config = config;
-    }
+public interface CommentService {
 
     // 添加评论
-    public CreateCommentResp createComment(CreateCommentReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
-                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/create"
-                , false
-                , req);
-
-        CreateCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateCommentResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public CreateCommentResp createComment(CreateCommentReq req, RequestOptions reqOptions) throws Exception;
 
     // 删除评论
-    public DeleteCommentResp deleteComment(DeleteCommentReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
-                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
-                , false
-                , req);
-
-        DeleteCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteCommentResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public DeleteCommentResp deleteComment(DeleteCommentReq req, RequestOptions reqOptions) throws Exception;
 
     // 查询评论
-    public QueryCommentsResp queryComments(QueryCommentsReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
-                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comments"
-                , false
-                , req);
-
-        QueryCommentsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryCommentsResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public QueryCommentsResp queryComments(QueryCommentsReq req, RequestOptions reqOptions) throws Exception;
 
     // 更新评论
-    public UpdateCommentResp updateComment(UpdateCommentReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
-                , "/open_api/:project_key/work_item/:work_item_type_key/:work_item_id/comment/:comment_id"
-                , false
-                , req);
-
-        UpdateCommentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateCommentResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public UpdateCommentResp updateComment(UpdateCommentReq req, RequestOptions reqOptions) throws Exception;
 
 }

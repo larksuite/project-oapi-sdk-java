@@ -26,15 +26,24 @@ import com.lark.project.core.token.AccessTokenType;
 import com.lark.project.core.token.GlobalTokenManager;
 import com.lark.project.core.token.TokenManager;
 import com.lark.project.service.chat.ChatService;
+import com.lark.project.service.chat.ChatServiceImpl;
 import com.lark.project.service.comment.CommentService;
+import com.lark.project.service.comment.CommentServiceImpl;
 import com.lark.project.service.field.FieldService;
+import com.lark.project.service.field.FieldServiceImpl;
 import com.lark.project.service.plugin.PluginService;
-import com.lark.project.service.project.ProjectService;
+import com.lark.project.service.plugin.PluginServiceImpl;
+import com.lark.project.service.project.ProjectServiceImpl;
 import com.lark.project.service.task.TaskService;
+import com.lark.project.service.task.TaskServiceImpl;
 import com.lark.project.service.user.UserService;
+import com.lark.project.service.user.UserServiceImpl;
 import com.lark.project.service.view.ViewService;
+import com.lark.project.service.view.ViewServiceImpl;
 import com.lark.project.service.workitem.WorkItemService;
+import com.lark.project.service.workitem.WorkItemServiceImpl;
 import com.lark.project.service.workitem_conf.WorkItemConfService;
+import com.lark.project.service.workitem_conf.WorkItemConfServiceImpl;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
@@ -46,7 +55,7 @@ public class Client {
 
     private PluginService plugin; // token
 
-    private ProjectService project; // 空间
+    private ProjectServiceImpl project; // 空间
 
     private UserService user; // 用户
 
@@ -76,7 +85,7 @@ public class Client {
         return plugin;
     }
 
-    public ProjectService getProjectService() {
+    public ProjectServiceImpl getProjectService() {
         return project;
     }
 
@@ -185,16 +194,16 @@ public class Client {
             client.setConfig(config);
             initCache(config);
             initHttpTransport(config);
-            client.plugin = new PluginService(config);
-            client.project = new ProjectService(config);
-            client.user = new UserService(config);
-            client.workItem = new WorkItemService(config);
-            client.task = new TaskService(config);
-            client.view = new ViewService(config);
-            client.field = new FieldService(config);
-            client.comment = new CommentService(config);
-            client.workItemConf = new WorkItemConfService(config);
-            client.chat = new ChatService(config);
+            client.plugin = new PluginServiceImpl(config);
+            client.project = new ProjectServiceImpl(config);
+            client.user = new UserServiceImpl(config);
+            client.workItem = new WorkItemServiceImpl(config);
+            client.task = new TaskServiceImpl(config);
+            client.view = new ViewServiceImpl(config);
+            client.field = new FieldServiceImpl(config);
+            client.comment = new CommentServiceImpl(config);
+            client.workItemConf = new WorkItemConfServiceImpl(config);
+            client.chat = new ChatServiceImpl(config);
             return client;
         }
     }

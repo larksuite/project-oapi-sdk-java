@@ -35,7 +35,7 @@ public class LocalCache implements ICache {
 
     @Override
     public String get(String key) {
-        Value v = this.CACHE.get(key);
+        Value v = CACHE.get(key);
         if (v == null || new Date().after(v.end)) {
             return "";
         }
@@ -50,7 +50,7 @@ public class LocalCache implements ICache {
         calendar.add(Calendar.SECOND, (int) timeUnit.toSeconds(expire));
         Value v = new Value(value, calendar.getTime());
         log.debug("put key:{}, expire time:{} ", key, calendar.getTime());
-        this.CACHE.put(key, v);
+        CACHE.put(key, v);
     }
 
     private static class Value {

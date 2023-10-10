@@ -114,6 +114,12 @@ public class WorkflowNode {
     @SerializedName("milestone")
     private Boolean milestone;
 
+    /**
+     *
+     */
+    @SerializedName("participants")
+    private List<String> participants;
+
     public String getID() {
         return this.id;
     }
@@ -232,6 +238,14 @@ public class WorkflowNode {
 
     public void setMilestone(Boolean milestone) {
         this.milestone = milestone;
+    }
+
+    public List<String> getParticipants() {
+        return this.participants;
+    }
+
+    public void setParticipants(List<String> participants) {
+        this.participants = participants;
     }
 
 }

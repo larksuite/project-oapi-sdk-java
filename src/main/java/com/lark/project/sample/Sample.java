@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class Sample {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         // 构建client
         Client client = Client.newBuilder("pluginID", "pluginSecret")
                 .openBaseUrl("https://project.feishu.cn/").build();
@@ -44,10 +44,16 @@ public class Sample {
         headers.put("key2", Lists.newArrayList("value2"));
 
         // 发起请求
-        ListProjectWorkItemTypeResp resp = client.getProjectService().listProjectWorkItemType(req, RequestOptions.newBuilder()
-                .accessToken("user_token") // 传递用户token
-                .headers(headers) // 传递自定义 Headers
-                .build());
+        ListProjectWorkItemTypeResp resp = null;
+        try {
+            resp = client.getProjectService().listProjectWorkItemType(req, RequestOptions.newBuilder()
+                    .accessToken("user_token") // 传递用户token
+                    .headers(headers) // 传递自定义 Headers
+                    .build());
+        } catch (Exception e) {
+            // 处理异常
+            throw new RuntimeException(e);
+        }
 
         // 处理服务端错误
         if (!resp.success()) {

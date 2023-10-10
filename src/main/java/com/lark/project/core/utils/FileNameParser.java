@@ -12,6 +12,8 @@
 
 package com.lark.project.core.utils;
 
+import com.lark.project.core.exception.ErrConstants;
+
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -48,7 +50,7 @@ public class FileNameParser {
             String part = (String) parts.get(i);
             int eqIndex = part.indexOf(61);
             if (eqIndex == -1) {
-                throw new IllegalArgumentException("Invalid content disposition format");
+                throw new IllegalArgumentException(ErrConstants.CONTENT_DISPOSITION_INVALID);
             }
 
             String attribute = part.substring(0, eqIndex);
@@ -110,7 +112,7 @@ public class FileNameParser {
         int index = headerValue.indexOf(59);
         String type = (index >= 0 ? headerValue.substring(0, index) : headerValue).trim();
         if (type.isEmpty()) {
-            throw new IllegalArgumentException("Content-Disposition header must not be empty");
+            throw new IllegalArgumentException(ErrConstants.CONTENT_DISPOSITION_HEADER_EMPTY);
         } else {
             List<String> parts = new ArrayList();
             parts.add(type);

@@ -16,48 +16,13 @@
 
 package com.lark.project.service.measure;
 
-import com.lark.project.core.Config;
-import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
-import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Logs;
-import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.measure.builder.QueryChartDataReq;
 import com.lark.project.service.measure.builder.QueryChartDataResp;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class MeasureService {
-
-    private static final Logger log = LoggerFactory.getLogger(MeasureService.class);
-
-    private Config config;
-
-    public MeasureService(Config config) {
-        this.config = config;
-    }
+public interface MeasureService {
 
     // 度量查询接口
-    public QueryChartDataResp queryChartData(QueryChartDataReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
-                , "/open_api/:project_key/measure/:chart_id"
-                , false
-                , req);
-
-        QueryChartDataResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryChartDataResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public QueryChartDataResp queryChartData(QueryChartDataReq req, RequestOptions reqOptions) throws Exception;
 
 }

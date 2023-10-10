@@ -16,48 +16,13 @@
 
 package com.lark.project.service.chat;
 
-import com.lark.project.core.Config;
-import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
-import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Logs;
-import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.chat.builder.BotJoinChatReq;
 import com.lark.project.service.chat.builder.BotJoinChatResp;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class ChatService {
-
-    private static final Logger log = LoggerFactory.getLogger(ChatService.class);
-
-    private Config config;
-
-    public ChatService(Config config) {
-        this.config = config;
-    }
+public interface ChatService {
 
     // 拉机器人入群
-    public BotJoinChatResp botJoinChat(BotJoinChatReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
-                , "/open_api/:project_key/work_item/:work_item_id/bot_join_chat"
-                , false
-                , req);
-
-        BotJoinChatResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, BotJoinChatResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public BotJoinChatResp botJoinChat(BotJoinChatReq req, RequestOptions reqOptions) throws Exception;
 
 }

@@ -15,10 +15,11 @@ package com.lark.project.core.token;
 import com.lark.project.core.Config;
 import com.lark.project.core.Transport;
 import com.lark.project.core.cache.ICache;
+import com.lark.project.core.exception.ErrConstants;
 import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.GetAccessTokenResp;
 import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Jsons;
+import com.lark.project.core.utils.Logs;
 import com.lark.project.core.utils.Strings;
 import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.plugin.builder.GetPluginTokenReq;
@@ -26,7 +27,6 @@ import com.lark.project.service.plugin.builder.GetPluginTokenResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 
 public class TokenManager {
@@ -73,12 +73,8 @@ public class TokenManager {
 
         GetPluginTokenResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetPluginTokenResp.class);
         if (resp == null) {
-            log.error(String.format(
-                    "%s,callError,req=%s,respHeader=%s,respStatusCode=%s,respBody=%s,", "/open_api/projects"
-                    , Jsons.DEFAULT.toJson(req), Jsons.DEFAULT.toJson(httpResponse.getHeaders()),
-                    httpResponse.getStatusCode(), new String(httpResponse.getBody(),
-                            StandardCharsets.UTF_8)));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/authen/plugin_token"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
         }
         GetAccessTokenResp getAccessTokenResp = new GetAccessTokenResp();
         getAccessTokenResp.setToken(resp.getData().getToken());

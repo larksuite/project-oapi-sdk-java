@@ -16,162 +16,27 @@
 
 package com.lark.project.service.workitem_conf;
 
-import com.lark.project.core.Config;
-import com.lark.project.core.Transport;
 import com.lark.project.core.request.RequestOptions;
-import com.lark.project.core.response.RawResponse;
-import com.lark.project.core.utils.Logs;
-import com.lark.project.core.utils.UnmarshalRespUtil;
 import com.lark.project.service.workitem_conf.builder.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class WorkItemConfService {
-
-    private static final Logger log = LoggerFactory.getLogger(WorkItemConfService.class);
-
-    private Config config;
-
-    public WorkItemConfService(Config config) {
-        this.config = config;
-    }
+public interface WorkItemConfService {
 
     // 新增流程类型配置
-    public CreateTemplateDetailResp createTemplateDetail(CreateTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
-                , "/open_api/template/v2/create_template"
-                , false
-                , req);
-
-        CreateTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateTemplateDetailResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public CreateTemplateDetailResp createTemplateDetail(CreateTemplateDetailReq req, RequestOptions reqOptions) throws Exception;
 
     // 删除流程类型配置
-    public DeleteTemplateDetailResp deleteTemplateDetail(DeleteTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "DELETE"
-                , "/open_api/template/v2/delete_template/:project_key/:template_id"
-                , false
-                , req);
-
-        DeleteTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteTemplateDetailResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public DeleteTemplateDetailResp deleteTemplateDetail(DeleteTemplateDetailReq req, RequestOptions reqOptions) throws Exception;
 
     // 获取流程类型配置详情
-    public QueryTemplateDetailResp queryTemplateDetail(QueryTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
-                , "/open_api/:project_key/template_detail/:template_id"
-                , false
-                , req);
-
-        QueryTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryTemplateDetailResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public QueryTemplateDetailResp queryTemplateDetail(QueryTemplateDetailReq req, RequestOptions reqOptions) throws Exception;
 
     // 获取流程类型配置（wbs）
-    public QueryWbsTemplateConfResp queryWbsTemplateConf(QueryWbsTemplateConfReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
-                , "/open_api/:project_key/wbs_template"
-                , false
-                , req);
-
-        QueryWbsTemplateConfResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWbsTemplateConfResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public QueryWbsTemplateConfResp queryWbsTemplateConf(QueryWbsTemplateConfReq req, RequestOptions reqOptions) throws Exception;
 
     // 获取工作项下的流程类型
-    public QueryWorkItemTemplatesResp queryWorkItemTemplates(QueryWorkItemTemplatesReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
-                , "/open_api/:project_key/template_list/:work_item_type_key"
-                , false
-                , req);
-
-        QueryWorkItemTemplatesResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemTemplatesResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public QueryWorkItemTemplatesResp queryWorkItemTemplates(QueryWorkItemTemplatesReq req, RequestOptions reqOptions) throws Exception;
 
     // 更新流程类型配置
-    public UpdateTemplateDetailResp updateTemplateDetail(UpdateTemplateDetailReq req, RequestOptions reqOptions) throws Exception {
-        if (reqOptions == null) {
-            reqOptions = new RequestOptions();
-        }
-
-        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
-                , "/open_api/template/v2/update_template"
-                , false
-                , req);
-
-        UpdateTemplateDetailResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateTemplateDetailResp.class);
-        if (resp == null) {
-            log.error(Logs.formatReq(req, httpResponse));
-            throw new IllegalArgumentException("The result returned by the server is illegal");
-        }
-
-        resp.setRawResponse(httpResponse);
-        resp.setRequest(req);
-
-        return resp;
-    }
+    public UpdateTemplateDetailResp updateTemplateDetail(UpdateTemplateDetailReq req, RequestOptions reqOptions) throws Exception;
 
 }
