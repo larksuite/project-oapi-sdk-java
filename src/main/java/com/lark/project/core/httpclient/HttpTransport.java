@@ -49,7 +49,7 @@ public class HttpTransport implements IHttpTransport {
             }
             return builder.build();
         }
-        return new StringEntity(Jsons.DEFAULT.toJson(request.getBody()),"UTF-8");
+        return new StringEntity(Jsons.DEFAULT.toJson(request.getBody()), "UTF-8");
     }
 
     private Map<String, List<String>> convertRespHeader(Header[] allHeaders) {
