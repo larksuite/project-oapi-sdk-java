@@ -142,9 +142,11 @@ public class ReqTranslator {
                 field.setAccessible(true);
                 if (field.getType() == File.class) {
                     SerializedName serializedName = field.getAnnotation(SerializedName.class);
+                    File file = (File) field.get(body);
                     FormDataFile formDataFile = new FormDataFile();
-                    formDataFile.setFile((File) field.get(body));
+                    formDataFile.setFile(file);
                     formDataFile.setFieldName(serializedName.value().trim());
+                    formDataFile.setFileName(file.getName());
                     formData.addFile(serializedName.value().trim(), formDataFile);
                 } else {
                     SerializedName serializedName = field.getAnnotation(SerializedName.class);
