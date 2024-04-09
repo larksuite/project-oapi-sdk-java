@@ -19,7 +19,7 @@ public class UserPluginToken {
     @SerializedName("user_key")
     private String userKey;
 
-    @SerializedName("tenant_key")
+    @SerializedName("saas_tenant_key")
     private String tenantKey;
 
     public int getExpireTime() {
