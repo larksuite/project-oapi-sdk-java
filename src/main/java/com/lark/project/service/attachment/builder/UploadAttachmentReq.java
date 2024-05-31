@@ -26,15 +26,15 @@ public class UploadAttachmentReq {
     public UploadAttachmentReq() {
     }
 
-    public UploadAttachmentReq(UploadAttachmentReq.Builder builder) {
+    public UploadAttachmentReq(Builder builder) {
         this.projectKey = builder.projectKey;
         this.workItemTypeKey = builder.workItemTypeKey;
         this.workItemID = builder.workItemID;
         this.body = builder.body;
     }
 
-    public static UploadAttachmentReq.Builder newBuilder() {
-        return new UploadAttachmentReq.Builder();
+    public static Builder newBuilder() {
+        return new Builder();
     }
 
     public String getProjectKey() {
@@ -79,32 +79,32 @@ public class UploadAttachmentReq {
             body = new UploadAttachmentReqBody();
         }
 
-        public UploadAttachmentReq.Builder projectKey(String projectKey) {
+        public Builder projectKey(String projectKey) {
             this.projectKey = projectKey;
             return this;
         }
 
-        public UploadAttachmentReq.Builder workItemID(Long workItemID) {
+        public Builder workItemID(Long workItemID) {
             this.workItemID = workItemID;
             return this;
         }
 
-        public UploadAttachmentReq.Builder workItemTypeKey(String workItemTypeKey) {
+        public Builder workItemTypeKey(String workItemTypeKey) {
             this.workItemTypeKey = workItemTypeKey;
             return this;
         }
 
-        public UploadAttachmentReq.Builder file(File file) {
+        public Builder file(File file) {
             this.body.setFile(file);
             return this;
         }
 
-        public UploadAttachmentReq.Builder fieldKey(String fieldKey) {
+        public Builder fieldKey(String fieldKey) {
             this.body.setFieldKey(fieldKey);
             return this;
         }
 
-        public UploadAttachmentReq.Builder fieldAlias(String fieldAlias) {
+        public Builder fieldAlias(String fieldAlias) {
             this.body.setFieldAlias(fieldAlias);
             return this;
         }

@@ -7,7 +7,7 @@ import java.io.File;
 public class UploadAttachmentReqBody {
 
     @SerializedName("file")
-    private java.io.File file;
+    private File file;
 
     @SerializedName("field_key")
     private String fieldKey;

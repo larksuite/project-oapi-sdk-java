@@ -16,13 +16,13 @@ public class GetUserPluginTokenReq extends BaseRequest {
     public GetUserPluginTokenReq() {
     }
 
-    public GetUserPluginTokenReq(GetUserPluginTokenReq.Builder builder) {
+    public GetUserPluginTokenReq(Builder builder) {
         this.body = builder.body;
         this.setHeaders(builder.headers);
     }
 
-    public static GetUserPluginTokenReq.Builder newBuilder() {
-        return new GetUserPluginTokenReq.Builder();
+    public static Builder newBuilder() {
+        return new Builder();
     }
 
     public GetUserPluginTokenReqBody getGetUserPluginTokenReqBody() {
@@ -43,12 +43,12 @@ public class GetUserPluginTokenReq extends BaseRequest {
             body = new GetUserPluginTokenReqBody();
         }
 
-        public GetUserPluginTokenReq.Builder code(String code) {
+        public Builder code(String code) {
             this.body.setCode(code);
             return this;
         }
 
-        public GetUserPluginTokenReq.Builder grantType(String grantType) {
+        public Builder grantType(String grantType) {
             this.body.setGrantType(grantType);
             return this;
         }

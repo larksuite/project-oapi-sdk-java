@@ -16,13 +16,13 @@ public class RefreshTokenReq extends BaseRequest {
     public RefreshTokenReq() {
     }
 
-    public RefreshTokenReq(RefreshTokenReq.Builder builder) {
+    public RefreshTokenReq(Builder builder) {
         this.body = builder.body;
         this.setHeaders(builder.headers);
     }
 
-    public static RefreshTokenReq.Builder newBuilder() {
-        return new RefreshTokenReq.Builder();
+    public static Builder newBuilder() {
+        return new Builder();
     }
 
     public RefreshTokenReqBody getRefreshTokenReqBody() {
@@ -43,12 +43,12 @@ public class RefreshTokenReq extends BaseRequest {
             body = new RefreshTokenReqBody();
         }
 
-        public RefreshTokenReq.Builder refreshToken(String refreshToken) {
+        public Builder refreshToken(String refreshToken) {
             this.body.setRefreshToken(refreshToken);
             return this;
         }
 
-        public RefreshTokenReq.Builder type(int type) {
+        public Builder type(int type) {
             this.body.setType(type);
             return this;
         }

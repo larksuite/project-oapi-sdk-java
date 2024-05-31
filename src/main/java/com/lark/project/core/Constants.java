@@ -30,7 +30,7 @@ public interface Constants {
     String HTTP_HEADER_ACCESS_TOKEN = "X-PLUGIN-TOKEN";
 
     String HTTP_HEADER_IDEM_UUID = "X-IDEM-UUID";
-    String VERSION = "v1.0.0";
+    String VERSION = "1.0.12";
 
     String BASE_URL = "https://project.feishu.cn";
 
