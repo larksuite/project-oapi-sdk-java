@@ -138,6 +138,19 @@ public class ReqTranslator {
         FormData formData = new FormData();
         Field[] fields = body.getClass().getDeclaredFields();
         if (fields != null) {
+            String mimeType = "application/octet-stream";
+            try {
+                Field fieldMimeType = body.getClass().getDeclaredField("mimeType");
+                if (fieldMimeType != null) {
+                    fieldMimeType.setAccessible(true);
+                    String mimeTypeField = (String) fieldMimeType.get(body);
+                    if (mimeTypeField != null && !mimeTypeField.isEmpty()) {
+                        mimeType = mimeTypeField;
+                    }
+                }
+            } catch (NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
             for (Field field : fields) {
                 field.setAccessible(true);
                 if (field.getType() == File.class) {
@@ -147,6 +160,7 @@ public class ReqTranslator {
                     formDataFile.setFile(file);
                     formDataFile.setFieldName(serializedName.value().trim());
                     formDataFile.setFileName(file.getName());
+                    formDataFile.setMimetype(mimeType);
                     formData.addFile(serializedName.value().trim(), formDataFile);
                 } else {
                     SerializedName serializedName = field.getAnnotation(SerializedName.class);

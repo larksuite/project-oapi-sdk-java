@@ -99,6 +99,11 @@ public class UploadAttachmentReq {
             return this;
         }
 
+        public Builder fileMimeType(String mimeType) {
+            this.body.setMimeType(mimeType);
+            return this;
+        }
+
         public Builder fieldKey(String fieldKey) {
             this.body.setFieldKey(fieldKey);
             return this;
