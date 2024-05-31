@@ -56,7 +56,7 @@
 <dependency>
   <groupId>com.larksuite.project</groupId>
   <artifactId>oapi-sdk</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.13</version>
 </dependency>
 ```
 

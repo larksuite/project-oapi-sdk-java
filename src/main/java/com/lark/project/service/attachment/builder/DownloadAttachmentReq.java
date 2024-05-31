@@ -22,15 +22,15 @@ public class DownloadAttachmentReq {
     public DownloadAttachmentReq() {
     }
 
-    public DownloadAttachmentReq(DownloadAttachmentReq.Builder builder) {
+    public DownloadAttachmentReq(Builder builder) {
         this.projectKey = builder.projectKey;
         this.workItemTypeKey = builder.workItemTypeKey;
         this.workItemID = builder.workItemID;
         this.body = builder.body;
     }
 
-    public static DownloadAttachmentReq.Builder newBuilder() {
-        return new DownloadAttachmentReq.Builder();
+    public static Builder newBuilder() {
+        return new Builder();
     }
 
     public String getProjectKey() {
@@ -75,22 +75,22 @@ public class DownloadAttachmentReq {
             body = new DownloadAttachmentReqBody();
         }
 
-        public DownloadAttachmentReq.Builder projectKey(String projectKey) {
+        public Builder projectKey(String projectKey) {
             this.projectKey = projectKey;
             return this;
         }
 
-        public DownloadAttachmentReq.Builder workItemID(Long workItemID) {
+        public Builder workItemID(Long workItemID) {
             this.workItemID = workItemID;
             return this;
         }
 
-        public DownloadAttachmentReq.Builder workItemTypeKey(String workItemTypeKey) {
+        public Builder workItemTypeKey(String workItemTypeKey) {
             this.workItemTypeKey = workItemTypeKey;
             return this;
         }
 
-        public DownloadAttachmentReq.Builder uuid(String uuid) {
+        public Builder uuid(String uuid) {
             this.body.setUUID(uuid);
             return this;
         }

@@ -14,6 +14,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.util.EntityUtils;
 
@@ -40,12 +41,13 @@ public class HttpTransport implements IHttpTransport {
         Object body = request.getBody();
         if (body instanceof FormData) {
             MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+            builder.setMode(HttpMultipartMode.RFC6532);
             for (Map.Entry<String, Object> entry : ((FormData) body).getParams().entrySet()) {
                 builder.addTextBody(entry.getKey(), entry.getValue().toString());
             }
             for (FormDataFile file : ((FormData) body).getFiles()) {
                 final File uploadFile = file.getFile();
-                builder.addBinaryBody(file.getFieldName(), uploadFile, ContentType.APPLICATION_OCTET_STREAM, Strings.isEmpty(file.getFileName()) ? "unknown" : file.getFileName());
+                builder.addBinaryBody(file.getFieldName(), uploadFile, ContentType.create(file.getMimetype()), Strings.isEmpty(file.getFileName()) ? "unknown" : file.getFileName());
             }
             return builder.build();
         }
