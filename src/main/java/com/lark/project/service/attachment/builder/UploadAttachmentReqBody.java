@@ -7,7 +7,10 @@ import java.io.File;
 public class UploadAttachmentReqBody {
 
     @SerializedName("file")
-    private java.io.File file;
+    private File file;
+
+    @SerializedName("file")
+    private String mimeType;
 
     @SerializedName("field_key")
     private String fieldKey;
@@ -37,5 +40,13 @@ public class UploadAttachmentReqBody {
 
     public void setFieldAlias(String fieldAlias) {
         this.fieldAlias = fieldAlias;
+    }
+
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
     }
 }

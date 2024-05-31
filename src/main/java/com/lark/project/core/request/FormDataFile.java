@@ -19,6 +19,7 @@ public class FormDataFile {
 
     private String fieldName;
     private String fileName;
+    private String mimetype;
     private String type;
     private File file;
 
@@ -56,5 +57,11 @@ public class FormDataFile {
         return this;
     }
 
+    public String getMimetype() {
+        return mimetype;
+    }
 
+    public void setMimetype(String mimetype) {
+        this.mimetype = mimetype;
+    }
 }

@@ -15,13 +15,13 @@ public class GetPluginTokenReq extends BaseRequest {
     public GetPluginTokenReq() {
     }
 
-    public GetPluginTokenReq(GetPluginTokenReq.Builder builder) {
+    public GetPluginTokenReq(Builder builder) {
         this.body = builder.body;
         this.setHeaders(builder.headers);
     }
 
-    public static GetPluginTokenReq.Builder newBuilder() {
-        return new GetPluginTokenReq.Builder();
+    public static Builder newBuilder() {
+        return new Builder();
     }
 
     public GetPluginTokenReqBody getGetAccessTokenReqBody() {
@@ -42,17 +42,17 @@ public class GetPluginTokenReq extends BaseRequest {
             body = new GetPluginTokenReqBody();
         }
 
-        public GetPluginTokenReq.Builder pluginID(String pluginID) {
+        public Builder pluginID(String pluginID) {
             this.body.setPluginID(pluginID);
             return this;
         }
 
-        public GetPluginTokenReq.Builder pluginSecret(String pluginSecret) {
+        public Builder pluginSecret(String pluginSecret) {
             this.body.setPluginSecret(pluginSecret);
             return this;
         }
 
-        public GetPluginTokenReq.Builder type(int type) {
+        public Builder type(int type) {
             this.body.setType(type);
             return this;
         }
