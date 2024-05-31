@@ -9,7 +9,6 @@ public class UploadAttachmentReqBody {
     @SerializedName("file")
     private File file;
 
-    @SerializedName("file")
     private String mimeType;
 
     @SerializedName("field_key")
