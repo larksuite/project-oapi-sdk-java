@@ -17,13 +17,13 @@ public class SpecialUploadAttachmentReq {
     public SpecialUploadAttachmentReq() {
     }
 
-    public SpecialUploadAttachmentReq(SpecialUploadAttachmentReq.Builder builder) {
+    public SpecialUploadAttachmentReq(Builder builder) {
         this.projectKey = builder.projectKey;
         this.body = builder.body;
     }
 
-    public static SpecialUploadAttachmentReq.Builder newBuilder() {
-        return new SpecialUploadAttachmentReq.Builder();
+    public static Builder newBuilder() {
+        return new Builder();
     }
 
     public String getProjectKey() {
@@ -50,12 +50,12 @@ public class SpecialUploadAttachmentReq {
             body = new SpecialUploadAttachmentReqBody();
         }
 
-        public SpecialUploadAttachmentReq.Builder projectKey(String projectKey) {
+        public Builder projectKey(String projectKey) {
             this.projectKey = projectKey;
             return this;
         }
 
-        public SpecialUploadAttachmentReq.Builder file(File file) {
+        public Builder file(File file) {
             this.body.setFile(file);
             return this;
         }

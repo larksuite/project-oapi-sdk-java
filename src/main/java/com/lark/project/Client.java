@@ -25,6 +25,8 @@ import com.lark.project.core.httpclient.IHttpTransport;
 import com.lark.project.core.token.AccessTokenType;
 import com.lark.project.core.token.GlobalTokenManager;
 import com.lark.project.core.token.TokenManager;
+import com.lark.project.service.attachment.AttachmentService;
+import com.lark.project.service.attachment.AttachmentServiceImpl;
 import com.lark.project.service.chat.ChatService;
 import com.lark.project.service.chat.ChatServiceImpl;
 import com.lark.project.service.comment.CommentService;
@@ -86,6 +88,8 @@ public class Client {
 
     private RoleConfService roleConf; // 角色
 
+    private AttachmentService attachment; //附件
+
     public static Builder newBuilder(String pluginId, String pluginSecret) {
         return new Builder(pluginId, pluginSecret);
     }
@@ -144,6 +148,10 @@ public class Client {
 
     public RoleConfService getRoleConfService() {
         return roleConf;
+    }
+
+    public AttachmentService getAttachmentService() {
+        return attachment;
     }
 
     public static final class Builder {
@@ -232,6 +240,7 @@ public class Client {
             client.projectRelation = new ProjectRelationServiceImpl(config);
             client.measure = new MeasureServiceImpl(config);
             client.roleConf = new RoleConfServiceImpl(config);
+            client.attachment = new AttachmentServiceImpl(config);
             return client;
         }
     }

@@ -7,7 +7,7 @@ import java.io.File;
 public class SpecialUploadAttachmentReqBody {
 
     @SerializedName("file")
-    private java.io.File file;
+    private File file;
 
     public File getFile() {
         return file;
