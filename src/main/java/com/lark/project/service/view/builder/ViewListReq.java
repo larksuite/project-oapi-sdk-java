@@ -78,6 +78,11 @@ public class ViewListReq {
             return this;
         }
 
+        public Builder viewName(String viewName) {
+            this.body.setViewName(viewName);
+            return this;
+        }
+
         public Builder viewIDs(List<String> viewIDs) {
             this.body.setViewIDs(viewIDs);
             return this;
