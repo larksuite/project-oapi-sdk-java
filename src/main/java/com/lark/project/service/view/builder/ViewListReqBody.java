@@ -25,6 +25,8 @@ import java.util.List;
 public class ViewListReqBody {
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
+    @SerializedName("view_name")
+    private String viewName;
     @SerializedName("view_ids")
     private List<String> viewIDs;
     @SerializedName("created_by")
@@ -42,6 +44,14 @@ public class ViewListReqBody {
 
     public void setWorkItemTypeKey(String workItemTypeKey) {
         this.workItemTypeKey = workItemTypeKey;
+    }
+
+    public String getViewName() {
+        return this.viewName;
+    }
+
+    public void setViewName(String viewName) {
+        this.viewName = viewName;
     }
 
     public List<String> getViewIDs() {
