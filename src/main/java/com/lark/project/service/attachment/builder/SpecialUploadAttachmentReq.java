@@ -60,6 +60,11 @@ public class SpecialUploadAttachmentReq {
             return this;
         }
 
+        public Builder fileMimeType(String mimeType) {
+            this.body.setMimeType(mimeType);
+            return this;
+        }
+
         public SpecialUploadAttachmentReq build() {
             return new SpecialUploadAttachmentReq(this);
         }
