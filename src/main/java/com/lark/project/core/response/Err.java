@@ -16,11 +16,16 @@
 
 package com.lark.project.core.response;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Err {
 
     private int code;
 
     private String msg;
+
+    @SerializedName("log_id")
+    private String logId;
 
     public int getCode() {
         return code;
@@ -38,4 +43,11 @@ public class Err {
         this.msg = msg;
     }
 
+    public String getLogId() {
+        return logId;
+    }
+
+    public void setLogId(String logId) {
+        this.logId = logId;
+    }
 }
