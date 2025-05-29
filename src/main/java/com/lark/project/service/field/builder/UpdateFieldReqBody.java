@@ -17,6 +17,7 @@
 package com.lark.project.service.field.builder;
 
 import com.google.gson.annotations.SerializedName;
+import com.lark.project.service.field.model.FieldValue;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class UpdateFieldReqBody {
     @SerializedName("field_key")
     private String fieldKey;
     @SerializedName("field_value")
-    private Object fieldValue;
+    private List<FieldValue> fieldValue;
     @SerializedName("free_add")
     private Long freeAdd;
     @SerializedName("work_item_relation_uuid")
@@ -57,11 +58,11 @@ public class UpdateFieldReqBody {
         this.fieldKey = fieldKey;
     }
 
-    public Object getFieldValue() {
+    public List<FieldValue> getFieldValue() {
         return this.fieldValue;
     }
 
-    public void setFieldValue(Object fieldValue) {
+    public void setFieldValue(List<FieldValue> fieldValue) {
         this.fieldValue = fieldValue;
     }
 
