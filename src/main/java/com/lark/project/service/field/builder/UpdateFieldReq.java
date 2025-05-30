@@ -101,7 +101,7 @@ public class UpdateFieldReq {
             return this;
         }
 
-        public Builder fieldValue(List<FieldValue> fieldValue) {
+        public Builder fieldValue(Object fieldValue) {
             this.body.setFieldValue(fieldValue);
             return this;
         }
