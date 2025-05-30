@@ -28,7 +28,7 @@ public class UpdateFieldReqBody {
     @SerializedName("field_key")
     private String fieldKey;
     @SerializedName("field_value")
-    private List<FieldValue> fieldValue;
+    private Object fieldValue;
     @SerializedName("free_add")
     private Long freeAdd;
     @SerializedName("work_item_relation_uuid")
@@ -58,11 +58,11 @@ public class UpdateFieldReqBody {
         this.fieldKey = fieldKey;
     }
 
-    public List<FieldValue> getFieldValue() {
+    public Object getFieldValue() {
         return this.fieldValue;
     }
 
-    public void setFieldValue(List<FieldValue> fieldValue) {
+    public void setFieldValue(Object fieldValue) {
         this.fieldValue = fieldValue;
     }
 
