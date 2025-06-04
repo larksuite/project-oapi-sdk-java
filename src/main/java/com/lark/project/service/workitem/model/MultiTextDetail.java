@@ -81,6 +81,7 @@ public class MultiTextDetail {
     }
 
     public String getDocHTML() {
+
         return this.docHTML;
     }
 
