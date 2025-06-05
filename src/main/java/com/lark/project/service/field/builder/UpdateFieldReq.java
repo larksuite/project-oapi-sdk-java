@@ -19,6 +19,7 @@ package com.lark.project.service.field.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
+import com.lark.project.service.field.model.FieldValue;
 
 import java.util.List;
 
