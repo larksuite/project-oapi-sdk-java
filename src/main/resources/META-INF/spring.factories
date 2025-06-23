@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration= \
+com.bestzyx.larksuite.project.autoconfigure.LarksuiteProjectAutoConfiguration
+# larksuite auto configuration class

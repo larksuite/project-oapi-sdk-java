@@ -17,10 +17,10 @@ import com.lark.project.Client;
  */
 @Configuration
 @EnableConfigurationProperties(LarksuiteProjectProperties.class)
-public class LarksuiteAutoConfiguration {
+public class LarksuiteProjectAutoConfiguration {
     
     private static final Logger log = LoggerFactory
-            .getLogger(LarksuiteAutoConfiguration.class);
+            .getLogger(LarksuiteProjectAutoConfiguration.class);
     
     @Bean
     @ConditionalOnMissingBean(Client.class)

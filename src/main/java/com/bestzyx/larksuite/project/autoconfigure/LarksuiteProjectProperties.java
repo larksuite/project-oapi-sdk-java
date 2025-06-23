@@ -14,7 +14,7 @@ import static com.lark.project.core.token.AccessTokenType.AccessTokenTypePlugin;
  *
  * @author zhangyongxiang
  */
-@ConfigurationProperties(prefix = "lark.project.client")
+@ConfigurationProperties(prefix = "larksuite.project.client")
 public class LarksuiteProjectProperties {
     
     /**
