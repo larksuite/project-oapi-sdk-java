@@ -11,6 +11,8 @@ public class SpecialUploadAttachmentReq {
     @Path
     @SerializedName("project_key")
     private String projectKey;
+
+
     @Body
     private SpecialUploadAttachmentReqBody body;
 
@@ -60,6 +62,10 @@ public class SpecialUploadAttachmentReq {
             return this;
         }
 
+        public Builder fileMimeType(String mimeType) {
+            this.body.setMimeType(mimeType);
+            return this;
+        }
         public SpecialUploadAttachmentReq build() {
             return new SpecialUploadAttachmentReq(this);
         }
