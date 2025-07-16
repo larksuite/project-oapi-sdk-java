@@ -51,4 +51,14 @@ public class LarksuiteProjectAutoConfiguration {
         }
         return client;
     }
+    
+    @Bean
+    @ConditionalOnMissingBean
+    public SimpleLarksuiteProjectService simpleLarksuiteProjectService(
+            LarksuiteProjectProperties larksuiteProjectProperties,
+            Client client) {
+        return new DefaultSimpleLarksuiteProjectService(client,
+                larksuiteProjectProperties.getMaxRetryTimes() < 0 ? 3
+                        : larksuiteProjectProperties.getMaxRetryTimes());
+    }
 }

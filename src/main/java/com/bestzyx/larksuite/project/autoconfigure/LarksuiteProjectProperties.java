@@ -47,6 +47,11 @@ public class LarksuiteProjectProperties {
      */
     private boolean logReqAtDebug = false;
     
+    /**
+     * max retry times
+     */
+    private int maxRetryTimes = 3;
+    
     public String getPluginId() {
         return this.pluginId;
     }
@@ -95,34 +100,43 @@ public class LarksuiteProjectProperties {
         this.logReqAtDebug = logReqAtDebug;
     }
     
+    public int getMaxRetryTimes() {
+        return this.maxRetryTimes;
+    }
+    
+    public void setMaxRetryTimes(int maxRetryTimes) {
+        this.maxRetryTimes = maxRetryTimes;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
         LarksuiteProjectProperties that = (LarksuiteProjectProperties) o;
-        return this.accessTokenType == that.accessTokenType
-                && this.logReqAtDebug == that.logReqAtDebug
-                && Objects.equals(this.pluginId, that.pluginId)
-                && Objects.equals(this.pluginSecret, that.pluginSecret)
-                && Objects.equals(this.baseUrl, that.baseUrl)
-                && Objects.equals(this.requestTimeout, that.requestTimeout);
+        return isLogReqAtDebug() == that.isLogReqAtDebug()
+                && getMaxRetryTimes() == that.getMaxRetryTimes()
+                && Objects.equals(getPluginId(), that.getPluginId())
+                && Objects.equals(getPluginSecret(), that.getPluginSecret())
+                && getAccessTokenType() == that.getAccessTokenType()
+                && Objects.equals(getBaseUrl(), that.getBaseUrl()) && Objects
+                        .equals(getRequestTimeout(), that.getRequestTimeout());
     }
     
     @Override
     public int hashCode() {
-        return Objects.hash(this.pluginId, this.pluginSecret,
-                this.accessTokenType, this.baseUrl, this.requestTimeout,
-                this.logReqAtDebug);
+        return Objects.hash(getPluginId(), getPluginSecret(),
+                getAccessTokenType(), getBaseUrl(), getRequestTimeout(),
+                isLogReqAtDebug(), getMaxRetryTimes());
     }
     
     @Override
     public String toString() {
-        return "LarksuiteProperties{" + "appId='" + this.pluginId + '\''
-                + ", appSecret='" + this.pluginSecret + '\''
-                + ", marketplaceApp=" + this.accessTokenType + ", baseUrl='"
+        return "LarksuiteProjectProperties{" + "pluginId='" + this.pluginId
+                + '\'' + ", pluginSecret='" + this.pluginSecret + '\''
+                + ", accessTokenType=" + this.accessTokenType + ", baseUrl='"
                 + this.baseUrl + '\'' + ", requestTimeout="
                 + this.requestTimeout + ", logReqAtDebug=" + this.logReqAtDebug
-                + '}';
+                + ", maxRetryTimes=" + this.maxRetryTimes + '}';
     }
 }
