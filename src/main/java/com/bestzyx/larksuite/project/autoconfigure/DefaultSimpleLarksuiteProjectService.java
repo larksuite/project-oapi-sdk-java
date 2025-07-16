@@ -39,13 +39,13 @@ public class DefaultSimpleLarksuiteProjectService
     
     public static final int USER_NOT_FOUND_CODE = 30006;
     
-    private final Client larkProjectClient;
+    private final Client larksuiteProjectClient;
     
     private final int maxRetryTimes;
     
-    public DefaultSimpleLarksuiteProjectService(Client larkProjectClient,
+    public DefaultSimpleLarksuiteProjectService(Client larksuiteProjectClient,
             int maxRetryTimes) {
-        this.larkProjectClient = larkProjectClient;
+        this.larksuiteProjectClient = larksuiteProjectClient;
         this.maxRetryTimes = maxRetryTimes;
     }
     
@@ -58,7 +58,7 @@ public class DefaultSimpleLarksuiteProjectService
         RuntimeException exception;
         do {
             try {
-                final CreateWorkItemResp resp = this.larkProjectClient
+                final CreateWorkItemResp resp = this.larksuiteProjectClient
                         .getWorkItemService().createWorkItem(
                                 CreateWorkItemReq.newBuilder()
                                         .workItemTypeKey(workItemTypeKey)
@@ -88,10 +88,11 @@ public class DefaultSimpleLarksuiteProjectService
                             resp.getRequestId(),
                             DEFAULT.toJson(resp.getErr())));
                 } else {
-                    log.info("Successfully created larksuite project work item. "
-                            + "request: projectKey={}, workItemTypeKey={}, templateId={}, name={}, fieldValuePairs={}, userKey={}"
-                            + ", response: workItemId={}", projectKey,
-                            workItemTypeKey, templateId, name,
+                    log.info(
+                            "Successfully created larksuite project work item. "
+                                    + "request: projectKey={}, workItemTypeKey={}, templateId={}, name={}, fieldValuePairs={}, userKey={}"
+                                    + ", response: workItemId={}",
+                            projectKey, workItemTypeKey, templateId, name,
                             DEFAULT.toJson(fieldValuePairs), userKey,
                             resp.getData());
                     return resp.getData();
@@ -120,7 +121,7 @@ public class DefaultSimpleLarksuiteProjectService
         RuntimeException exception;
         do {
             try {
-                final NodeStateChangeResp resp = this.larkProjectClient
+                final NodeStateChangeResp resp = this.larksuiteProjectClient
                         .getWorkItemService().nodeStateChange(
                                 NodeStateChangeReq.newBuilder()
                                         .projectKey(projectKey)
@@ -150,11 +151,12 @@ public class DefaultSimpleLarksuiteProjectService
                             resp.getRequestId(),
                             DEFAULT.toJson(resp.getErr())));
                 } else {
-                    log.info("Successfully changed larksuite project work item status. "
-                            + "request: projectKey={}, workItemTypeKey={}, workItemId={}, transitionId={}, userKey={}"
-                            + ", response: workItemId={}", projectKey,
-                            workItemTypeKey, workItemId, transitionId, userKey,
-                            DEFAULT.toJson(resp));
+                    log.info(
+                            "Successfully changed larksuite project work item status. "
+                                    + "request: projectKey={}, workItemTypeKey={}, workItemId={}, transitionId={}, userKey={}"
+                                    + ", response: workItemId={}",
+                            projectKey, workItemTypeKey, workItemId,
+                            transitionId, userKey, DEFAULT.toJson(resp));
                     return;
                 }
             } catch (final Exception e) {
@@ -181,7 +183,7 @@ public class DefaultSimpleLarksuiteProjectService
             RuntimeException exception;
             do {
                 try {
-                    final QueryUserDetailResp resp = this.larkProjectClient
+                    final QueryUserDetailResp resp = this.larksuiteProjectClient
                             .getUserService()
                             .queryUserDetail(QueryUserDetailReq.newBuilder()
                                     .emails(Arrays.asList(emails)).build(),
@@ -236,7 +238,7 @@ public class DefaultSimpleLarksuiteProjectService
         RuntimeException exception;
         do {
             try {
-                final SearchUserResp resp = this.larkProjectClient
+                final SearchUserResp resp = this.larksuiteProjectClient
                         .getUserService()
                         .searchUser(SearchUserReq.newBuilder()
                                 .projectKey(projectKey).query(keyword).build(),

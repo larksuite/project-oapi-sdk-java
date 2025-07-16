@@ -23,7 +23,7 @@ public class LarksuiteProjectAutoConfiguration {
             .getLogger(LarksuiteProjectAutoConfiguration.class);
     
     @Bean
-    @ConditionalOnMissingBean(Client.class)
+    @ConditionalOnMissingBean
     public Client larksuiteProjectClient(
             LarksuiteProjectProperties larksuiteProjectProperties,
             ObjectProvider<LarksuiteProjectPropertiesCustomizer> customizers) {
