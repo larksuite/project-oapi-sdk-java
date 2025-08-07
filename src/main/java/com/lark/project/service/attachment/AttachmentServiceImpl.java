@@ -104,4 +104,27 @@ public class AttachmentServiceImpl implements AttachmentService{
 
         return resp;
     }
+
+    @Override
+    public DeleteAttachmentResp deleteAttachment(DeleteAttachmentReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/file/delete"
+                , false
+                , req);
+
+        DeleteAttachmentResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteAttachmentResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/file/delete"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }
