@@ -114,6 +114,11 @@ public class UploadAttachmentReq {
             return this;
         }
 
+        public Builder index(Integer index) {
+            this.body.setIndex(index);
+            return this;
+        }
+
         public UploadAttachmentReq build() {
             return new UploadAttachmentReq(this);
         }
