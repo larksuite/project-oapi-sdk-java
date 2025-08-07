@@ -17,6 +17,9 @@ public class UploadAttachmentReqBody {
     @SerializedName("field_alias")
     private String fieldAlias;
 
+    @SerializedName("index")
+    private Integer index;
+
     public File getFile() {
         return file;
     }
@@ -47,5 +50,13 @@ public class UploadAttachmentReqBody {
 
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
+    }
+
+    public Integer getIndex() {
+        return index;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
     }
 }
