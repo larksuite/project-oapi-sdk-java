@@ -14,4 +14,7 @@ public interface AttachmentService {
     // 附件上传
     public SpecialUploadAttachmentResp specialUploadAttachment(SpecialUploadAttachmentReq req, RequestOptions reqOptions) throws Exception;
 
+    // 附件删除
+    public DeleteAttachmentResp deleteAttachment(DeleteAttachmentReq req, RequestOptions reqOptions) throws Exception;
+
 }
