@@ -17,6 +17,7 @@
 package com.lark.project.service.task.builder;
 
 import com.google.gson.annotations.SerializedName;
+import com.lark.project.service.field.model.FieldValuePair;
 import com.lark.project.service.user.model.RoleOwner;
 import com.lark.project.service.workitem.model.Schedule;
 
@@ -38,6 +39,8 @@ public class CreateSubTaskReqBody {
     private Schedule schedule;
     @SerializedName("note")
     private String note;
+    @SerializedName("field_value_pairs")
+    private List<FieldValuePair> fieldValuePairs;
 
     public String getNodeID() {
         return this.nodeID;
@@ -93,5 +96,13 @@ public class CreateSubTaskReqBody {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public List<FieldValuePair> getFieldValuePairs() {
+        return fieldValuePairs;
+    }
+
+    public void setFieldValuePairs(List<FieldValuePair> fieldValuePairs) {
+        this.fieldValuePairs = fieldValuePairs;
     }
 }

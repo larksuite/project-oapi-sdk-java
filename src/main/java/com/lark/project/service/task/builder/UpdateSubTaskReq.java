@@ -177,6 +177,11 @@ public class UpdateSubTaskReq {
             return this;
         }
 
+        public Builder updateFields(List<FieldValuePair> fieldValuePairs) {
+            this.body.setUpdateFields(fieldValuePairs);
+            return this;
+        }
+
         public UpdateSubTaskReq build() {
             return new UpdateSubTaskReq(this);
         }

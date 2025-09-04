@@ -37,6 +37,8 @@ public class UpdateSubTaskReqBody {
     private String note;
     @SerializedName("deliverable")
     private List<FieldValuePair> deliverable;
+    @SerializedName("update_fields")
+    private List<FieldValuePair> updateFields;
 
     public String getName() {
         return this.name;
@@ -84,5 +86,13 @@ public class UpdateSubTaskReqBody {
 
     public void setDeliverable(List<FieldValuePair> deliverable) {
         this.deliverable = deliverable;
+    }
+
+    public List<FieldValuePair> getUpdateFields() {
+        return updateFields;
+    }
+
+    public void setUpdateFields(List<FieldValuePair> updateFields) {
+        this.updateFields = updateFields;
     }
 }
