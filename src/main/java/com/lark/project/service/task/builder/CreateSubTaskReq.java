@@ -19,6 +19,7 @@ package com.lark.project.service.task.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
+import com.lark.project.service.field.model.FieldValuePair;
 import com.lark.project.service.user.model.RoleOwner;
 import com.lark.project.service.workitem.model.Schedule;
 
@@ -142,6 +143,11 @@ public class CreateSubTaskReq {
 
         public Builder note(String note) {
             this.body.setNote(note);
+            return this;
+        }
+
+        public Builder fieldValuePairs(List<FieldValuePair> fieldValuePairs) {
+            this.body.setFieldValuePairs(fieldValuePairs);
             return this;
         }
 
