@@ -23,6 +23,12 @@ import java.util.List;
 
 
 public class NodesConnections {
+    @SerializedName("template_id")
+    private Long templateID;
+
+    @SerializedName("version")
+    private Long version;
+
     @SerializedName("workflow_nodes")
     private List<WorkflowNode> workflowNodes;
 
@@ -67,4 +73,19 @@ public class NodesConnections {
         this.userDetails = userDetails;
     }
 
+    public Long getTemplateID() {
+        return templateID;
+    }
+
+    public void setTemplateID(Long templateID) {
+        this.templateID = templateID;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
 }

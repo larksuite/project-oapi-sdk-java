@@ -6,7 +6,7 @@
 
     <groupId>com.larksuite.project</groupId>
     <artifactId>oapi-sdk</artifactId>
-    <version>1.0.19</version>
+    <version>1.0.20</version>
     <build>
         <plugins>
             <plugin>
@@ -125,5 +125,9 @@
             <id>meego</id>
             <url>https://artifacts-cn-beijing.volces.com/repository/meego/</url>
         </repository>
+        <snapshotRepository>
+            <id>meego-snapshot</id>
+            <url>https://artifacts-cn-beijing.volces.com/repository/meego-snapshot/</url>
+        </snapshotRepository>
     </distributionManagement>
 </project>
