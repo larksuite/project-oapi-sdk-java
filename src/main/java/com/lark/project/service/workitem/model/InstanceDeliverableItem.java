@@ -10,13 +10,13 @@ public class InstanceDeliverableItem {
     private String name;
 
     @SerializedName("work_item_id")
-    private long workItemID;
+    private Long workItemID;
 
     @SerializedName("deletable")
-    private boolean deletable;
+    private Boolean deletable;
 
     @SerializedName("must_complete")
-    private boolean mustComplete;
+    private Boolean mustComplete;
 
     @SerializedName("state_key")
     private String stateKey;
@@ -39,27 +39,27 @@ public class InstanceDeliverableItem {
         this.name = name;
     }
 
-    public long getWorkItemID() {
+    public Long getWorkItemID() {
         return workItemID;
     }
 
-    public void setWorkItemID(long workItemID) {
+    public void setWorkItemID(Long workItemID) {
         this.workItemID = workItemID;
     }
 
-    public boolean isDeletable() {
+    public Boolean getDeletable() {
         return deletable;
     }
 
-    public void setDeletable(boolean deletable) {
-        this.deletable = deletable;
-    }
-
-    public boolean isMustComplete() {
+    public Boolean getMustComplete() {
         return mustComplete;
     }
 
-    public void setMustComplete(boolean mustComplete) {
+    public void setDeletable(Boolean deletable) {
+        this.deletable = deletable;
+    }
+
+    public void setMustComplete(Boolean mustComplete) {
         this.mustComplete = mustComplete;
     }
 

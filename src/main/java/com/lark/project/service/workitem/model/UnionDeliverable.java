@@ -9,7 +9,7 @@ public class UnionDeliverable {
     private List<FieldDeliverableItem> fieldDeliverables;
 
     @SerializedName("instance_deliverables")
-    private List<InstanceDeliverableItem> InstanceDeliverables;
+    private List<InstanceDeliverableItem> instanceDeliverables;
 
     public List<FieldDeliverableItem> getFieldDeliverables() {
         return fieldDeliverables;
@@ -20,10 +20,10 @@ public class UnionDeliverable {
     }
 
     public List<InstanceDeliverableItem> getInstanceDeliverables() {
-        return InstanceDeliverables;
+        return instanceDeliverables;
     }
 
     public void setInstanceDeliverables(List<InstanceDeliverableItem> instanceDeliverables) {
-        InstanceDeliverables = instanceDeliverables;
+        this.instanceDeliverables = instanceDeliverables;
     }
 }

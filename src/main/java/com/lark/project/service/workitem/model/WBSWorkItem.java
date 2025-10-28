@@ -71,10 +71,10 @@ public class WBSWorkItem {
     private UnionDeliverable unionDeliverable;
 
     @SerializedName("start_time")
-    private long startTime;
+    private Long startTime;
 
     @SerializedName("finish_time")
-    private long finishTime;
+    private Long finishTime;
 
     public String getNodeUUID() {
         return this.nodeUUID;
@@ -196,19 +196,19 @@ public class WBSWorkItem {
         this.unionDeliverable = unionDeliverable;
     }
 
-    public long getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(long startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public long getFinishTime() {
+    public Long getFinishTime() {
         return finishTime;
     }
 
-    public void setFinishTime(long finishTime) {
+    public void setFinishTime(Long finishTime) {
         this.finishTime = finishTime;
     }
 }
