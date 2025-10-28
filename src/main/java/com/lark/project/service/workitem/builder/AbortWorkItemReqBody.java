@@ -24,6 +24,8 @@ public class AbortWorkItemReqBody {
     private Boolean isAborted;
     @SerializedName("reason")
     private String reason;
+    @SerializedName("reason_option")
+    private String reasonOption;
 
     public Boolean getIsAborted() {
         return this.isAborted;
@@ -39,5 +41,13 @@ public class AbortWorkItemReqBody {
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public String getReasonOption() {
+        return reasonOption;
+    }
+
+    public void setReasonOption(String reasonOption) {
+        this.reasonOption = reasonOption;
     }
 }

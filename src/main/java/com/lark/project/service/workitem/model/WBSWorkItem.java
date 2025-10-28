@@ -67,6 +67,15 @@ public class WBSWorkItem {
     @SerializedName("milestone")
     private Boolean milestone;
 
+    @SerializedName("union_deliverable")
+    private UnionDeliverable unionDeliverable;
+
+    @SerializedName("start_time")
+    private Long startTime;
+
+    @SerializedName("finish_time")
+    private Long finishTime;
+
     public String getNodeUUID() {
         return this.nodeUUID;
     }
@@ -179,4 +188,27 @@ public class WBSWorkItem {
         this.milestone = milestone;
     }
 
+    public UnionDeliverable getUnionDeliverable() {
+        return unionDeliverable;
+    }
+
+    public void setUnionDeliverable(UnionDeliverable unionDeliverable) {
+        this.unionDeliverable = unionDeliverable;
+    }
+
+    public Long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
+
+    public Long getFinishTime() {
+        return finishTime;
+    }
+
+    public void setFinishTime(Long finishTime) {
+        this.finishTime = finishTime;
+    }
 }
