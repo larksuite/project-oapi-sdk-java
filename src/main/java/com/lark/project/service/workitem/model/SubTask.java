@@ -63,6 +63,10 @@ public class SubTask {
     @SerializedName("deliverable")
     private List<FieldValuePair> deliverable;
 
+    @SerializedName("fields")
+    private List<FieldValuePair> fields;
+
+
     public String getID() {
         return this.id;
     }
@@ -167,4 +171,11 @@ public class SubTask {
         this.deliverable = deliverable;
     }
 
+    public List<FieldValuePair> getFields() {
+        return fields;
+    }
+
+    public void setFields(List<FieldValuePair> fields) {
+        this.fields = fields;
+    }
 }

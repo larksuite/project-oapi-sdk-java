@@ -33,7 +33,6 @@ public class AbortWorkItemReq {
     @Body
     private AbortWorkItemReqBody body;
 
-
     public AbortWorkItemReq() {
     }
 
@@ -113,6 +112,11 @@ public class AbortWorkItemReq {
 
         public Builder reason(String reason) {
             this.body.setReason(reason);
+            return this;
+        }
+
+        public Builder reasonOption(String reasonOption) {
+            this.body.setReasonOption(reasonOption);
             return this;
         }
 
