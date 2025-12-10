@@ -102,4 +102,7 @@ public interface WorkItemService {
     // 获取工作流详情（wbs）
     public WbsViewResp wbsView(WbsViewReq req, RequestOptions reqOptions) throws Exception;
 
+    //增量更新复合字段
+    UpdateCompoundFieldValueResp updateCompoundFieldValue(UpdateCompoundFieldValueReq req, RequestOptions reqOptions) throws Exception;
+
 }

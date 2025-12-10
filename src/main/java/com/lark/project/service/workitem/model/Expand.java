@@ -35,6 +35,15 @@ public class Expand {
     @SerializedName("need_sub_task_parent")
     private Boolean needSubTaskParent;
 
+    @SerializedName("need_union_deliverable")
+    private Boolean needUnionDeliverable;
+
+    @SerializedName("need_wbs_relation_chain_entity")
+    private Boolean needWBSRelationChainEntity;
+
+    @SerializedName("need_wbs_relation_chain_path")
+    private Boolean needWBSRelationChainPath;
+
     public Boolean getNeedWorkflow() {
         return this.needWorkflow;
     }
@@ -75,4 +84,27 @@ public class Expand {
         this.needSubTaskParent = needSubTaskParent;
     }
 
+    public Boolean getNeedUnionDeliverable() {
+        return needUnionDeliverable;
+    }
+
+    public void setNeedUnionDeliverable(Boolean needUnionDeliverable) {
+        this.needUnionDeliverable = needUnionDeliverable;
+    }
+
+    public Boolean getNeedWBSRelationChainEntity() {
+        return needWBSRelationChainEntity;
+    }
+
+    public void setNeedWBSRelationChainEntity(Boolean needWBSRelationChainEntity) {
+        this.needWBSRelationChainEntity = needWBSRelationChainEntity;
+    }
+
+    public Boolean getNeedWBSRelationChainPath() {
+        return needWBSRelationChainPath;
+    }
+
+    public void setNeedWBSRelationChainPath(Boolean needWBSRelationChainPath) {
+        this.needWBSRelationChainPath = needWBSRelationChainPath;
+    }
 }

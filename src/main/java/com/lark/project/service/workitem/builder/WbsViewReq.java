@@ -19,6 +19,7 @@ package com.lark.project.service.workitem.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
+import com.lark.project.core.annotation.Query;
 import com.lark.project.service.workitem.model.Expand;
 
 public class WbsViewReq {
@@ -31,6 +32,12 @@ public class WbsViewReq {
     @Path
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
+    @Query
+    @SerializedName("need_union_deliverable")
+    private Boolean needUnionDeliverable;
+    @Query
+    @SerializedName("need_schedule_table_agg")
+    private Boolean needScheduleTableAgg;
     @Body
     private WbsViewReqBody body;
 
@@ -42,6 +49,8 @@ public class WbsViewReq {
         this.projectKey = builder.projectKey;
         this.workItemID = builder.workItemID;
         this.workItemTypeKey = builder.workItemTypeKey;
+        this.needUnionDeliverable = builder.needUnionDeliverable;
+        this.needScheduleTableAgg = builder.needScheduleTableAgg;
         this.body = builder.body;
 
     }
@@ -74,6 +83,22 @@ public class WbsViewReq {
         this.workItemTypeKey = workItemTypeKey;
     }
 
+    public Boolean getNeedUnionDeliverable() {
+        return needUnionDeliverable;
+    }
+
+    public void setNeedUnionDeliverable(Boolean needUnionDeliverable) {
+        this.needUnionDeliverable = needUnionDeliverable;
+    }
+
+    public Boolean getNeedScheduleTableAgg() {
+        return needScheduleTableAgg;
+    }
+
+    public void setNeedScheduleTableAgg(Boolean needScheduleTableAgg) {
+        this.needScheduleTableAgg = needScheduleTableAgg;
+    }
+
     public WbsViewReqBody getWbsViewReqBody() {
         return this.body;
     }
@@ -86,6 +111,8 @@ public class WbsViewReq {
         private String projectKey;
         private Long workItemID;
         private String workItemTypeKey;
+        private Boolean needUnionDeliverable;
+        private Boolean needScheduleTableAgg;
         private WbsViewReqBody body;
 
         public Builder() {
@@ -102,11 +129,20 @@ public class WbsViewReq {
             return this;
         }
 
+        public Builder needUnionDeliverable(Boolean needUnionDeliverable) {
+            this.needUnionDeliverable = needUnionDeliverable;
+            return this;
+        }
+
+        public Builder needScheduleTableAgg(Boolean needScheduleTableAgg) {
+            this.needScheduleTableAgg = needScheduleTableAgg;
+            return this;
+        }
+
         public Builder workItemTypeKey(String workItemTypeKey) {
             this.workItemTypeKey = workItemTypeKey;
             return this;
         }
-
         public Builder expand(Expand expand) {
             this.body.setExpand(expand);
             return this;
