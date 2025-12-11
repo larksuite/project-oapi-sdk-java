@@ -44,6 +44,41 @@ public class WbsViewResponse {
     @SerializedName("user_details")
     private List<UserDetail> userDetails;
 
+
+    @SerializedName("connections")
+    private List<Connection> connections;
+
+    @SerializedName("relation_chain_path")
+    private WBSRelationChainPath relationChainPath;
+
+    @SerializedName("relation_chain_entity")
+    private WBSRelationChainEntity relationChainEntity;
+
+
+    public List<Connection> getConnections() {
+        return connections;
+    }
+
+    public void setConnections(List<Connection> connections) {
+        this.connections = connections;
+    }
+
+    public WBSRelationChainPath getRelationChainPath() {
+        return relationChainPath;
+    }
+
+    public void setRelationChainPath(WBSRelationChainPath relationChainPath) {
+        this.relationChainPath = relationChainPath;
+    }
+
+    public WBSRelationChainEntity getRelationChainEntity() {
+        return relationChainEntity;
+    }
+
+    public void setRelationChainEntity(WBSRelationChainEntity relationChainEntity) {
+        this.relationChainEntity = relationChainEntity;
+    }
+
     public String getTemplateKey() {
         return this.templateKey;
     }

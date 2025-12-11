@@ -658,4 +658,26 @@ public class WorkItemServiceImpl implements WorkItemService {
         return resp;
     }
 
+    // 增量更新复合字段
+    public UpdateCompoundFieldValueResp updateCompoundFieldValue(UpdateCompoundFieldValueReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/field_value/update_compound_field"
+                , false
+                , req);
+
+        UpdateCompoundFieldValueResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateCompoundFieldValueResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/field_value/update_compound_field"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }
