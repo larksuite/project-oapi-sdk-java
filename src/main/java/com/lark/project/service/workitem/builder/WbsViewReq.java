@@ -22,6 +22,11 @@ import com.lark.project.core.annotation.Path;
 import com.lark.project.core.annotation.Query;
 import com.lark.project.service.workitem.model.Expand;
 
+/**
+ * 获取工作流详情（WBS）的请求对象。
+ *
+ * <p>对应 OpenAPI：{@code GET /open_api/:project_key/work_item/:work_item_type_key/:work_item_id/wbs_view}。</p>
+ */
 public class WbsViewReq {
     @Path
     @SerializedName("project_key")
@@ -129,11 +134,22 @@ public class WbsViewReq {
             return this;
         }
 
+        /**
+         * 是否融合需要交付物。
+         *
+         * <p>对应查询参数 {@code need_union_deliverable}，含义与请求体
+         * {@link Expand#getNeedUnionDeliverable()} 一致。</p>
+         */
         public Builder needUnionDeliverable(Boolean needUnionDeliverable) {
             this.needUnionDeliverable = needUnionDeliverable;
             return this;
         }
 
+        /**
+         * 扩展查询：是否需要计划表自定义列聚合字段。
+         *
+         * <p>对应查询参数 {@code need_schedule_table_agg}。</p>
+         */
         public Builder needScheduleTableAgg(Boolean needScheduleTableAgg) {
             this.needScheduleTableAgg = needScheduleTableAgg;
             return this;

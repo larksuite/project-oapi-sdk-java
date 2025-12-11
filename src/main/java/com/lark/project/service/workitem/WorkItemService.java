@@ -99,10 +99,22 @@ public interface WorkItemService {
     // 更新实际工时
     public UpdateWorkingHourRecordResp updateWorkingHourRecord(UpdateWorkingHourRecordReq req, RequestOptions reqOptions) throws Exception;
 
-    // 获取工作流详情（wbs）
+    /**
+     * 获取工作流详情（WBS）。
+     *
+     * <p>对应 OpenAPI：{@code GET /open_api/:project_key/work_item/:work_item_type_key/:work_item_id/wbs_view}。</p>
+     *
+     * <p>请求中可通过 {@code need_union_deliverable} 和 {@code need_schedule_table_agg}
+     * 参数控制返回是否包含融合交付物以及计划表自定义列聚合字段。</p>
+     */
     public WbsViewResp wbsView(WbsViewReq req, RequestOptions reqOptions) throws Exception;
 
-    //增量更新复合字段
-    UpdateCompoundFieldValueResp updateCompoundFieldValue(UpdateCompoundFieldValueReq req, RequestOptions reqOptions) throws Exception;
+    /**
+     * 按组更新复合字段值。
+     *
+     * <p>对应 OpenAPI：{@code POST /open_api/work_item/field_value/update_compound_field}，
+     * 支持对指定工作项的复合字段按组执行删除（delete）、更新（update）或添加（add）操作。</p>
+     */
+    public UpdateCompoundFieldValueResp updateCompoundFieldValue(UpdateCompoundFieldValueReq req, RequestOptions reqOptions) throws Exception;
 
 }

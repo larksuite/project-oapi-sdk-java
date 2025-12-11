@@ -6,6 +6,12 @@ import com.lark.project.service.workitem.model.Expand;
 
 import java.util.List;
 
+/**
+ * 按组更新复合字段值的请求对象。
+ *
+ * <p>对应 OpenAPI：{@code POST /open_api/work_item/field_value/update_compound_field}，
+ * 用于对指定工作项的复合字段按组执行删除（delete）、更新（update）或添加（add）操作。</p>
+ */
 public class UpdateCompoundFieldValueReq {
     @Body
     private UpdateCompoundFieldValueReqBody body;
