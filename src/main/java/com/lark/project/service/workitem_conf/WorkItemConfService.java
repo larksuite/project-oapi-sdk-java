@@ -39,4 +39,5 @@ public interface WorkItemConfService {
     // 更新流程类型配置
     public UpdateTemplateDetailResp updateTemplateDetail(UpdateTemplateDetailReq req, RequestOptions reqOptions) throws Exception;
 
+
 }
