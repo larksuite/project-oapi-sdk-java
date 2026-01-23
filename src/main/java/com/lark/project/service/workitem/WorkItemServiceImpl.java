@@ -680,4 +680,50 @@ public class WorkItemServiceImpl implements WorkItemService {
 
         return resp;
     }
+
+    @Override
+    public BatchUpdateWorkItemResp batchUpdateWorkItem(BatchUpdateWorkItemReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/batch_update"
+                , false
+                , req);
+
+        BatchUpdateWorkItemResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, BatchUpdateWorkItemResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/batch_update"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    @Override
+    public GetTaskResultResp getTaskResult(GetTaskResultReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "GET"
+                , "/open_api/task_result"
+                , false
+                , req);
+
+        GetTaskResultResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetTaskResultResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/task_result"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }
