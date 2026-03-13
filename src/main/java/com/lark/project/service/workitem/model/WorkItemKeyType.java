@@ -32,6 +32,9 @@ public class WorkItemKeyType {
     @SerializedName("api_name")
     private String aPIName;
 
+    @SerializedName("enable_model_resource_lib")
+    private Boolean enableModelResourceLib;
+
     public String getTypeKey() {
         return this.typeKey;
     }
@@ -62,6 +65,14 @@ public class WorkItemKeyType {
 
     public void setAPIName(String aPIName) {
         this.aPIName = aPIName;
+    }
+
+    public Boolean getEnableModelResourceLib() {
+        return this.enableModelResourceLib;
+    }
+
+    public void setEnableModelResourceLib(Boolean enableModelResourceLib) {
+        this.enableModelResourceLib = enableModelResourceLib;
     }
 
 }

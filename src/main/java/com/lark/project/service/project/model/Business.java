@@ -43,7 +43,7 @@ public class Business {
     private List<String> watchers;
 
     @SerializedName("order")
-    private Float order;
+    private Double order;
 
     @SerializedName("super_masters")
     private List<String> superMasters;
@@ -108,11 +108,11 @@ public class Business {
         this.watchers = watchers;
     }
 
-    public Float getOrder() {
+    public Double getOrder() {
         return this.order;
     }
 
-    public void setOrder(Float order) {
+    public void setOrder(Double order) {
         this.order = order;
     }
 
