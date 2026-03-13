@@ -125,6 +125,11 @@ public class FilterReq {
             return this;
         }
 
+        public Builder searchId(String searchId) {
+            this.body.setSearchId(searchId);
+            return this;
+        }
+
         public Builder pageNum(Long pageNum) {
             this.body.setPageNum(pageNum);
             return this;
