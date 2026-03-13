@@ -17,6 +17,7 @@
 package com.lark.project.service.field.builder;
 
 import com.google.gson.annotations.SerializedName;
+import com.lark.project.service.field.model.TeamOption;
 
 import java.util.List;
 
@@ -50,6 +51,8 @@ public class CreateFieldReqBody {
     private Boolean isMulti;
     @SerializedName("format")
     private Boolean format;
+    @SerializedName("team_option")
+    private TeamOption teamOption;
 
     public String getFieldName() {
         return this.fieldName;
@@ -161,5 +164,13 @@ public class CreateFieldReqBody {
 
     public void setFormat(Boolean format) {
         this.format = format;
+    }
+
+    public TeamOption getTeamOption() {
+        return this.teamOption;
+    }
+
+    public void setTeamOption(TeamOption teamOption) {
+        this.teamOption = teamOption;
     }
 }

@@ -68,6 +68,15 @@ public class WorkItemTypeInfo {
     @SerializedName("belong_roles")
     private List<SimpleRoleConf> belongRoles;
 
+    @SerializedName("actual_work_time_switch")
+    private Boolean actualWorkTimeSwitch;
+
+    @SerializedName("enable_model_resource_lib")
+    private Boolean enableModelResourceLib;
+
+    @SerializedName("resource_lib_setting")
+    private ResourceLibSetting resourceLibSetting;
+
     public String getTypeKey() {
         return this.typeKey;
     }
@@ -186,6 +195,54 @@ public class WorkItemTypeInfo {
 
     public void setBelongRoles(List<SimpleRoleConf> belongRoles) {
         this.belongRoles = belongRoles;
+    }
+
+    public Boolean getActualWorkTimeSwitch() {
+        return this.actualWorkTimeSwitch;
+    }
+
+    public void setActualWorkTimeSwitch(Boolean actualWorkTimeSwitch) {
+        this.actualWorkTimeSwitch = actualWorkTimeSwitch;
+    }
+
+    public Boolean getEnableModelResourceLib() {
+        return this.enableModelResourceLib;
+    }
+
+    public void setEnableModelResourceLib(Boolean enableModelResourceLib) {
+        this.enableModelResourceLib = enableModelResourceLib;
+    }
+
+    public ResourceLibSetting getResourceLibSetting() {
+        return this.resourceLibSetting;
+    }
+
+    public void setResourceLibSetting(ResourceLibSetting resourceLibSetting) {
+        this.resourceLibSetting = resourceLibSetting;
+    }
+
+    public static class ResourceLibSetting {
+        @SerializedName("enable_roles")
+        private List<SimpleRoleConf> enableRoles;
+
+        @SerializedName("enable_fields")
+        private List<com.lark.project.service.field.model.SimpleField> enableFields;
+
+        public List<SimpleRoleConf> getEnableRoles() {
+            return this.enableRoles;
+        }
+
+        public void setEnableRoles(List<SimpleRoleConf> enableRoles) {
+            this.enableRoles = enableRoles;
+        }
+
+        public List<com.lark.project.service.field.model.SimpleField> getEnableFields() {
+            return this.enableFields;
+        }
+
+        public void setEnableFields(List<com.lark.project.service.field.model.SimpleField> enableFields) {
+            this.enableFields = enableFields;
+        }
     }
 
 }

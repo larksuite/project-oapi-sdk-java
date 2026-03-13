@@ -19,6 +19,7 @@ package com.lark.project.service.field.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
+import com.lark.project.service.field.model.TeamOption;
 
 import java.util.List;
 
@@ -157,6 +158,11 @@ public class CreateFieldReq {
 
         public Builder format(Boolean format) {
             this.body.setFormat(format);
+            return this;
+        }
+
+        public Builder teamOption(TeamOption teamOption) {
+            this.body.setTeamOption(teamOption);
             return this;
         }
 
