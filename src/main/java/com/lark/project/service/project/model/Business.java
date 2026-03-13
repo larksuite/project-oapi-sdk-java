@@ -42,9 +42,6 @@ public class Business {
     @SerializedName("watchers")
     private List<String> watchers;
 
-    @SerializedName("order")
-    private Double order;
-
     @SerializedName("super_masters")
     private List<String> superMasters;
 
@@ -106,14 +103,6 @@ public class Business {
 
     public void setWatchers(List<String> watchers) {
         this.watchers = watchers;
-    }
-
-    public Double getOrder() {
-        return this.order;
-    }
-
-    public void setOrder(Double order) {
-        this.order = order;
     }
 
     public List<String> getSuperMasters() {
