@@ -1,7 +1,6 @@
 package com.lark.project.service.workitem.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.lark.project.service.workitem.WBSRelationChainEntityItem;
 
 import java.util.List;
 
