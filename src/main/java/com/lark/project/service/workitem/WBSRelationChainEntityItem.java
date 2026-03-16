@@ -1,4 +1,4 @@
-package com.lark.project.service.workitem.model;
+package com.lark.project.service.workitem;
 
 import com.google.gson.annotations.SerializedName;
 
