@@ -18,6 +18,7 @@ package com.lark.project.service.workitem.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.service.role_conf.model.SimpleRoleConf;
+import com.lark.project.service.field.model.SimpleField;
 
 import java.util.List;
 
@@ -226,7 +227,7 @@ public class WorkItemTypeInfo {
         private List<SimpleRoleConf> enableRoles;
 
         @SerializedName("enable_fields")
-        private List<com.lark.project.service.field.model.SimpleField> enableFields;
+        private List<SimpleField> enableFields;
 
         public List<SimpleRoleConf> getEnableRoles() {
             return this.enableRoles;
@@ -236,11 +237,11 @@ public class WorkItemTypeInfo {
             this.enableRoles = enableRoles;
         }
 
-        public List<com.lark.project.service.field.model.SimpleField> getEnableFields() {
+        public List<SimpleField> getEnableFields() {
             return this.enableFields;
         }
 
-        public void setEnableFields(List<com.lark.project.service.field.model.SimpleField> enableFields) {
+        public void setEnableFields(List<SimpleField> enableFields) {
             this.enableFields = enableFields;
         }
     }
