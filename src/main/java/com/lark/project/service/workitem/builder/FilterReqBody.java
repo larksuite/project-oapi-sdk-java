@@ -45,6 +45,8 @@ public class FilterReqBody {
     private List<String> priorities;
     @SerializedName("tags")
     private List<String> tags;
+    @SerializedName("search_id")
+    private String searchId;
     @SerializedName("page_num")
     private Long pageNum;
     @SerializedName("page_size")
@@ -132,6 +134,14 @@ public class FilterReqBody {
 
     public void setTags(List<String> tags) {
         this.tags = tags;
+    }
+
+    public String getSearchId() {
+        return this.searchId;
+    }
+
+    public void setSearchId(String searchId) {
+        this.searchId = searchId;
     }
 
     public Long getPageNum() {

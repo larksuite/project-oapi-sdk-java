@@ -29,6 +29,12 @@ public class SearchParam {
     @SerializedName("operator")
     private String operator;
 
+    @SerializedName("pre_operator")
+    private String preOperator;
+
+    @SerializedName("value_search_groups")
+    private SearchGroup valueSearchGroups;
+
     public String getParamKey() {
         return this.paramKey;
     }
@@ -51,6 +57,22 @@ public class SearchParam {
 
     public void setOperator(String operator) {
         this.operator = operator;
+    }
+
+    public String getPreOperator() {
+        return this.preOperator;
+    }
+
+    public void setPreOperator(String preOperator) {
+        this.preOperator = preOperator;
+    }
+
+    public SearchGroup getValueSearchGroups() {
+        return this.valueSearchGroups;
+    }
+
+    public void setValueSearchGroups(SearchGroup valueSearchGroups) {
+        this.valueSearchGroups = valueSearchGroups;
     }
 
 }

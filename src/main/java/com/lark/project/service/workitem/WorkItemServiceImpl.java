@@ -83,6 +83,29 @@ public class WorkItemServiceImpl implements WorkItemService {
         return resp;
     }
 
+    // 获取指定的工作项列表（全量搜索）
+    public UniversalSearchResp universalSearch(UniversalSearchReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/view_search/universal_search"
+                , false
+                , req);
+
+        UniversalSearchResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UniversalSearchResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/view_search/universal_search"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
     // 创建工作项
     public CreateWorkItemResp createWorkItem(CreateWorkItemReq req, RequestOptions reqOptions) throws Exception {
         if (reqOptions == null) {

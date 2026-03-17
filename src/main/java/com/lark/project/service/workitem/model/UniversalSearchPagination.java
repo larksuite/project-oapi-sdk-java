@@ -14,27 +14,26 @@
  * limitations under the License.
  */
 
-package com.lark.project.service.common.model;
+package com.lark.project.service.workitem.model;
 
 import com.google.gson.annotations.SerializedName;
 
-
-public class Pagination {
-    @SerializedName("page_num")
-    private Long pageNum;
+public class UniversalSearchPagination {
+    @SerializedName("total")
+    private Long total;
 
     @SerializedName("page_size")
     private Long pageSize;
 
-    @SerializedName("total")
-    private Long total;
+    @SerializedName("search_after")
+    private String searchAfter;
 
-    public Long getPageNum() {
-        return this.pageNum;
+    public Long getTotal() {
+        return this.total;
     }
 
-    public void setPageNum(Long pageNum) {
-        this.pageNum = pageNum;
+    public void setTotal(Long total) {
+        this.total = total;
     }
 
     public Long getPageSize() {
@@ -45,12 +44,11 @@ public class Pagination {
         this.pageSize = pageSize;
     }
 
-    public Long getTotal() {
-        return this.total;
+    public String getSearchAfter() {
+        return this.searchAfter;
     }
 
-    public void setTotal(Long total) {
-        this.total = total;
+    public void setSearchAfter(String searchAfter) {
+        this.searchAfter = searchAfter;
     }
-
 }

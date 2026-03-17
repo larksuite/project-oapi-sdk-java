@@ -14,43 +14,31 @@
  * limitations under the License.
  */
 
-package com.lark.project.service.common.model;
+package com.lark.project.service.field.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
 
-public class Pagination {
-    @SerializedName("page_num")
-    private Long pageNum;
+public class TeamOption {
+    @SerializedName("team_data_scopes")
+    private List<TeamDataScope> teamDataScopes;
+    @SerializedName("team_mode")
+    private String teamMode;
 
-    @SerializedName("page_size")
-    private Long pageSize;
-
-    @SerializedName("total")
-    private Long total;
-
-    public Long getPageNum() {
-        return this.pageNum;
+    public List<TeamDataScope> getTeamDataScopes() {
+        return this.teamDataScopes;
     }
 
-    public void setPageNum(Long pageNum) {
-        this.pageNum = pageNum;
+    public void setTeamDataScopes(List<TeamDataScope> teamDataScopes) {
+        this.teamDataScopes = teamDataScopes;
     }
 
-    public Long getPageSize() {
-        return this.pageSize;
+    public String getTeamMode() {
+        return this.teamMode;
     }
 
-    public void setPageSize(Long pageSize) {
-        this.pageSize = pageSize;
+    public void setTeamMode(String teamMode) {
+        this.teamMode = teamMode;
     }
-
-    public Long getTotal() {
-        return this.total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
-    }
-
 }
