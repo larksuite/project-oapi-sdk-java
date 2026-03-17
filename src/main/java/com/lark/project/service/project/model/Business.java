@@ -42,6 +42,9 @@ public class Business {
     @SerializedName("watchers")
     private List<String> watchers;
 
+    @SerializedName("order")
+    private Float order;
+
     @SerializedName("super_masters")
     private List<String> superMasters;
 
@@ -123,6 +126,14 @@ public class Business {
 
     public Boolean getDisabled() {
         return this.disabled;
+    }
+
+    public Float setOrder(Float order) {
+        return this.order = order;
+    }
+
+    public Float getOrder() {
+        return this.order;
     }
 
     public void setDisabled(Boolean disabled) {
