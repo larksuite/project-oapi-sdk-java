@@ -27,6 +27,9 @@ public interface WorkItemService {
     // 获取指定的工作项列表（全文搜索）
     public CompositiveSearchResp compositiveSearch(CompositiveSearchReq req, RequestOptions reqOptions) throws Exception;
 
+    // 获取指定的工作项列表（全量搜索）
+    public UniversalSearchResp universalSearch(UniversalSearchReq req, RequestOptions reqOptions) throws Exception;
+
     // 创建工作项
     public CreateWorkItemResp createWorkItem(CreateWorkItemReq req, RequestOptions reqOptions) throws Exception;
 

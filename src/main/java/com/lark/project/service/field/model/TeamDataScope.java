@@ -14,43 +14,29 @@
  * limitations under the License.
  */
 
-package com.lark.project.service.common.model;
+package com.lark.project.service.field.model;
 
 import com.google.gson.annotations.SerializedName;
 
+public class TeamDataScope {
+    @SerializedName("team_id")
+    private String teamID;
+    @SerializedName("cascade")
+    private Boolean cascade;
 
-public class Pagination {
-    @SerializedName("page_num")
-    private Long pageNum;
-
-    @SerializedName("page_size")
-    private Long pageSize;
-
-    @SerializedName("total")
-    private Long total;
-
-    public Long getPageNum() {
-        return this.pageNum;
+    public String getTeamID() {
+        return this.teamID;
     }
 
-    public void setPageNum(Long pageNum) {
-        this.pageNum = pageNum;
+    public void setTeamID(String teamID) {
+        this.teamID = teamID;
     }
 
-    public Long getPageSize() {
-        return this.pageSize;
+    public Boolean getCascade() {
+        return this.cascade;
     }
 
-    public void setPageSize(Long pageSize) {
-        this.pageSize = pageSize;
+    public void setCascade(Boolean cascade) {
+        this.cascade = cascade;
     }
-
-    public Long getTotal() {
-        return this.total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
-    }
-
 }

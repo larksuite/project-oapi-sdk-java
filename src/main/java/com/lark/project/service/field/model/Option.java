@@ -34,6 +34,18 @@ public class Option {
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
 
+    @SerializedName("color")
+    private String color;
+
+    @SerializedName("order")
+    private Long order;
+
+    @SerializedName("is_disabled")
+    private Integer isDisabled;
+
+    @SerializedName("is_visibility")
+    private Long isVisibility;
+
     public String getLabel() {
         return this.label;
     }
@@ -64,6 +76,38 @@ public class Option {
 
     public void setWorkItemTypeKey(String workItemTypeKey) {
         this.workItemTypeKey = workItemTypeKey;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Long getOrder() {
+        return this.order;
+    }
+
+    public void setOrder(Long order) {
+        this.order = order;
+    }
+
+    public Integer getIsDisabled() {
+        return this.isDisabled;
+    }
+
+    public void setIsDisabled(Integer isDisabled) {
+        this.isDisabled = isDisabled;
+    }
+
+    public Long getIsVisibility() {
+        return this.isVisibility;
+    }
+
+    public void setIsVisibility(Long isVisibility) {
+        this.isVisibility = isVisibility;
     }
 
 }

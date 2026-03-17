@@ -52,6 +52,9 @@ public class SimpleField {
     @SerializedName("value_generate_mode")
     private String valueGenerateMode;
 
+    @SerializedName("relation_id")
+    private String relationID;
+
     public String getFieldKey() {
         return this.fieldKey;
     }
@@ -130,6 +133,14 @@ public class SimpleField {
 
     public void setValueGenerateMode(String valueGenerateMode) {
         this.valueGenerateMode = valueGenerateMode;
+    }
+
+    public String getRelationID() {
+        return this.relationID;
+    }
+
+    public void setRelationID(String relationID) {
+        this.relationID = relationID;
     }
 
 }

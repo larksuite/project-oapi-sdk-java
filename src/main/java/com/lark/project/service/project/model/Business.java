@@ -108,14 +108,6 @@ public class Business {
         this.watchers = watchers;
     }
 
-    public Float getOrder() {
-        return this.order;
-    }
-
-    public void setOrder(Float order) {
-        this.order = order;
-    }
-
     public List<String> getSuperMasters() {
         return this.superMasters;
     }
@@ -134,6 +126,14 @@ public class Business {
 
     public Boolean getDisabled() {
         return this.disabled;
+    }
+
+    public Float setOrder(Float order) {
+        return this.order = order;
+    }
+
+    public Float getOrder() {
+        return this.order;
     }
 
     public void setDisabled(Boolean disabled) {
