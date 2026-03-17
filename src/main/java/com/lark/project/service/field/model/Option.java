@@ -41,7 +41,7 @@ public class Option {
     private Long order;
 
     @SerializedName("is_disabled")
-    private Boolean isDisabled;
+    private Integer isDisabled;
 
     @SerializedName("is_visibility")
     private Long isVisibility;
@@ -94,11 +94,11 @@ public class Option {
         this.order = order;
     }
 
-    public boolean getIsDisabled() {
+    public Integer getIsDisabled() {
         return this.isDisabled;
     }
 
-    public void setIsDisabled(boolean isDisabled) {
+    public void setIsDisabled(Integer isDisabled) {
         this.isDisabled = isDisabled;
     }
 
