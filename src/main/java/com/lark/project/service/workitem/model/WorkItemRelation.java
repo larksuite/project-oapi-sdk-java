@@ -28,6 +28,9 @@ public class WorkItemRelation {
     @SerializedName("name")
     private String name;
 
+    @SerializedName("relation_type")
+    private Long relationType;
+
     @SerializedName("disabled")
     private Boolean disabled;
 
@@ -54,6 +57,14 @@ public class WorkItemRelation {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getRelationType() {
+        return this.relationType;
+    }
+
+    public void setRelationType(Long relationType) {
+        this.relationType = relationType;
     }
 
     public Boolean getDisabled() {

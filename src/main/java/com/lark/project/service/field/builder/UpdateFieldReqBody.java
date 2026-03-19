@@ -17,12 +17,17 @@
 package com.lark.project.service.field.builder;
 
 import com.google.gson.annotations.SerializedName;
-import com.lark.project.service.field.model.FieldValue;
-
+import com.lark.project.service.field.model.TeamOption;
 import java.util.List;
 
 
 public class UpdateFieldReqBody {
+    @SerializedName("number_config")
+    private NumberConfig numberConfig;
+
+    @SerializedName("team_option")
+    private TeamOption teamOption;
+
     @SerializedName("field_name")
     private String fieldName;
     @SerializedName("field_key")
@@ -44,6 +49,80 @@ public class UpdateFieldReqBody {
 
     public String getFieldName() {
         return this.fieldName;
+    }
+
+    public NumberConfig getNumberConfig() {
+        return this.numberConfig;
+    }
+
+    public void setNumberConfig(NumberConfig numberConfig) {
+        this.numberConfig = numberConfig;
+    }
+
+    public static class NumberConfig {
+        @SerializedName("scaling_ratio")
+        private String scalingRatio;
+        @SerializedName("display_digits")
+        private Integer displayDigits;
+        @SerializedName("symbol_setting")
+        private SymbolSetting symbolSetting;
+
+        public String getScalingRatio() {
+            return scalingRatio;
+        }
+
+        public void setScalingRatio(String scalingRatio) {
+            this.scalingRatio = scalingRatio;
+        }
+
+        public Integer getDisplayDigits() {
+            return displayDigits;
+        }
+
+        public void setDisplayDigits(Integer displayDigits) {
+            this.displayDigits = displayDigits;
+        }
+
+        public SymbolSetting getSymbolSetting() {
+            return symbolSetting;
+        }
+
+        public void setSymbolSetting(SymbolSetting symbolSetting) {
+            this.symbolSetting = symbolSetting;
+        }
+    }
+
+    public static class SymbolSetting {
+        @SerializedName("display")
+        private String display;
+        @SerializedName("value")
+        private String value;
+        @SerializedName("layout")
+        private String layout;
+
+        public String getDisplay() {
+            return display;
+        }
+
+        public void setDisplay(String display) {
+            this.display = display;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        public String getLayout() {
+            return layout;
+        }
+
+        public void setLayout(String layout) {
+            this.layout = layout;
+        }
     }
 
     public void setFieldName(String fieldName) {
@@ -112,5 +191,13 @@ public class UpdateFieldReqBody {
 
     public void setAuthorizedRoles(List<String> authorizedRoles) {
         this.authorizedRoles = authorizedRoles;
+    }
+
+    public TeamOption getTeamOption() {
+        return this.teamOption;
+    }
+
+    public void setTeamOption(TeamOption teamOption) {
+        this.teamOption = teamOption;
     }
 }

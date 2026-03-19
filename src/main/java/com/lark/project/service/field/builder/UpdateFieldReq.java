@@ -19,6 +19,7 @@ package com.lark.project.service.field.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
+import com.lark.project.service.field.model.TeamOption;
 import com.lark.project.service.field.model.FieldValue;
 
 import java.util.List;
@@ -133,6 +134,16 @@ public class UpdateFieldReq {
 
         public Builder authorizedRoles(List<String> authorizedRoles) {
             this.body.setAuthorizedRoles(authorizedRoles);
+            return this;
+        }
+
+        public Builder teamOption(TeamOption teamOption) {
+            this.body.setTeamOption(teamOption);
+            return this;
+        }
+
+        public Builder numberConfig(UpdateFieldReqBody.NumberConfig numberConfig) {
+            this.body.setNumberConfig(numberConfig);
             return this;
         }
 
