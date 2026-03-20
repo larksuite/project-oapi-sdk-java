@@ -102,6 +102,9 @@ public interface WorkItemService {
     // 更新实际工时
     public UpdateWorkingHourRecordResp updateWorkingHourRecord(UpdateWorkingHourRecordReq req, RequestOptions reqOptions) throws Exception;
 
+    // 拉机器人入群
+    public BotJoinChatResp botJoinChat(BotJoinChatReq req, RequestOptions reqOptions) throws Exception;
+
     /**
      * 获取工作流详情（WBS）。
      *
