@@ -704,7 +704,7 @@ public class WorkItemServiceImpl implements WorkItemService {
         return resp;
     }
 
-    @Override
+    // 批量更新工作项。
     public BatchUpdateWorkItemResp batchUpdateWorkItem(BatchUpdateWorkItemReq req, RequestOptions reqOptions) throws Exception {
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
@@ -727,7 +727,11 @@ public class WorkItemServiceImpl implements WorkItemService {
         return resp;
     }
 
-    @Override
+    /**
+     * 获取任务结果。
+     *
+     * <p>对应 OpenAPI：{@code GET /open_api/task_result}</p>
+     */
     public GetTaskResultResp getTaskResult(GetTaskResultReq req, RequestOptions reqOptions) throws Exception {
         if (reqOptions == null) {
             reqOptions = new RequestOptions();

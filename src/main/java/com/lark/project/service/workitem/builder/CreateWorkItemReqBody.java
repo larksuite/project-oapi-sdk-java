@@ -31,8 +31,13 @@ public class CreateWorkItemReqBody {
     private Long templateID;
     @SerializedName("name")
     private String name;
+    @SerializedName("required_mode")
+    private Integer requiredMode;
+    @SerializedName("role_mode")
+    private Integer roleMode;
 
     public String getWorkItemTypeKey() {
+
         return this.workItemTypeKey;
     }
 
@@ -62,5 +67,21 @@ public class CreateWorkItemReqBody {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getRequiredMode() {
+        return this.requiredMode;
+    }
+
+    public void setRequiredMode(Integer requiredMode) {
+        this.requiredMode = requiredMode;
+    }
+
+    public Integer getRoleMode() {
+        return this.roleMode;
+    }
+
+    public void setRoleMode(Integer roleMode) {
+        this.roleMode = roleMode;
     }
 }
