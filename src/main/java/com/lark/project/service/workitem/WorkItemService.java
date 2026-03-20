@@ -126,14 +126,14 @@ public interface WorkItemService {
      /**
       * 批量更新工作项。
       *
-      * <p>对应 OpenAPI：{@code POST /open_api/:project_key/work_item/:work_item_type_key/batch_update}</p>
+      * <p>对应 OpenAPI：{@code POST /open_api/work_item/batch_update}</p>
       */
     public BatchUpdateWorkItemResp batchUpdateWorkItem(BatchUpdateWorkItemReq req, RequestOptions reqOptions) throws Exception;
 
     /**
      * 获取任务结果。
      *
-     * <p>对应 OpenAPI：{@code GET /open_api/:project_key/work_item/:work_item_type_key/:work_item_id/task_result}</p>
+     * <p>对应 OpenAPI：{@code GET /open_api/task_result}</p>
      */
     public GetTaskResultResp getTaskResult(GetTaskResultReq req, RequestOptions reqOptions) throws Exception;
 }
