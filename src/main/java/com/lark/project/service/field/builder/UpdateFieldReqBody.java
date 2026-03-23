@@ -18,16 +18,11 @@ package com.lark.project.service.field.builder;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.service.field.model.TeamOption;
+
 import java.util.List;
 
 
 public class UpdateFieldReqBody {
-    @SerializedName("number_config")
-    private NumberConfig numberConfig;
-
-    @SerializedName("team_option")
-    private TeamOption teamOption;
-
     @SerializedName("field_name")
     private String fieldName;
     @SerializedName("field_key")
@@ -46,6 +41,10 @@ public class UpdateFieldReqBody {
     private String helpDescription;
     @SerializedName("authorized_roles")
     private List<String> authorizedRoles;
+    @SerializedName("number_config")
+    private NumberConfig numberConfig;
+    @SerializedName("team_option")
+    private TeamOption teamOption;
 
     public String getFieldName() {
         return this.fieldName;
