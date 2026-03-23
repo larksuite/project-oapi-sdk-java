@@ -60,7 +60,7 @@ public class FieldConf {
     private String label;
 
     @SerializedName("field_uuid")
-    private String fieldUuid;
+    private String fieldUUID;
 
     @SerializedName("field_tips")
     private String fieldTips;
@@ -170,12 +170,12 @@ public class FieldConf {
         this.label = label;
     }
 
-    public String getFieldUuid() {
-        return this.fieldUuid;
+    public String getFieldUUID() {
+        return this.fieldUUID;
     }
 
-    public void setFieldUuid(String fieldUuid) {
-        this.fieldUuid = fieldUuid;
+    public void setFieldUUID(String fieldUUID) {
+        this.fieldUUID = fieldUUID;
     }
 
     public String getFieldTips() {
