@@ -3,9 +3,7 @@ package com.lark.project.service.workitem.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.response.BaseResponse;
 import com.lark.project.service.workitem.model.BatchUpdateWorkItemResult;
-import com.lark.project.service.workitem.model.WorkItemInfo;
 
-import java.util.List;
 
 /**
  * 批量更新工作项的响应对象。
