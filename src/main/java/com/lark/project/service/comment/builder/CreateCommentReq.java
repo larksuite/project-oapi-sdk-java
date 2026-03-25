@@ -20,6 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
 
+import java.util.List;
+
 public class CreateCommentReq {
     @Path
     @SerializedName("project_key")
@@ -108,6 +110,11 @@ public class CreateCommentReq {
 
         public Builder content(String content) {
             this.body.setContent(content);
+            return this;
+        }
+
+        public Builder richText(List<Object> richText) {
+            this.body.setRichText(richText);
             return this;
         }
 
