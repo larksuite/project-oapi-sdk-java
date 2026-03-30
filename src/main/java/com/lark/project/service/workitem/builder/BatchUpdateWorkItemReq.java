@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 批量更新工作项的请求对象。
  *
- * <p>对应 OpenAPI：{@code POST /open_api/:project_key/work_item/:work_item_type_key/batch_update}</p>
+ * <p>对应 OpenAPI：{@code POST /open_api/work_item/batch_update}</p>
  */
 public class BatchUpdateWorkItemReq {
     @Body

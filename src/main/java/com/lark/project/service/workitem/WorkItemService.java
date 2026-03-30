@@ -102,6 +102,9 @@ public interface WorkItemService {
     // 更新实际工时
     public UpdateWorkingHourRecordResp updateWorkingHourRecord(UpdateWorkingHourRecordReq req, RequestOptions reqOptions) throws Exception;
 
+    // 拉机器人入群
+    public BotJoinChatResp botJoinChat(BotJoinChatReq req, RequestOptions reqOptions) throws Exception;
+
     /**
      * 获取工作流详情（WBS）。
      *
@@ -123,14 +126,35 @@ public interface WorkItemService {
      /**
       * 批量更新工作项。
       *
-      * <p>对应 OpenAPI：{@code POST /open_api/:project_key/work_item/:work_item_type_key/batch_update}</p>
+      * <p>对应 OpenAPI：{@code POST /open_api/work_item/batch_update}</p>
       */
     public BatchUpdateWorkItemResp batchUpdateWorkItem(BatchUpdateWorkItemReq req, RequestOptions reqOptions) throws Exception;
 
     /**
      * 获取任务结果。
      *
-     * <p>对应 OpenAPI：{@code GET /open_api/:project_key/work_item/:work_item_type_key/:work_item_id/task_result}</p>
+     * <p>对应 OpenAPI：{@code GET /open_api/task_result}</p>
      */
     public GetTaskResultResp getTaskResult(GetTaskResultReq req, RequestOptions reqOptions) throws Exception;
+
+    /**
+     * 交付物信息批量查询（WBS）
+     *
+     * <p>对应 OpenAPI：{@code POST /open_api/work_item/deliverable/batch_query}</p>
+     */
+    public BatchQueryDeliverableResp batchQueryDeliverable(BatchQueryDeliverableReq req, RequestOptions reqOptions) throws Exception;
+
+    /**
+     * 冻结/解冻工作项
+     *
+     * <p>对应 OpenAPI：{@code PUT /open_api/work_item/freeze}</p>
+     */
+    public FreezeWorkItemResp freezeWorkItem(FreezeWorkItemReq req, RequestOptions reqOptions) throws Exception;
+
+    /**
+     * 获取工作项操作记录
+     *
+     * <p>对应 OpenAPI：{@code POST /open_api/op_record/work_item/list}</p>
+     */
+    public ListWorkItemOpRecordResp listWorkItemOpRecord(ListWorkItemOpRecordReq req, RequestOptions reqOptions) throws Exception;
 }

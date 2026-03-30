@@ -59,6 +59,21 @@ public class FieldConf {
     @SerializedName("label")
     private String label;
 
+    @SerializedName("field_uuid")
+    private String fieldUUID;
+
+    @SerializedName("field_tips")
+    private String fieldTips;
+
+    @SerializedName("free_add")
+    private Boolean freeAdd;
+
+    @SerializedName("sub_type_level_mode")
+    private String subTypeLevelMode;
+
+    @SerializedName("sub_type_level_class")
+    private Long subTypeLevelClass;
+
     public Integer getIsRequired() {
         return this.isRequired;
     }
@@ -153,6 +168,46 @@ public class FieldConf {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    public String getFieldUUID() {
+        return this.fieldUUID;
+    }
+
+    public void setFieldUUID(String fieldUUID) {
+        this.fieldUUID = fieldUUID;
+    }
+
+    public String getFieldTips() {
+        return this.fieldTips;
+    }
+
+    public void setFieldTips(String fieldTips) {
+        this.fieldTips = fieldTips;
+    }
+
+    public Boolean getFreeAdd() {
+        return this.freeAdd;
+    }
+
+    public void setFreeAdd(Boolean freeAdd) {
+        this.freeAdd = freeAdd;
+    }
+
+    public String getSubTypeLevelMode() {
+        return this.subTypeLevelMode;
+    }
+
+    public void setSubTypeLevelMode(String subTypeLevelMode) {
+        this.subTypeLevelMode = subTypeLevelMode;
+    }
+
+    public Long getSubTypeLevelClass() {
+        return this.subTypeLevelClass;
+    }
+
+    public void setSubTypeLevelClass(Long subTypeLevelClass) {
+        this.subTypeLevelClass = subTypeLevelClass;
     }
 
 }

@@ -93,6 +93,16 @@ public class CreateWorkItemReq {
             return this;
         }
 
+        public Builder requiredMode(Integer requiredMode) {
+            this.body.setRequiredMode(requiredMode);
+            return this;
+        }
+
+        public Builder roleMode(Integer roleMode) {
+            this.body.setRoleMode(roleMode);
+            return this;
+        }
+
         public CreateWorkItemReq build() {
             return new CreateWorkItemReq(this);
         }
