@@ -18,10 +18,15 @@ package com.lark.project.service.comment.builder;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 
 public class UpdateCommentReqBody {
     @SerializedName("content")
     private String content;
+
+    @SerializedName("rich_text")
+    private List<Object> richText;
 
     public String getContent() {
         return this.content;
@@ -29,5 +34,13 @@ public class UpdateCommentReqBody {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public List<Object> getRichText() {
+        return this.richText;
+    }
+
+    public void setRichText(List<Object> richText) {
+        this.richText = richText;
     }
 }
