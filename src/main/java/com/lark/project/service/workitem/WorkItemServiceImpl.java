@@ -704,7 +704,7 @@ public class WorkItemServiceImpl implements WorkItemService {
         return resp;
     }
 
-    @Override
+    // 批量更新工作项。
     public BatchUpdateWorkItemResp batchUpdateWorkItem(BatchUpdateWorkItemReq req, RequestOptions reqOptions) throws Exception {
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
@@ -727,7 +727,11 @@ public class WorkItemServiceImpl implements WorkItemService {
         return resp;
     }
 
-    @Override
+    /**
+     * 获取任务结果。
+     *
+     * <p>对应 OpenAPI：{@code GET /open_api/task_result}</p>
+     */
     public GetTaskResultResp getTaskResult(GetTaskResultReq req, RequestOptions reqOptions) throws Exception {
         if (reqOptions == null) {
             reqOptions = new RequestOptions();
@@ -741,6 +745,29 @@ public class WorkItemServiceImpl implements WorkItemService {
         GetTaskResultResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetTaskResultResp.class);
         if (resp == null) {
             log.error(Logs.formatReq(req, httpResponse, "/open_api/task_result"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 拉机器人入群
+    public BotJoinChatResp botJoinChat(BotJoinChatReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/:project_key/work_item/:work_item_id/bot_join_chat"
+                , false
+                , req);
+
+        BotJoinChatResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, BotJoinChatResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/:project_key/work_item/:work_item_id/bot_join_chat"));
             throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
         }
 

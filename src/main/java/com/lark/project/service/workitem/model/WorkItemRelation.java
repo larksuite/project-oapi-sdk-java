@@ -40,6 +40,9 @@ public class WorkItemRelation {
     @SerializedName("relation_details")
     private List<RelationDetail> relationDetails;
 
+    @SerializedName("relation_type")
+    private Long relationType;
+
     public String getID() {
         return this.id;
     }
@@ -54,6 +57,14 @@ public class WorkItemRelation {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getRelationType() {
+        return this.relationType;
+    }
+
+    public void setRelationType(Long relationType) {
+        this.relationType = relationType;
     }
 
     public Boolean getDisabled() {
