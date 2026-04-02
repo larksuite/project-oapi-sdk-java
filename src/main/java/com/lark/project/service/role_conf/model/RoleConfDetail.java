@@ -46,6 +46,9 @@ public class RoleConfDetail {
     @SerializedName("members")
     private List<String> members;
 
+    @SerializedName("is_member_multi")
+    private Boolean isMemberMulti;
+
     @SerializedName("key")
     private String key;
 
@@ -121,4 +124,11 @@ public class RoleConfDetail {
         this.key = key;
     }
 
+    public Boolean getIsMemberMulti() {
+        return this.isMemberMulti;
+    }
+
+    public void setIsMemberMulti(Boolean isMemberMulti) {
+        this.isMemberMulti = isMemberMulti;
+    }
 }
