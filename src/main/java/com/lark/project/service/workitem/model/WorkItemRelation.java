@@ -28,6 +28,9 @@ public class WorkItemRelation {
     @SerializedName("name")
     private String name;
 
+    @SerializedName("relation_type")
+    private Long relationType;
+
     @SerializedName("disabled")
     private Boolean disabled;
 

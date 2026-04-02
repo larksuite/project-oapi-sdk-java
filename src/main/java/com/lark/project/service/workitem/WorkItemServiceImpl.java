@@ -776,4 +776,73 @@ public class WorkItemServiceImpl implements WorkItemService {
 
         return resp;
     }
+
+    // 交付物信息批量查询（WBS）
+    public BatchQueryDeliverableResp batchQueryDeliverable(BatchQueryDeliverableReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/deliverable/batch_query"
+                , false
+                , req);
+
+        BatchQueryDeliverableResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, BatchQueryDeliverableResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/deliverable/batch_query"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 冻结/解冻工作项
+    public FreezeWorkItemResp freezeWorkItem(FreezeWorkItemReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PUT"
+                , "/open_api/work_item/freeze"
+                , false
+                , req);
+
+        FreezeWorkItemResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, FreezeWorkItemResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/freeze"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 获取工作项操作记录
+    public ListWorkItemOpRecordResp listWorkItemOpRecord(ListWorkItemOpRecordReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/op_record/work_item/list"
+                , false
+                , req);
+
+        ListWorkItemOpRecordResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, ListWorkItemOpRecordResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/op_record/work_item/list"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }
