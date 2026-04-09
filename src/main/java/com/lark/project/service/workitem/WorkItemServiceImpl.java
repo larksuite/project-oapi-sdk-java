@@ -845,4 +845,119 @@ public class WorkItemServiceImpl implements WorkItemService {
 
         return resp;
     }
+
+    // 创建工作项资源库实例
+    public CreateWorkItemResourceResp createWorkItemResource(CreateWorkItemResourceReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/resource/create_work_item"
+                , false
+                , req);
+
+        CreateWorkItemResourceResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateWorkItemResourceResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/resource/create_work_item"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 更新工作项资源实例
+    public UpdateWorkItemResourceResp updateWorkItemResource(UpdateWorkItemResourceReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/resource/update"
+                , false
+                , req);
+
+        UpdateWorkItemResourceResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateWorkItemResourceResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/resource/update"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 获取工作项资源实例详情
+    public QueryWorkItemResourceResp queryWorkItemResource(QueryWorkItemResourceReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/resource/query"
+                , false
+                , req);
+
+        QueryWorkItemResourceResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemResourceResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/resource/query"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 获取指定的工作项资源库实例列表（复杂传参）
+    public SearchWorkItemResourceByParamsResp searchWorkItemResourceByParams(SearchWorkItemResourceByParamsReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/resource/search/params"
+                , false
+                , req);
+
+        SearchWorkItemResourceByParamsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, SearchWorkItemResourceByParamsResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/resource/search/params"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 通过资源创建实例
+    public CreateWorkItemResourceInstanceResp createWorkItemResourceInstance(CreateWorkItemResourceInstanceReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/resource/:project_key/:work_item_id/create_instance"
+                , false
+                , req);
+
+        CreateWorkItemResourceInstanceResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateWorkItemResourceInstanceResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/resource/:project_key/:work_item_id/create_instance"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }

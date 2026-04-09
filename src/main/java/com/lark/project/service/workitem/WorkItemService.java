@@ -157,4 +157,19 @@ public interface WorkItemService {
      * <p>对应 OpenAPI：{@code POST /open_api/op_record/work_item/list}</p>
      */
     public ListWorkItemOpRecordResp listWorkItemOpRecord(ListWorkItemOpRecordReq req, RequestOptions reqOptions) throws Exception;
+
+    // 创建工作项资源库实例
+    public CreateWorkItemResourceResp createWorkItemResource(CreateWorkItemResourceReq req, RequestOptions reqOptions) throws Exception;
+
+    // 更新工作项资源实例
+    public UpdateWorkItemResourceResp updateWorkItemResource(UpdateWorkItemResourceReq req, RequestOptions reqOptions) throws Exception;
+
+    // 获取工作项资源实例详情
+    public QueryWorkItemResourceResp queryWorkItemResource(QueryWorkItemResourceReq req, RequestOptions reqOptions) throws Exception;
+
+    // 获取指定的工作项资源库实例列表（复杂传参）
+    public SearchWorkItemResourceByParamsResp searchWorkItemResourceByParams(SearchWorkItemResourceByParamsReq req, RequestOptions reqOptions) throws Exception;
+
+    // 通过资源创建实例
+    public CreateWorkItemResourceInstanceResp createWorkItemResourceInstance(CreateWorkItemResourceInstanceReq req, RequestOptions reqOptions) throws Exception;
 }

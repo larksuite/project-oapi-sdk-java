@@ -43,9 +43,6 @@ public class WorkItemRelation {
     @SerializedName("relation_details")
     private List<RelationDetail> relationDetails;
 
-    @SerializedName("relation_type")
-    private Long relationType;
-
     public String getID() {
         return this.id;
     }
