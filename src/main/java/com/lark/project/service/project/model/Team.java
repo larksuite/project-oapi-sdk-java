@@ -34,6 +34,9 @@ public class Team {
     @SerializedName("administrators")
     private List<String> administrators;
 
+    @SerializedName("members")
+    private List<String> members;
+
     public Long getTeamID() {
         return this.teamID;
     }
@@ -64,6 +67,14 @@ public class Team {
 
     public void setAdministrators(List<String> administrators) {
         this.administrators = administrators;
+    }
+
+    public List<String> getMembers() {
+        return this.members;
+    }
+
+    public void setMembers(List<String> members) {
+        this.members = members;
     }
 
 }

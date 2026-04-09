@@ -46,6 +46,27 @@ public class RoleConfDetail {
     @SerializedName("members")
     private List<String> members;
 
+    @SerializedName("is_member_multi")
+    private Boolean isMemberMulti;
+
+    @SerializedName("lock_scope")
+    private List<String> lockScope;
+
+    @SerializedName("role_alias")
+    private String roleAlias;
+
+    @SerializedName("is_required")
+    private Integer isRequired;
+
+    @SerializedName("lock_app_id")
+    private String lockAppId;
+
+    @SerializedName("allow_delete")
+    private Boolean allowDelete;
+
+    @SerializedName("authorization_role_keys")
+    private List<String> authorizationRoleKeys;
+
     @SerializedName("key")
     private String key;
 
@@ -121,4 +142,59 @@ public class RoleConfDetail {
         this.key = key;
     }
 
+    public Boolean getIsMemberMulti() {
+        return this.isMemberMulti;
+    }
+
+    public void setIsMemberMulti(Boolean isMemberMulti) {
+        this.isMemberMulti = isMemberMulti;
+    }
+
+    public List<String> getLockScope() {
+        return lockScope;
+    }
+
+    public void setLockScope(List<String> lockScope) {
+        this.lockScope = lockScope;
+    }
+
+    public String getRoleAlias() {
+        return roleAlias;
+    }
+
+    public void setRoleAlias(String roleAlias) {
+        this.roleAlias = roleAlias;
+    }
+
+    public Integer getIsRequired() {
+        return isRequired;
+    }
+
+    public void setIsRequired(Integer isRequired) {
+        this.isRequired = isRequired;
+    }
+
+    public String getLockAppId() {
+        return lockAppId;
+    }
+
+    public void setLockAppId(String lockAppId) {
+        this.lockAppId = lockAppId;
+    }
+
+    public Boolean getAllowDelete() {
+        return allowDelete;
+    }
+
+    public void setAllowDelete(Boolean allowDelete) {
+        this.allowDelete = allowDelete;
+    }
+
+    public List<String> getAuthorizationRoleKeys() {
+        return authorizationRoleKeys;
+    }
+
+    public void setAuthorizationRoleKeys(List<String> authorizationRoleKeys) {
+        this.authorizationRoleKeys = authorizationRoleKeys;
+    }
 }
