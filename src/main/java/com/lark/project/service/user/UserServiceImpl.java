@@ -27,6 +27,12 @@ import com.lark.project.service.user.builder.QueryUserDetailReq;
 import com.lark.project.service.user.builder.QueryUserDetailResp;
 import com.lark.project.service.user.builder.SearchUserReq;
 import com.lark.project.service.user.builder.SearchUserResp;
+import com.lark.project.service.user.builder.CreateUserGroupReq;
+import com.lark.project.service.user.builder.CreateUserGroupResp;
+import com.lark.project.service.user.builder.QueryUserGroupMembersReq;
+import com.lark.project.service.user.builder.QueryUserGroupMembersResp;
+import com.lark.project.service.user.builder.UpdateUserGroupMembersReq;
+import com.lark.project.service.user.builder.UpdateUserGroupMembersResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,6 +89,54 @@ public class UserServiceImpl implements UserService {
         resp.setRawResponse(httpResponse);
         resp.setRequest(req);
 
+        return resp;
+    }
+
+    @Override
+    public CreateUserGroupResp createUserGroup(CreateUserGroupReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST", "/open_api/:project_key/user_group", false, req);
+        CreateUserGroupResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateUserGroupResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/:project_key/user_group"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+        return resp;
+    }
+
+    @Override
+    public QueryUserGroupMembersResp queryUserGroupMembers(QueryUserGroupMembersReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST", "/open_api/:project_key/user_groups/members/page", false, req);
+        QueryUserGroupMembersResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryUserGroupMembersResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/:project_key/user_groups/members/page"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+        return resp;
+    }
+
+    @Override
+    public UpdateUserGroupMembersResp updateUserGroupMembers(UpdateUserGroupMembersReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "PATCH", "/open_api/:project_key/user_group/members", false, req);
+        UpdateUserGroupMembersResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateUserGroupMembersResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/:project_key/user_group/members"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
         return resp;
     }
 

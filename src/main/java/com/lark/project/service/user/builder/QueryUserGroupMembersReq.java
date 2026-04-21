@@ -1,4 +1,4 @@
-package com.lark.project.service.user_group.builder;
+package com.lark.project.service.user.builder;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;

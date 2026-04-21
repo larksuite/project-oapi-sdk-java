@@ -47,8 +47,6 @@ import com.lark.project.service.task.TaskService;
 import com.lark.project.service.task.TaskServiceImpl;
 import com.lark.project.service.user.UserService;
 import com.lark.project.service.user.UserServiceImpl;
-import com.lark.project.service.user_group.UserGroupService;
-import com.lark.project.service.user_group.UserGroupServiceImpl;
 import com.lark.project.service.view.ViewService;
 import com.lark.project.service.view.ViewServiceImpl;
 import com.lark.project.service.workitem.WorkItemService;
@@ -69,8 +67,6 @@ public class Client {
     private ProjectService project; // 空间
 
     private UserService user; // 用户
-
-    private UserGroupService userGroup; // 用户组
 
     private WorkItemService workItem; // 工作项
 
@@ -112,10 +108,6 @@ public class Client {
 
     public UserService getUserService() {
         return user;
-    }
-
-    public UserGroupService getUserGroupService() {
-        return userGroup;
     }
 
     public WorkItemService getWorkItemService() {
@@ -238,7 +230,6 @@ public class Client {
             client.plugin = new PluginServiceImpl(config);
             client.project = new ProjectServiceImpl(config);
             client.user = new UserServiceImpl(config);
-            client.userGroup = new UserGroupServiceImpl(config);
             client.workItem = new WorkItemServiceImpl(config);
             client.task = new TaskServiceImpl(config);
             client.view = new ViewServiceImpl(config);
