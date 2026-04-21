@@ -23,8 +23,14 @@ import com.lark.project.core.request.RequestOptions;
 import com.lark.project.core.response.RawResponse;
 import com.lark.project.core.utils.Logs;
 import com.lark.project.core.utils.UnmarshalRespUtil;
+import com.lark.project.service.role_conf.builder.CreateRoleConfReq;
+import com.lark.project.service.role_conf.builder.CreateRoleConfResp;
+import com.lark.project.service.role_conf.builder.DeleteRoleConfReq;
+import com.lark.project.service.role_conf.builder.DeleteRoleConfResp;
 import com.lark.project.service.role_conf.builder.QueryRoleConfDetailsReq;
 import com.lark.project.service.role_conf.builder.QueryRoleConfDetailsResp;
+import com.lark.project.service.role_conf.builder.UpdateRoleConfReq;
+import com.lark.project.service.role_conf.builder.UpdateRoleConfResp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,4 +67,72 @@ public class RoleConfServiceImpl implements RoleConfService {
         return resp;
     }
 
+    @Override
+    public CreateRoleConfResp createRoleConf(CreateRoleConfReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/:project_key/flow_roles/:work_item_type_key/create_role"
+                , false
+                , req);
+
+        CreateRoleConfResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateRoleConfResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/:project_key/flow_roles/:work_item_type_key/create_role"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    @Override
+    public UpdateRoleConfResp updateRoleConf(UpdateRoleConfReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/:project_key/flow_roles/:work_item_type_key/update_role"
+                , false
+                , req);
+
+        UpdateRoleConfResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateRoleConfResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/:project_key/flow_roles/:work_item_type_key/update_role"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    @Override
+    public DeleteRoleConfResp deleteRoleConf(DeleteRoleConfReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/:project_key/flow_roles/:work_item_type_key/delete_role"
+                , false
+                , req);
+
+        DeleteRoleConfResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteRoleConfResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/:project_key/flow_roles/:work_item_type_key/delete_role"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }

@@ -72,6 +72,11 @@ public class QueryUserDetailReq {
             return this;
         }
 
+        public Builder tenantKey(String tenantKey) {
+            this.body.setTenantKey(tenantKey);
+            return this;
+        }
+
         public QueryUserDetailReq build() {
             return new QueryUserDetailReq(this);
         }

@@ -21,6 +21,12 @@ import com.lark.project.service.user.builder.QueryUserDetailReq;
 import com.lark.project.service.user.builder.QueryUserDetailResp;
 import com.lark.project.service.user.builder.SearchUserReq;
 import com.lark.project.service.user.builder.SearchUserResp;
+import com.lark.project.service.user.builder.CreateUserGroupReq;
+import com.lark.project.service.user.builder.CreateUserGroupResp;
+import com.lark.project.service.user.builder.QueryUserGroupMembersReq;
+import com.lark.project.service.user.builder.QueryUserGroupMembersResp;
+import com.lark.project.service.user.builder.UpdateUserGroupMembersReq;
+import com.lark.project.service.user.builder.UpdateUserGroupMembersResp;
 
 public interface UserService {
 
@@ -29,5 +35,14 @@ public interface UserService {
 
     // 模糊查询指定空间的用户列表
     public SearchUserResp searchUser(SearchUserReq req, RequestOptions reqOptions) throws Exception;
+
+    // 创建用户组
+    public CreateUserGroupResp createUserGroup(CreateUserGroupReq req, RequestOptions reqOptions) throws Exception;
+
+    // 查询用户组成员
+    public QueryUserGroupMembersResp queryUserGroupMembers(QueryUserGroupMembersReq req, RequestOptions reqOptions) throws Exception;
+
+    // 更新用户组成员
+    public UpdateUserGroupMembersResp updateUserGroupMembers(UpdateUserGroupMembersReq req, RequestOptions reqOptions) throws Exception;
 
 }
