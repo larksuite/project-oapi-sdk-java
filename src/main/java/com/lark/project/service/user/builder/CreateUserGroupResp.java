@@ -1,8 +1,8 @@
-package com.lark.project.service.user_group.builder;
+package com.lark.project.service.user.builder;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.response.BaseResponse;
-import com.lark.project.service.user_group.model.CreateUserGroupData;
+import com.lark.project.service.user.model.CreateUserGroupData;
 
 public class CreateUserGroupResp extends BaseResponse {
     @SerializedName("data")

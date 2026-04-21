@@ -1,4 +1,4 @@
-package com.lark.project.service.user_group.model;
+package com.lark.project.service.user.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
