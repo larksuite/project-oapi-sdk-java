@@ -1,34 +1,29 @@
-/*
- * Copyright (c) 2023 Lark Technologies Pte. Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.lark.project.service.project.builder;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Path;
+import com.lark.project.core.annotation.Query;
 
 public class ListProjectTeamReq {
     @Path
     @SerializedName("project_key")
     private String projectKey;
 
+    @Query
+    @SerializedName("offset")
+    private Long offset;
+
+    @Query
+    @SerializedName("limit")
+    private Long limit;
+
     public ListProjectTeamReq() {
     }
 
     public ListProjectTeamReq(Builder builder) {
         this.projectKey = builder.projectKey;
+        this.offset = builder.offset;
+        this.limit = builder.limit;
     }
 
     public static Builder newBuilder() {
@@ -43,8 +38,26 @@ public class ListProjectTeamReq {
         this.projectKey = projectKey;
     }
 
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    public Long getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Long limit) {
+        this.limit = limit;
+    }
+
     public static class Builder {
         private String projectKey;
+        private Long offset;
+        private Long limit;
 
         public Builder() {
         }
@@ -54,9 +67,18 @@ public class ListProjectTeamReq {
             return this;
         }
 
+        public Builder offset(Long offset) {
+            this.offset = offset;
+            return this;
+        }
+
+        public Builder limit(Long limit) {
+            this.limit = limit;
+            return this;
+        }
+
         public ListProjectTeamReq build() {
             return new ListProjectTeamReq(this);
         }
-
     }
 }

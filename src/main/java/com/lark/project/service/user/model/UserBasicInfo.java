@@ -52,6 +52,9 @@ public class UserBasicInfo {
     @SerializedName("status")
     private String status;
 
+    @SerializedName("name")
+    private java.util.Map<String, String> name;
+
     public Long getUserID() {
         return this.userID;
     }
@@ -130,6 +133,14 @@ public class UserBasicInfo {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public java.util.Map<String, String> getName() {
+        return this.name;
+    }
+
+    public void setName(java.util.Map<String, String> name) {
+        this.name = name;
     }
 
 }

@@ -30,6 +30,8 @@ public class QueryUserDetailReqBody {
     private List<String> outIDs;
     @SerializedName("emails")
     private List<String> emails;
+    @SerializedName("tenant_key")
+    private String tenantKey;
 
     public List<String> getUserKeys() {
         return this.userKeys;
@@ -61,5 +63,13 @@ public class QueryUserDetailReqBody {
 
     public void setEmails(List<String> emails) {
         this.emails = emails;
+    }
+
+    public String getTenantKey() {
+        return this.tenantKey;
+    }
+
+    public void setTenantKey(String tenantKey) {
+        this.tenantKey = tenantKey;
     }
 }
