@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.lark.project.service.field.model.FieldValuePair;
 import com.lark.project.service.user.model.RoleOwner;
 import com.lark.project.service.workitem.model.Schedule;
+import com.lark.project.service.workitem.model.ScheduleConstraintRule;
 
 import java.util.List;
 
@@ -35,6 +36,10 @@ public class NodeUpdateReqBody {
     private List<FieldValuePair> fields;
     @SerializedName("role_assignee")
     private List<RoleOwner> roleAssignee;
+    @SerializedName("schedule_constraint_rule")
+    private ScheduleConstraintRule scheduleConstraintRule;
+    @SerializedName("node_custom_fields")
+    private List<FieldValuePair> nodeCustomFields;
 
     public List<String> getNodeOwners() {
         return this.nodeOwners;
@@ -74,5 +79,21 @@ public class NodeUpdateReqBody {
 
     public void setRoleAssignee(List<RoleOwner> roleAssignee) {
         this.roleAssignee = roleAssignee;
+    }
+
+    public ScheduleConstraintRule getScheduleConstraintRule() {
+        return this.scheduleConstraintRule;
+    }
+
+    public void setScheduleConstraintRule(ScheduleConstraintRule scheduleConstraintRule) {
+        this.scheduleConstraintRule = scheduleConstraintRule;
+    }
+
+    public List<FieldValuePair> getNodeCustomFields() {
+        return this.nodeCustomFields;
+    }
+
+    public void setNodeCustomFields(List<FieldValuePair> nodeCustomFields) {
+        this.nodeCustomFields = nodeCustomFields;
     }
 }

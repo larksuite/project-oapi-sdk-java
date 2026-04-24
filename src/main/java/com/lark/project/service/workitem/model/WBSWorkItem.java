@@ -56,16 +56,10 @@ public class WBSWorkItem {
     private List<Schedule> schedules;
 
     @SerializedName("points")
-    private Float points;
+    private Double points;
 
     @SerializedName("role_owners")
     private List<RoleOwner> roleOwners;
-
-    @SerializedName("work_item_type_key")
-    private String workItemTypeKey;
-
-    @SerializedName("milestone")
-    private Boolean milestone;
 
     @SerializedName("union_deliverable")
     private UnionDeliverable unionDeliverable;
@@ -75,6 +69,9 @@ public class WBSWorkItem {
 
     @SerializedName("finish_time")
     private Long finishTime;
+
+    @SerializedName("field_values")
+    private List<FieldValuePair> fieldValues;
 
     public String getNodeUUID() {
         return this.nodeUUID;
@@ -156,11 +153,11 @@ public class WBSWorkItem {
         this.schedules = schedules;
     }
 
-    public Float getPoints() {
+    public Double getPoints() {
         return this.points;
     }
 
-    public void setPoints(Float points) {
+    public void setPoints(Double points) {
         this.points = points;
     }
 
@@ -170,22 +167,6 @@ public class WBSWorkItem {
 
     public void setRoleOwners(List<RoleOwner> roleOwners) {
         this.roleOwners = roleOwners;
-    }
-
-    public String getWorkItemTypeKey() {
-        return this.workItemTypeKey;
-    }
-
-    public void setWorkItemTypeKey(String workItemTypeKey) {
-        this.workItemTypeKey = workItemTypeKey;
-    }
-
-    public Boolean getMilestone() {
-        return this.milestone;
-    }
-
-    public void setMilestone(Boolean milestone) {
-        this.milestone = milestone;
     }
 
     public UnionDeliverable getUnionDeliverable() {
@@ -210,5 +191,13 @@ public class WBSWorkItem {
 
     public void setFinishTime(Long finishTime) {
         this.finishTime = finishTime;
+    }
+
+    public List<FieldValuePair> getFieldValues() {
+        return fieldValues;
+    }
+
+    public void setFieldValues(List<FieldValuePair> fieldValues) {
+        this.fieldValues = fieldValues;
     }
 }

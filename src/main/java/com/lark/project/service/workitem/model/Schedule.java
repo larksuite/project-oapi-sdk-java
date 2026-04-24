@@ -23,7 +23,7 @@ import java.util.List;
 
 public class Schedule {
     @SerializedName("points")
-    private Float points;
+    private Double points;
 
     @SerializedName("estimate_start_date")
     private Long estimateStartDate;
@@ -35,13 +35,19 @@ public class Schedule {
     private List<String> owners;
 
     @SerializedName("actual_work_time")
-    private Float actualWorkTime;
+    private Double actualWorkTime;
 
-    public Float getPoints() {
+    @SerializedName("is_auto")
+    private Boolean isAuto;
+
+    @SerializedName("planned_construction_period")
+    private Integer plannedConstructionPeriod;
+
+    public Double getPoints() {
         return this.points;
     }
 
-    public void setPoints(Float points) {
+    public void setPoints(Double points) {
         this.points = points;
     }
 
@@ -69,12 +75,28 @@ public class Schedule {
         this.owners = owners;
     }
 
-    public Float getActualWorkTime() {
+    public Double getActualWorkTime() {
         return this.actualWorkTime;
     }
 
-    public void setActualWorkTime(Float actualWorkTime) {
+    public void setActualWorkTime(Double actualWorkTime) {
         this.actualWorkTime = actualWorkTime;
+    }
+
+    public Boolean getIsAuto() {
+        return this.isAuto;
+    }
+
+    public void setIsAuto(Boolean isAuto) {
+        this.isAuto = isAuto;
+    }
+
+    public Integer getPlannedConstructionPeriod() {
+        return this.plannedConstructionPeriod;
+    }
+
+    public void setPlannedConstructionPeriod(Integer plannedConstructionPeriod) {
+        this.plannedConstructionPeriod = plannedConstructionPeriod;
     }
 
 }

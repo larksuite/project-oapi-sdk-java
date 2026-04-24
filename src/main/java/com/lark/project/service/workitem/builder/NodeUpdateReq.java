@@ -31,7 +31,7 @@ public class NodeUpdateReq {
     private String projectKey;
     @Path
     @SerializedName("work_item_id")
-    private Long workItemID;
+    private String workItemID;
     @Path
     @SerializedName("node_id")
     private String nodeID;
@@ -66,11 +66,11 @@ public class NodeUpdateReq {
         this.projectKey = projectKey;
     }
 
-    public Long getWorkItemID() {
+    public String getWorkItemID() {
         return this.workItemID;
     }
 
-    public void setWorkItemID(Long workItemID) {
+    public void setWorkItemID(String workItemID) {
         this.workItemID = workItemID;
     }
 
@@ -100,7 +100,7 @@ public class NodeUpdateReq {
 
     public static class Builder {
         private String projectKey;
-        private Long workItemID;
+        private String workItemID;
         private String nodeID;
         private String workItemTypeKey;
         private NodeUpdateReqBody body;
@@ -114,7 +114,7 @@ public class NodeUpdateReq {
             return this;
         }
 
-        public Builder workItemID(Long workItemID) {
+        public Builder workItemID(String workItemID) {
             this.workItemID = workItemID;
             return this;
         }
@@ -151,6 +151,16 @@ public class NodeUpdateReq {
 
         public Builder roleAssignee(List<RoleOwner> roleAssignee) {
             this.body.setRoleAssignee(roleAssignee);
+            return this;
+        }
+
+        public Builder scheduleConstraintRule(com.lark.project.service.workitem.model.ScheduleConstraintRule scheduleConstraintRule) {
+            this.body.setScheduleConstraintRule(scheduleConstraintRule);
+            return this;
+        }
+
+        public Builder nodeCustomFields(List<FieldValuePair> nodeCustomFields) {
+            this.body.setNodeCustomFields(nodeCustomFields);
             return this;
         }
 

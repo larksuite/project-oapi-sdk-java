@@ -29,21 +29,8 @@ public class WbsViewResponse {
     @SerializedName("related_sub_work_items")
     private List<WBSWorkItem> relatedSubWorkItems;
 
-    @SerializedName("template_version")
-    private Long templateVersion;
-
-    @SerializedName("template_name")
-    private String templateName;
-
-    @SerializedName("template_id")
-    private String templateID;
-
     @SerializedName("related_parent_work_item")
     private WBSParentWorkItem relatedParentWorkItem;
-
-    @SerializedName("user_details")
-    private List<UserDetail> userDetails;
-
 
     @SerializedName("connections")
     private List<Connection> connections;
@@ -95,44 +82,12 @@ public class WbsViewResponse {
         this.relatedSubWorkItems = relatedSubWorkItems;
     }
 
-    public Long getTemplateVersion() {
-        return this.templateVersion;
-    }
-
-    public void setTemplateVersion(Long templateVersion) {
-        this.templateVersion = templateVersion;
-    }
-
-    public String getTemplateName() {
-        return this.templateName;
-    }
-
-    public void setTemplateName(String templateName) {
-        this.templateName = templateName;
-    }
-
-    public String getTemplateID() {
-        return this.templateID;
-    }
-
-    public void setTemplateID(String templateID) {
-        this.templateID = templateID;
-    }
-
     public WBSParentWorkItem getRelatedParentWorkItem() {
         return this.relatedParentWorkItem;
     }
 
     public void setRelatedParentWorkItem(WBSParentWorkItem relatedParentWorkItem) {
         this.relatedParentWorkItem = relatedParentWorkItem;
-    }
-
-    public List<UserDetail> getUserDetails() {
-        return this.userDetails;
-    }
-
-    public void setUserDetails(List<UserDetail> userDetails) {
-        this.userDetails = userDetails;
     }
 
 }

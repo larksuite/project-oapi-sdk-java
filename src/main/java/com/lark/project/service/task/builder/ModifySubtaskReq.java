@@ -34,7 +34,7 @@ public class ModifySubtaskReq {
     private String workItemTypeKey;
     @Path
     @SerializedName("work_item_id")
-    private Long workItemID;
+    private String workItemID;
     @Body
     private ModifySubtaskReqBody body;
 
@@ -70,11 +70,11 @@ public class ModifySubtaskReq {
         this.workItemTypeKey = workItemTypeKey;
     }
 
-    public Long getWorkItemID() {
+    public String getWorkItemID() {
         return this.workItemID;
     }
 
-    public void setWorkItemID(Long workItemID) {
+    public void setWorkItemID(String workItemID) {
         this.workItemID = workItemID;
     }
 
@@ -89,7 +89,7 @@ public class ModifySubtaskReq {
     public static class Builder {
         private String projectKey;
         private String workItemTypeKey;
-        private Long workItemID;
+        private String workItemID;
         private ModifySubtaskReqBody body;
 
         public Builder() {
@@ -106,7 +106,7 @@ public class ModifySubtaskReq {
             return this;
         }
 
-        public Builder workItemID(Long workItemID) {
+        public Builder workItemID(String workItemID) {
             this.workItemID = workItemID;
             return this;
         }

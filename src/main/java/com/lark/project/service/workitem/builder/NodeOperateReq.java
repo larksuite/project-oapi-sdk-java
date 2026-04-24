@@ -31,7 +31,7 @@ public class NodeOperateReq {
     private String projectKey;
     @Path
     @SerializedName("work_item_id")
-    private Long workItemID;
+    private String workItemID;
     @Path
     @SerializedName("node_id")
     private String nodeID;
@@ -66,11 +66,11 @@ public class NodeOperateReq {
         this.projectKey = projectKey;
     }
 
-    public Long getWorkItemID() {
+    public String getWorkItemID() {
         return this.workItemID;
     }
 
-    public void setWorkItemID(Long workItemID) {
+    public void setWorkItemID(String workItemID) {
         this.workItemID = workItemID;
     }
 
@@ -100,7 +100,7 @@ public class NodeOperateReq {
 
     public static class Builder {
         private String projectKey;
-        private Long workItemID;
+        private String workItemID;
         private String nodeID;
         private String workItemTypeKey;
         private NodeOperateReqBody body;
@@ -114,7 +114,7 @@ public class NodeOperateReq {
             return this;
         }
 
-        public Builder workItemID(Long workItemID) {
+        public Builder workItemID(String workItemID) {
             this.workItemID = workItemID;
             return this;
         }

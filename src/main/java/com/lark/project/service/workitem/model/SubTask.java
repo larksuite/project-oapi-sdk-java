@@ -34,7 +34,7 @@ public class SubTask {
     private List<Schedule> schedules;
 
     @SerializedName("order")
-    private Float order;
+    private Double order;
 
     @SerializedName("details")
     private String details;
@@ -91,11 +91,11 @@ public class SubTask {
         this.schedules = schedules;
     }
 
-    public Float getOrder() {
+    public Double getOrder() {
         return this.order;
     }
 
-    public void setOrder(Float order) {
+    public void setOrder(Double order) {
         this.order = order;
     }
 

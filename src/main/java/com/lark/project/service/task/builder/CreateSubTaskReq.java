@@ -31,7 +31,7 @@ public class CreateSubTaskReq {
     private String projectKey;
     @Path
     @SerializedName("work_item_id")
-    private Long workItemID;
+    private String workItemID;
     @Path
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
@@ -62,11 +62,11 @@ public class CreateSubTaskReq {
         this.projectKey = projectKey;
     }
 
-    public Long getWorkItemID() {
+    public String getWorkItemID() {
         return this.workItemID;
     }
 
-    public void setWorkItemID(Long workItemID) {
+    public void setWorkItemID(String workItemID) {
         this.workItemID = workItemID;
     }
 
@@ -88,7 +88,7 @@ public class CreateSubTaskReq {
 
     public static class Builder {
         private String projectKey;
-        private Long workItemID;
+        private String workItemID;
         private String workItemTypeKey;
         private CreateSubTaskReqBody body;
 
@@ -101,7 +101,7 @@ public class CreateSubTaskReq {
             return this;
         }
 
-        public Builder workItemID(Long workItemID) {
+        public Builder workItemID(String workItemID) {
             this.workItemID = workItemID;
             return this;
         }
