@@ -33,7 +33,7 @@ public class WbsViewReq {
     private String projectKey;
     @Path
     @SerializedName("work_item_id")
-    private String workItemID;
+    private Long workItemID;
     @Path
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
@@ -72,11 +72,11 @@ public class WbsViewReq {
         this.projectKey = projectKey;
     }
 
-    public String getWorkItemID() {
+    public Long getWorkItemID() {
         return this.workItemID;
     }
 
-    public void setWorkItemID(String workItemID) {
+    public void setWorkItemID(Long workItemID) {
         this.workItemID = workItemID;
     }
 
@@ -114,7 +114,7 @@ public class WbsViewReq {
 
     public static class Builder {
         private String projectKey;
-        private String workItemID;
+        private Long workItemID;
         private String workItemTypeKey;
         private Boolean needUnionDeliverable;
         private Boolean needScheduleTableAgg;
@@ -129,7 +129,7 @@ public class WbsViewReq {
             return this;
         }
 
-        public Builder workItemID(String workItemID) {
+        public Builder workItemID(Long workItemID) {
             this.workItemID = workItemID;
             return this;
         }

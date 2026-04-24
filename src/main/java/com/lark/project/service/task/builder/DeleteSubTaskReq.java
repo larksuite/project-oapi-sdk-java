@@ -25,13 +25,13 @@ public class DeleteSubTaskReq {
     private String projectKey;
     @Path
     @SerializedName("work_item_id")
-    private String workItemID;
+    private Long workItemID;
     @Path
     @SerializedName("work_item_type_key")
     private String workItemTypeKey;
     @Path
     @SerializedName("task_id")
-    private String taskID;
+    private Long taskID;
 
     public DeleteSubTaskReq() {
     }
@@ -55,11 +55,11 @@ public class DeleteSubTaskReq {
         this.projectKey = projectKey;
     }
 
-    public String getWorkItemID() {
+    public Long getWorkItemID() {
         return this.workItemID;
     }
 
-    public void setWorkItemID(String workItemID) {
+    public void setWorkItemID(Long workItemID) {
         this.workItemID = workItemID;
     }
 
@@ -71,19 +71,19 @@ public class DeleteSubTaskReq {
         this.workItemTypeKey = workItemTypeKey;
     }
 
-    public String getTaskID() {
+    public Long getTaskID() {
         return this.taskID;
     }
 
-    public void setTaskID(String taskID) {
+    public void setTaskID(Long taskID) {
         this.taskID = taskID;
     }
 
     public static class Builder {
         private String projectKey;
-        private String workItemID;
+        private Long workItemID;
         private String workItemTypeKey;
-        private String taskID;
+        private Long taskID;
 
         public Builder() {
         }
@@ -93,7 +93,7 @@ public class DeleteSubTaskReq {
             return this;
         }
 
-        public Builder workItemID(String workItemID) {
+        public Builder workItemID(Long workItemID) {
             this.workItemID = workItemID;
             return this;
         }
@@ -103,7 +103,7 @@ public class DeleteSubTaskReq {
             return this;
         }
 
-        public Builder taskID(String taskID) {
+        public Builder taskID(Long taskID) {
             this.taskID = taskID;
             return this;
         }

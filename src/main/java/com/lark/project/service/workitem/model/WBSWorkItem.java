@@ -56,7 +56,7 @@ public class WBSWorkItem {
     private List<Schedule> schedules;
 
     @SerializedName("points")
-    private Double points;
+    private Float points;
 
     @SerializedName("role_owners")
     private List<RoleOwner> roleOwners;
@@ -153,11 +153,11 @@ public class WBSWorkItem {
         this.schedules = schedules;
     }
 
-    public Double getPoints() {
+    public Float getPoints() {
         return this.points;
     }
 
-    public void setPoints(Double points) {
+    public void setPoints(Float points) {
         this.points = points;
     }
 
