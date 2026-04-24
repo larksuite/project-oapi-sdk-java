@@ -66,6 +66,9 @@ public class WorkflowNode {
     @SerializedName("checker")
     private List<Checker> checker;
 
+    @SerializedName("sub_status")
+    private List<Checker> subStatus;
+
     @SerializedName("milestone")
     private Boolean milestone;
 
@@ -191,6 +194,14 @@ public class WorkflowNode {
 
     public void setChecker(List<Checker> checker) {
         this.checker = checker;
+    }
+
+    public List<Checker> getSubStatus() {
+        return this.subStatus;
+    }
+
+    public void setSubStatus(List<Checker> subStatus) {
+        this.subStatus = subStatus;
     }
 
     public Boolean getMilestone() {
