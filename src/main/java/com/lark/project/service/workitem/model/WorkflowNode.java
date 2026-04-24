@@ -69,6 +69,9 @@ public class WorkflowNode {
     @SerializedName("milestone")
     private Boolean milestone;
 
+    @SerializedName("participants")
+    private List<String> participants;
+
     @SerializedName("node_fields")
     private List<FieldValuePair> nodeFields;
 
@@ -196,6 +199,14 @@ public class WorkflowNode {
 
     public void setMilestone(Boolean milestone) {
         this.milestone = milestone;
+    }
+
+    public List<String> getParticipants() {
+        return this.participants;
+    }
+
+    public void setParticipants(List<String> participants) {
+        this.participants = participants;
     }
 
     public List<FieldValuePair> getNodeFields() {

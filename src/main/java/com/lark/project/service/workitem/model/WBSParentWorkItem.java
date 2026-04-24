@@ -46,6 +46,18 @@ public class WBSParentWorkItem {
     @SerializedName("template_version")
     private Long templateVersion;
 
+    @SerializedName("relation_node_id")
+    private String relationNodeID;
+
+    @SerializedName("relation_node_name")
+    private String relationNodeName;
+
+    @SerializedName("relation_node_tags")
+    private List<String> relationNodeTags;
+
+    @SerializedName("relation_node_uuid")
+    private String relationNodeUUID;
+
     public Boolean getIsTop() {
         return this.isTop;
     }
@@ -108,5 +120,37 @@ public class WBSParentWorkItem {
 
     public void setTemplateVersion(Long templateVersion) {
         this.templateVersion = templateVersion;
+    }
+
+    public String getRelationNodeID() {
+        return this.relationNodeID;
+    }
+
+    public void setRelationNodeID(String relationNodeID) {
+        this.relationNodeID = relationNodeID;
+    }
+
+    public String getRelationNodeName() {
+        return this.relationNodeName;
+    }
+
+    public void setRelationNodeName(String relationNodeName) {
+        this.relationNodeName = relationNodeName;
+    }
+
+    public List<String> getRelationNodeTags() {
+        return this.relationNodeTags;
+    }
+
+    public void setRelationNodeTags(List<String> relationNodeTags) {
+        this.relationNodeTags = relationNodeTags;
+    }
+
+    public String getRelationNodeUUID() {
+        return this.relationNodeUUID;
+    }
+
+    public void setRelationNodeUUID(String relationNodeUUID) {
+        this.relationNodeUUID = relationNodeUUID;
     }
 }

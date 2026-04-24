@@ -61,6 +61,12 @@ public class WBSWorkItem {
     @SerializedName("role_owners")
     private List<RoleOwner> roleOwners;
 
+    @SerializedName("work_item_type_key")
+    private String workItemTypeKey;
+
+    @SerializedName("milestone")
+    private Boolean milestone;
+
     @SerializedName("union_deliverable")
     private UnionDeliverable unionDeliverable;
 
@@ -167,6 +173,22 @@ public class WBSWorkItem {
 
     public void setRoleOwners(List<RoleOwner> roleOwners) {
         this.roleOwners = roleOwners;
+    }
+
+    public String getWorkItemTypeKey() {
+        return this.workItemTypeKey;
+    }
+
+    public void setWorkItemTypeKey(String workItemTypeKey) {
+        this.workItemTypeKey = workItemTypeKey;
+    }
+
+    public Boolean getMilestone() {
+        return this.milestone;
+    }
+
+    public void setMilestone(Boolean milestone) {
+        this.milestone = milestone;
     }
 
     public UnionDeliverable getUnionDeliverable() {
