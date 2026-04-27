@@ -63,6 +63,9 @@ public class WorkflowNode {
     @SerializedName("different_schedule")
     private Boolean differentSchedule;
 
+    @SerializedName("checker")
+    private List<Checker> checker;
+
     @SerializedName("sub_status")
     private List<Checker> subStatus;
 
@@ -71,6 +74,15 @@ public class WorkflowNode {
 
     @SerializedName("participants")
     private List<String> participants;
+
+    @SerializedName("node_fields")
+    private List<FieldValuePair> nodeFields;
+
+    @SerializedName("finished_infos")
+    private FinishedInfos finishedInfos;
+
+    @SerializedName("owner_usage_mode")
+    private Long ownerUsageMode;
 
     public String getID() {
         return this.id;
@@ -176,6 +188,14 @@ public class WorkflowNode {
         this.differentSchedule = differentSchedule;
     }
 
+    public List<Checker> getChecker() {
+        return this.checker;
+    }
+
+    public void setChecker(List<Checker> checker) {
+        this.checker = checker;
+    }
+
     public List<Checker> getSubStatus() {
         return this.subStatus;
     }
@@ -198,6 +218,30 @@ public class WorkflowNode {
 
     public void setParticipants(List<String> participants) {
         this.participants = participants;
+    }
+
+    public List<FieldValuePair> getNodeFields() {
+        return nodeFields;
+    }
+
+    public void setNodeFields(List<FieldValuePair> nodeFields) {
+        this.nodeFields = nodeFields;
+    }
+
+    public FinishedInfos getFinishedInfos() {
+        return finishedInfos;
+    }
+
+    public void setFinishedInfos(FinishedInfos finishedInfos) {
+        this.finishedInfos = finishedInfos;
+    }
+
+    public Long getOwnerUsageMode() {
+        return ownerUsageMode;
+    }
+
+    public void setOwnerUsageMode(Long ownerUsageMode) {
+        this.ownerUsageMode = ownerUsageMode;
     }
 
 }

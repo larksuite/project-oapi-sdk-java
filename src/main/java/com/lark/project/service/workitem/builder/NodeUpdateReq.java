@@ -154,6 +154,16 @@ public class NodeUpdateReq {
             return this;
         }
 
+        public Builder scheduleConstraintRule(com.lark.project.service.workitem.model.ScheduleConstraintRule scheduleConstraintRule) {
+            this.body.setScheduleConstraintRule(scheduleConstraintRule);
+            return this;
+        }
+
+        public Builder nodeCustomFields(List<FieldValuePair> nodeCustomFields) {
+            this.body.setNodeCustomFields(nodeCustomFields);
+            return this;
+        }
+
         public NodeUpdateReq build() {
             return new NodeUpdateReq(this);
         }

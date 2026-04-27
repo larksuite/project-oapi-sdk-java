@@ -960,4 +960,96 @@ public class WorkItemServiceImpl implements WorkItemService {
 
         return resp;
     }
+
+    // 获取指定节点/状态流转所需必填信息
+    public GetTransitionRequiredInfoResp getTransitionRequiredInfo(GetTransitionRequiredInfoReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/transition_required_info/get"
+                , false
+                , req);
+
+        GetTransitionRequiredInfoResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, GetTransitionRequiredInfoResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/transition_required_info/get"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 修改评审结论和评审意见
+    public UpdateWorkItemFinishedResp updateWorkItemFinished(UpdateWorkItemFinishedReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/finished/update"
+                , false
+                , req);
+
+        UpdateWorkItemFinishedResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateWorkItemFinishedResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/finished/update"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 批量查询评审意见、评审结论
+    public BatchQueryWorkItemFinishedResp batchQueryWorkItemFinished(BatchQueryWorkItemFinishedReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/finished/batch_query"
+                , false
+                , req);
+
+        BatchQueryWorkItemFinishedResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, BatchQueryWorkItemFinishedResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/finished/batch_query"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 评审结论标签值查询
+    public QueryWorkItemConclusionOptionResp queryWorkItemConclusionOption(QueryWorkItemConclusionOptionReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/finished/query_conclusion_option"
+                , false
+                , req);
+
+        QueryWorkItemConclusionOptionResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemConclusionOptionResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/finished/query_conclusion_option"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }

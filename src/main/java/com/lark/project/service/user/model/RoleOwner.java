@@ -31,6 +31,9 @@ public class RoleOwner {
     @SerializedName("owners")
     private List<String> owners;
 
+    @SerializedName("exist")
+    private Boolean exist;
+
     public String getRole() {
         return this.role;
     }
@@ -55,4 +58,11 @@ public class RoleOwner {
         this.owners = owners;
     }
 
+    public Boolean getExist() {
+        return this.exist;
+    }
+
+    public void setExist(Boolean exist) {
+        this.exist = exist;
+    }
 }

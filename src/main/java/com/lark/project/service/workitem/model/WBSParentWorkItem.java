@@ -153,5 +153,4 @@ public class WBSParentWorkItem {
     public void setRelationNodeUUID(String relationNodeUUID) {
         this.relationNodeUUID = relationNodeUUID;
     }
-
 }
