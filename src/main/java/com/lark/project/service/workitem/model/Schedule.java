@@ -37,6 +37,12 @@ public class Schedule {
     @SerializedName("actual_work_time")
     private Float actualWorkTime;
 
+    @SerializedName("is_auto")
+    private Boolean isAuto;
+
+    @SerializedName("planned_construction_period")
+    private Integer plannedConstructionPeriod;
+
     public Float getPoints() {
         return this.points;
     }
@@ -75,6 +81,22 @@ public class Schedule {
 
     public void setActualWorkTime(Float actualWorkTime) {
         this.actualWorkTime = actualWorkTime;
+    }
+
+    public Boolean getIsAuto() {
+        return this.isAuto;
+    }
+
+    public void setIsAuto(Boolean isAuto) {
+        this.isAuto = isAuto;
+    }
+
+    public Integer getPlannedConstructionPeriod() {
+        return this.plannedConstructionPeriod;
+    }
+
+    public void setPlannedConstructionPeriod(Integer plannedConstructionPeriod) {
+        this.plannedConstructionPeriod = plannedConstructionPeriod;
     }
 
 }

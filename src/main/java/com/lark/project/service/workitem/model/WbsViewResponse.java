@@ -44,7 +44,6 @@ public class WbsViewResponse {
     @SerializedName("user_details")
     private List<UserDetail> userDetails;
 
-
     @SerializedName("connections")
     private List<Connection> connections;
 

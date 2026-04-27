@@ -172,4 +172,16 @@ public interface WorkItemService {
 
     // 通过资源创建实例
     public CreateWorkItemResourceInstanceResp createWorkItemResourceInstance(CreateWorkItemResourceInstanceReq req, RequestOptions reqOptions) throws Exception;
+
+    // 获取指定节点/状态流转所需必填信息
+    public GetTransitionRequiredInfoResp getTransitionRequiredInfo(GetTransitionRequiredInfoReq req, RequestOptions reqOptions) throws Exception;
+
+    // 修改评审结论和评审意见
+    public UpdateWorkItemFinishedResp updateWorkItemFinished(UpdateWorkItemFinishedReq req, RequestOptions reqOptions) throws Exception;
+
+    // 批量查询评审意见、评审结论
+    public BatchQueryWorkItemFinishedResp batchQueryWorkItemFinished(BatchQueryWorkItemFinishedReq req, RequestOptions reqOptions) throws Exception;
+
+    // 评审结论标签值查询
+    public QueryWorkItemConclusionOptionResp queryWorkItemConclusionOption(QueryWorkItemConclusionOptionReq req, RequestOptions reqOptions) throws Exception;
 }

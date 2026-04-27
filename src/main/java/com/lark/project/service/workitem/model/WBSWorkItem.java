@@ -76,6 +76,9 @@ public class WBSWorkItem {
     @SerializedName("finish_time")
     private Long finishTime;
 
+    @SerializedName("field_values")
+    private List<FieldValuePair> fieldValues;
+
     public String getNodeUUID() {
         return this.nodeUUID;
     }
@@ -210,5 +213,13 @@ public class WBSWorkItem {
 
     public void setFinishTime(Long finishTime) {
         this.finishTime = finishTime;
+    }
+
+    public List<FieldValuePair> getFieldValues() {
+        return fieldValues;
+    }
+
+    public void setFieldValues(List<FieldValuePair> fieldValues) {
+        this.fieldValues = fieldValues;
     }
 }
