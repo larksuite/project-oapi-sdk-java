@@ -1,0 +1,224 @@
+src/main/java/com/lark/project/service/workitem/model/QueryWorkItemFieldOptionsData.java
+  5dc37e760f99f50d 1-124 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a28d56983b5f6e495d5a05e","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[1,124]}]}]}
+src/main/java/com/lark/project/service/workitem/WorkItemService.java
+  5dc37e760f99f50d 20,187-189 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a28d56983b5f6e495d5a05e","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Single":20},{"Range":[187,189]}]}]}
+src/main/java/com/lark/project/service/workitem/builder/QueryWorkItemFieldOptionsResp.java
+  5dc37e760f99f50d 1-34 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a28d56983b5f6e495d5a05e","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[1,34]}]}]}
+src/main/java/com/lark/project/service/workitem/builder/QueryWorkItemFieldOptionsReq.java
+  5dc37e760f99f50d 1-81 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a28d56983b5f6e495d5a05e","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[1,81]}]}]}
+src/main/java/com/lark/project/service/workitem/builder/QueryWorkItemFieldOptionsReqBody.java
+  5dc37e760f99f50d 1-77 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a28d56983b5f6e495d5a05e","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[1,77]}]}]}
+src/main/java/com/lark/project/service/workitem/WorkItemServiceImpl.java
+  5dc37e760f99f50d 1055-1077 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a28d56983b5f6e495d5a05e","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[1055,1077]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "4d479ba27871c957e92265677705136a7fec6fbc",
+  "prompts": {
+    "5dc37e760f99f50d": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "69b90157c148d9e773240b6e",
+        "model": "gemini-3.1-pro__dev"
+      },
+      "human_author": "kang.zou <kang.zou@bytedance.com>",
+      "messages": [],
+      "total_additions": 370,
+      "total_deletions": 2,
+      "accepted_lines": 367,
+      "overriden_lines": 1
+    }
+  },
+  "attestation_metadata": {
+    "src/main/java/com/lark/project/service/workitem/WorkItemService.java": [
+      {
+        "hash": "5dc37e760f99f50d",
+        "line_ranges": [
+          {
+            "Single": 20
+          },
+          {
+            "Range": [
+              187,
+              189
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a28d56983b5f6e495d5a05e",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Single": 20
+              },
+              {
+                "Range": [
+                  187,
+                  189
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/workitem/WorkItemServiceImpl.java": [
+      {
+        "hash": "5dc37e760f99f50d",
+        "line_ranges": [
+          {
+            "Range": [
+              1055,
+              1077
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a28d56983b5f6e495d5a05e",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  1055,
+                  1077
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/workitem/builder/QueryWorkItemFieldOptionsReq.java": [
+      {
+        "hash": "5dc37e760f99f50d",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              81
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a28d56983b5f6e495d5a05e",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  81
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/workitem/builder/QueryWorkItemFieldOptionsReqBody.java": [
+      {
+        "hash": "5dc37e760f99f50d",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              77
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a28d56983b5f6e495d5a05e",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  77
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/workitem/builder/QueryWorkItemFieldOptionsResp.java": [
+      {
+        "hash": "5dc37e760f99f50d",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              34
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a28d56983b5f6e495d5a05e",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  34
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/workitem/model/QueryWorkItemFieldOptionsData.java": [
+      {
+        "hash": "5dc37e760f99f50d",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              124
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a28d56983b5f6e495d5a05e",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  124
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "5dc37e760f99f50d": {
+      "tool": "trae",
+      "conversation_id": "69b90157c148d9e773240b6e",
+      "session_id": "69b90157c148d9e773240b6e",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
