@@ -16,8 +16,8 @@
 
 package com.lark.project.service.workitem;
 
-import com.lark.project.core.request.RequestOptions;
 import com.lark.project.service.workitem.builder.*;
+import com.lark.project.core.request.RequestOptions;
 
 public interface WorkItemService {
 
@@ -184,4 +184,7 @@ public interface WorkItemService {
 
     // 评审结论标签值查询
     public QueryWorkItemConclusionOptionResp queryWorkItemConclusionOption(QueryWorkItemConclusionOptionReq req, RequestOptions reqOptions) throws Exception;
+
+    // 获取工作项指定字段可选选项
+    public QueryWorkItemFieldOptionsResp queryWorkItemFieldOptions(QueryWorkItemFieldOptionsReq req, RequestOptions reqOptions) throws Exception;
 }

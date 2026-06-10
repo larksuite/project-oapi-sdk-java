@@ -1052,4 +1052,27 @@ public class WorkItemServiceImpl implements WorkItemService {
 
         return resp;
     }
+
+    // 获取工作项指定字段可选选项
+    public QueryWorkItemFieldOptionsResp queryWorkItemFieldOptions(QueryWorkItemFieldOptionsReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/work_item/field/options"
+                , false
+                , req);
+
+        QueryWorkItemFieldOptionsResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryWorkItemFieldOptionsResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/work_item/field/options"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 }
