@@ -1,0 +1,513 @@
+src/main/java/com/lark/project/service/field/model/SymbolSetting.java
+  s_e6fc0cbc1f62e3::t_1683d00bc41310 1-36 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd187a356fbdc5eb5ba3e","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,36]}]}]}
+src/main/java/com/lark/project/service/field/builder/CreateFieldReqBody.java
+  s_e6fc0cbc1f62e3::t_998d395feee880 21 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd1a1a356fbdc5eb5ba4a","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Single":21}]}]}
+  s_e6fc0cbc1f62e3::t_a3197c0b2fd344 181-196 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd058a356fbdc5eb5ba0a","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[181,196]}]}]}
+  s_e6fc0cbc1f62e3::t_674a72741389d3 57-60 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd052a356fbdc5eb5ba07","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[57,60]}]}]}
+src/main/java/com/lark/project/service/field/model/SimpleField.java
+  s_e6fc0cbc1f62e3::t_308824f5683b81 149-155 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd080a356fbdc5eb5ba19","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[149,155]}]}]}
+  s_e6fc0cbc1f62e3::t_da79ec130db115 58-60 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd077a356fbdc5eb5ba16","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[58,60]}]}]}
+src/main/java/com/lark/project/service/field/builder/CreateFieldReq.java
+  s_e6fc0cbc1f62e3::t_ee968e80df93a0 170-179 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd244a356fbdc5eb5ba78","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[170,179]}]}]}
+  s_e6fc0cbc1f62e3::t_6ed1ef180b3be1 23 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd23ca356fbdc5eb5ba75","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Single":23}]}]}
+src/main/java/com/lark/project/service/field/model/NumberConfig.java
+  s_e6fc0cbc1f62e3::t_c57227cc44f1d8 1-46 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd193a356fbdc5eb5ba44","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,46]}]}]}
+src/main/java/com/lark/project/service/field/model/FieldValuePair.java
+  s_e6fc0cbc1f62e3::t_5d259fb6b4dc23 41-43 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd02aa356fbdc5eb5b9fe","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[41,43]}]}]}
+  s_e6fc0cbc1f62e3::t_ca7e4bb853c469 91-98 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd033a356fbdc5eb5ba01","tool_type":"agent","tool_id":"SearchReplace","line_ranges":[{"Range":[91,98]}]}]}
+src/main/java/com/lark/project/service/field/model/EditablePersonnelScope.java
+  s_e6fc0cbc1f62e3::t_37da2f845f99ce 1-45 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a3cd068a356fbdc5eb5ba10","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,45]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "8b88f47f5c02bd102fb7b2a470b778c2cb59345f",
+  "prompts": {},
+  "sessions": {
+    "s_e6fc0cbc1f62e3": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "69ca430dc148d9e77324767a",
+        "model": "gemini-3.1-pro__dev"
+      },
+      "human_author": "kang.zou <kang.zou@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "src/main/java/com/lark/project/service/field/builder/CreateFieldReq.java": [
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_ee968e80df93a0",
+        "line_ranges": [
+          {
+            "Range": [
+              170,
+              179
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd244a356fbdc5eb5ba78",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  170,
+                  179
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_6ed1ef180b3be1",
+        "line_ranges": [
+          {
+            "Single": 23
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd23ca356fbdc5eb5ba75",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Single": 23
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/field/builder/CreateFieldReqBody.java": [
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_998d395feee880",
+        "line_ranges": [
+          {
+            "Single": 21
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd1a1a356fbdc5eb5ba4a",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Single": 21
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_a3197c0b2fd344",
+        "line_ranges": [
+          {
+            "Range": [
+              181,
+              196
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd058a356fbdc5eb5ba0a",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  181,
+                  196
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_674a72741389d3",
+        "line_ranges": [
+          {
+            "Range": [
+              57,
+              60
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd052a356fbdc5eb5ba07",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  57,
+                  60
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/field/model/EditablePersonnelScope.java": [
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_37da2f845f99ce",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              45
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd068a356fbdc5eb5ba10",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  45
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/field/model/FieldValuePair.java": [
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_5d259fb6b4dc23",
+        "line_ranges": [
+          {
+            "Range": [
+              41,
+              43
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd02aa356fbdc5eb5b9fe",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  41,
+                  43
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_ca7e4bb853c469",
+        "line_ranges": [
+          {
+            "Range": [
+              91,
+              98
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd033a356fbdc5eb5ba01",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  91,
+                  98
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/field/model/NumberConfig.java": [
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_c57227cc44f1d8",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              46
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd193a356fbdc5eb5ba44",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  46
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/field/model/SimpleField.java": [
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_308824f5683b81",
+        "line_ranges": [
+          {
+            "Range": [
+              149,
+              155
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd080a356fbdc5eb5ba19",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  149,
+                  155
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_da79ec130db115",
+        "line_ranges": [
+          {
+            "Range": [
+              58,
+              60
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd077a356fbdc5eb5ba16",
+            "tool_type": "agent",
+            "tool_id": "SearchReplace",
+            "line_ranges": [
+              {
+                "Range": [
+                  58,
+                  60
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "src/main/java/com/lark/project/service/field/model/SymbolSetting.java": [
+      {
+        "hash": "s_e6fc0cbc1f62e3::t_1683d00bc41310",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              36
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a3cd187a356fbdc5eb5ba3e",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  36
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_e6fc0cbc1f62e3": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_1683d00bc41310": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_24b72c61dd143d": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_2d6f95068f9c84": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_308824f5683b81": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_37afece8cb719d": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_37da2f845f99ce": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_488173df20db19": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_5d259fb6b4dc23": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_674a72741389d3": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_6ed1ef180b3be1": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_7a52a2592950f6": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_90f5e28e7ba0d9": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_998d395feee880": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_a3197c0b2fd344": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_c57227cc44f1d8": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_ca7e4bb853c469": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_d4c7194fc4f3dd": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_da79ec130db115": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_ee968e80df93a0": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_e6fc0cbc1f62e3::t_f71756db2aeb41": {
+      "tool": "trae",
+      "conversation_id": "69ca430dc148d9e77324767a",
+      "session_id": "69ca430dc148d9e77324767a",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
