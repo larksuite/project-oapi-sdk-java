@@ -55,6 +55,9 @@ public class SimpleField {
     @SerializedName("relation_id")
     private String relationID;
 
+    @SerializedName("editable_personnel_scope")
+    private EditablePersonnelScope editablePersonnelScope;
+
     public String getFieldKey() {
         return this.fieldKey;
     }
@@ -143,4 +146,11 @@ public class SimpleField {
         this.relationID = relationID;
     }
 
+    public EditablePersonnelScope getEditablePersonnelScope() {
+        return editablePersonnelScope;
+    }
+
+    public void setEditablePersonnelScope(EditablePersonnelScope editablePersonnelScope) {
+        this.editablePersonnelScope = editablePersonnelScope;
+    }
 }
