@@ -38,6 +38,9 @@ public class FieldValuePair {
     @SerializedName("update_mode")
     private Integer updateMode;
 
+    @SerializedName("field_name")
+    private String fieldName;
+
     public String getFieldKey() {
         return this.fieldKey;
     }
@@ -84,5 +87,13 @@ public class FieldValuePair {
 
     public void setUpdateMode(Integer updateMode) {
         this.updateMode = updateMode;
+    }
+
+    public String getFieldName() {
+        return this.fieldName;
+    }
+
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 }

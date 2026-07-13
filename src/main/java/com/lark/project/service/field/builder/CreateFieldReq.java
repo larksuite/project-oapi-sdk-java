@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.lark.project.core.annotation.Body;
 import com.lark.project.core.annotation.Path;
 import com.lark.project.service.field.model.TeamOption;
+import com.lark.project.service.field.model.NumberConfig;
 
 import java.util.List;
 
@@ -163,6 +164,16 @@ public class CreateFieldReq {
 
         public Builder teamOption(TeamOption teamOption) {
             this.body.setTeamOption(teamOption);
+            return this;
+        }
+
+        public Builder parentFieldKey(String parentFieldKey) {
+            this.body.setParentFieldKey(parentFieldKey);
+            return this;
+        }
+
+        public Builder numberConfig(NumberConfig numberConfig) {
+            this.body.setNumberConfig(numberConfig);
             return this;
         }
 
