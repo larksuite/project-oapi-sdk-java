@@ -18,6 +18,7 @@ package com.lark.project.service.field.builder;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.service.field.model.TeamOption;
+import com.lark.project.service.field.model.NumberConfig;
 
 import java.util.List;
 
@@ -53,6 +54,10 @@ public class CreateFieldReqBody {
     private Boolean format;
     @SerializedName("team_option")
     private TeamOption teamOption;
+    @SerializedName("parent_field_key")
+    private String parentFieldKey;
+    @SerializedName("number_config")
+    private NumberConfig numberConfig;
 
     public String getFieldName() {
         return this.fieldName;
@@ -172,5 +177,21 @@ public class CreateFieldReqBody {
 
     public void setTeamOption(TeamOption teamOption) {
         this.teamOption = teamOption;
+    }
+
+    public String getParentFieldKey() {
+        return parentFieldKey;
+    }
+
+    public void setParentFieldKey(String parentFieldKey) {
+        this.parentFieldKey = parentFieldKey;
+    }
+
+    public NumberConfig getNumberConfig() {
+        return numberConfig;
+    }
+
+    public void setNumberConfig(NumberConfig numberConfig) {
+        this.numberConfig = numberConfig;
     }
 }
