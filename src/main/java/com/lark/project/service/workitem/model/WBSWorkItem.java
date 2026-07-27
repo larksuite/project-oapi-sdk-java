@@ -76,6 +76,9 @@ public class WBSWorkItem {
     @SerializedName("finish_time")
     private Long finishTime;
 
+    @SerializedName("state_key")
+    private String stateKey;
+
     @SerializedName("field_values")
     private List<FieldValuePair> fieldValues;
 
@@ -213,6 +216,14 @@ public class WBSWorkItem {
 
     public void setFinishTime(Long finishTime) {
         this.finishTime = finishTime;
+    }
+
+    public String getStateKey() {
+        return stateKey;
+    }
+
+    public void setStateKey(String stateKey) {
+        this.stateKey = stateKey;
     }
 
     public List<FieldValuePair> getFieldValues() {
