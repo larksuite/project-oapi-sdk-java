@@ -19,6 +19,7 @@ package com.lark.project.service.workitem.builder;
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.service.field.model.FieldValuePair;
 import com.lark.project.service.user.model.RoleOwner;
+import com.lark.project.service.workitem.model.AddSubWorkitems;
 import com.lark.project.service.workitem.model.Schedule;
 import com.lark.project.service.workitem.model.ScheduleConstraintRule;
 
@@ -40,6 +41,8 @@ public class NodeUpdateReqBody {
     private ScheduleConstraintRule scheduleConstraintRule;
     @SerializedName("node_custom_fields")
     private List<FieldValuePair> nodeCustomFields;
+    @SerializedName("add_sub_workitems")
+    private AddSubWorkitems addSubWorkitems;
 
     public List<String> getNodeOwners() {
         return this.nodeOwners;
@@ -95,5 +98,13 @@ public class NodeUpdateReqBody {
 
     public void setNodeCustomFields(List<FieldValuePair> nodeCustomFields) {
         this.nodeCustomFields = nodeCustomFields;
+    }
+
+    public AddSubWorkitems getAddSubWorkitems() {
+        return addSubWorkitems;
+    }
+
+    public void setAddSubWorkitems(AddSubWorkitems addSubWorkitems) {
+        this.addSubWorkitems = addSubWorkitems;
     }
 }
