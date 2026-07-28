@@ -44,6 +44,9 @@ public class Expand {
     @SerializedName("need_wbs_relation_chain_path")
     private Boolean needWBSRelationChainPath;
 
+    @SerializedName("need_sub_workitem_detail")
+    private Boolean needSubWorkitemDetail;
+
     public Boolean getNeedWorkflow() {
         return this.needWorkflow;
     }
@@ -106,5 +109,13 @@ public class Expand {
 
     public void setNeedWBSRelationChainPath(Boolean needWBSRelationChainPath) {
         this.needWBSRelationChainPath = needWBSRelationChainPath;
+    }
+
+    public Boolean getNeedSubWorkitemDetail() {
+        return needSubWorkitemDetail;
+    }
+
+    public void setNeedSubWorkitemDetail(Boolean needSubWorkitemDetail) {
+        this.needSubWorkitemDetail = needSubWorkitemDetail;
     }
 }

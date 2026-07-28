@@ -84,6 +84,9 @@ public class WorkflowNode {
     @SerializedName("owner_usage_mode")
     private Long ownerUsageMode;
 
+    @SerializedName("node_sub_workitem_detail")
+    private List<NodeSubWorkItemDetail> nodeSubWorkitemDetail;
+
     public String getID() {
         return this.id;
     }
@@ -242,6 +245,14 @@ public class WorkflowNode {
 
     public void setOwnerUsageMode(Long ownerUsageMode) {
         this.ownerUsageMode = ownerUsageMode;
+    }
+
+    public List<NodeSubWorkItemDetail> getNodeSubWorkitemDetail() {
+        return nodeSubWorkitemDetail;
+    }
+
+    public void setNodeSubWorkitemDetail(List<NodeSubWorkItemDetail> nodeSubWorkitemDetail) {
+        this.nodeSubWorkitemDetail = nodeSubWorkitemDetail;
     }
 
 }
