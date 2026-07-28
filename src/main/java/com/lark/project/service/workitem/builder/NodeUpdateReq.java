@@ -164,6 +164,11 @@ public class NodeUpdateReq {
             return this;
         }
 
+        public Builder addSubWorkitems(com.lark.project.service.workitem.model.AddSubWorkitems addSubWorkitems) {
+            this.body.setAddSubWorkitems(addSubWorkitems);
+            return this;
+        }
+
         public NodeUpdateReq build() {
             return new NodeUpdateReq(this);
         }
