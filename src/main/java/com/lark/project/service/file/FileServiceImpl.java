@@ -496,7 +496,23 @@ public class FileServiceImpl implements FileService {
                     
                     try (InputStream partStream = new java.io.FileInputStream(uploadFile) {
                         private long remaining = length;
-                        { skip(start); }
+                        {
+                            long remainingToSkip = start;
+                            while (remainingToSkip > 0) {
+                                long skipped = skip(remainingToSkip);
+                                if (skipped == 0) {
+                                    if (super.read() == -1) {
+                                        break;
+                                    }
+                                    remainingToSkip--;
+                                } else {
+                                    remainingToSkip -= skipped;
+                                }
+                            }
+                            if (remainingToSkip > 0) {
+                                throw new IOException("Failed to skip to start offset: " + start);
+                            }
+                        }
                         
                         @Override
                         public int read() throws IOException {
