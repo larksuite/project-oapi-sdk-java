@@ -59,7 +59,7 @@ public class AttachmentServiceImpl implements AttachmentService{
                 , false
                 , req);
 
-        if (httpResponse.getStatusCode() == 200) {
+        if (httpResponse.getStatusCode() == 200 || httpResponse.getStatusCode() == 206) {
             DownloadAttachmentResp resp = new DownloadAttachmentResp();
             resp.setRawResponse(httpResponse);
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

@@ -105,6 +105,98 @@ public class CommentServiceImpl implements CommentService {
 
         return resp;
     }
+    
+    // 添加评论（新版）
+    public CreateCommentNewResp createCommentNew(CreateCommentNewReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/comment/create"
+                , false
+                , req);
+
+        CreateCommentNewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, CreateCommentNewResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/comment/create"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 删除评论（新版）
+    public DeleteCommentNewResp deleteCommentNew(DeleteCommentNewReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/comment/delete"
+                , false
+                , req);
+
+        DeleteCommentNewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, DeleteCommentNewResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/comment/delete"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 查询评论（新版）
+    public QueryCommentNewResp queryCommentNew(QueryCommentNewReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/comment/query"
+                , false
+                , req);
+
+        QueryCommentNewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, QueryCommentNewResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/comment/query"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
+
+    // 更新评论（新版）
+    public UpdateCommentNewResp updateCommentNew(UpdateCommentNewReq req, RequestOptions reqOptions) throws Exception {
+        if (reqOptions == null) {
+            reqOptions = new RequestOptions();
+        }
+
+        RawResponse httpResponse = Transport.doSend(config, reqOptions, "POST"
+                , "/open_api/comment/update"
+                , false
+                , req);
+
+        UpdateCommentNewResp resp = UnmarshalRespUtil.unmarshalResp(httpResponse, UpdateCommentNewResp.class);
+        if (resp == null) {
+            log.error(Logs.formatReq(req, httpResponse, "/open_api/comment/update"));
+            throw new IllegalArgumentException(ErrConstants.RESULT_ILLEGAL);
+        }
+
+        resp.setRawResponse(httpResponse);
+        resp.setRequest(req);
+
+        return resp;
+    }
 
     // 更新评论
     public UpdateCommentResp updateComment(UpdateCommentReq req, RequestOptions reqOptions) throws Exception {

@@ -33,4 +33,17 @@ public interface CommentService {
     // 更新评论
     public UpdateCommentResp updateComment(UpdateCommentReq req, RequestOptions reqOptions) throws Exception;
 
+    // 添加评论（新版）
+    public CreateCommentNewResp createCommentNew(CreateCommentNewReq req, RequestOptions reqOptions) throws Exception;
+
+    // 删除评论（新版）
+    public DeleteCommentNewResp deleteCommentNew(DeleteCommentNewReq req, RequestOptions reqOptions) throws Exception;
+
+    // 查询评论（新版）
+    public QueryCommentNewResp queryCommentNew(QueryCommentNewReq req, RequestOptions reqOptions) throws Exception;
+
+    // 更新评论（新版）
+    public UpdateCommentNewResp updateCommentNew(UpdateCommentNewReq req, RequestOptions reqOptions) throws Exception;
+
+
 }
