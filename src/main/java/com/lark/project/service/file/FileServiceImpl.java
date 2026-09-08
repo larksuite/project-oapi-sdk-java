@@ -41,15 +41,24 @@ import com.lark.project.core.response.BaseResponse;
 public class FileServiceImpl implements FileService {
 
     private static final Logger log = LoggerFactory.getLogger(FileServiceImpl.class);
-    private static final CloseableHttpClient HTTP_CLIENT = HttpClients.createDefault();
+    private CloseableHttpClient httpClient;
 
     private Config config;
 
     public FileServiceImpl(Config config) {
         this.config = config;
+        if (config.getRequestTimeOut() > 0) {
+            org.apache.http.client.config.RequestConfig requestConfig = org.apache.http.client.config.RequestConfig.custom()
+                    .setSocketTimeout((int) config.getRequestTimeOut())
+                    .setConnectTimeout((int) config.getRequestTimeOut())
+                    .build();
+            this.httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build();
+        } else {
+            this.httpClient = HttpClients.createDefault();
+        }
     }
 
-    private static class FileErrorResp {
+    private static class FileBaseResp {
         private int code;
         private String message;
 
@@ -75,10 +84,10 @@ public class FileServiceImpl implements FileService {
         if (resp != null) {
             try {
                 String body = new String(rawResponse.getBody(), StandardCharsets.UTF_8);
-                FileErrorResp fileError = Jsons.DEFAULT.fromJson(body, FileErrorResp.class);
-                if (fileError != null) {
-                    resp.setErrCode(fileError.getCode());
-                    resp.setErrMsg(fileError.getMessage());
+                FileBaseResp fileBase = Jsons.DEFAULT.fromJson(body, FileBaseResp.class);
+                if (fileBase != null) {
+                    resp.setErrCode(fileBase.getCode());
+                    resp.setErrMsg(fileBase.getMessage());
                 }
             } catch (Exception e) {
                 // ignore
@@ -136,7 +145,7 @@ public class FileServiceImpl implements FileService {
 
         post.setEntity(builder.build());
 
-        try (CloseableHttpResponse response = HTTP_CLIENT.execute(post)) {
+        try (CloseableHttpResponse response = this.httpClient.execute(post)) {
             RawResponse rawResponse = new RawResponse();
             rawResponse.setStatusCode(response.getStatusLine().getStatusCode());
             
@@ -173,13 +182,14 @@ public class FileServiceImpl implements FileService {
         HttpGet get = new HttpGet(url);
         addAuthHeaders(get, reqOptions);
 
-        CloseableHttpResponse response = HTTP_CLIENT.execute(get);
-        
-        if (response.getStatusLine().getStatusCode() == 200) {
+        CloseableHttpResponse response = this.httpClient.execute(get);
+        int statusCode = response.getStatusLine().getStatusCode();
+
+        if (statusCode == 200 || statusCode == 206) {
             DownloadFileResp resp = new DownloadFileResp();
-            
+
             RawResponse rawResponse = new RawResponse();
-            rawResponse.setStatusCode(200);
+            rawResponse.setStatusCode(statusCode);
             Map<String, List<String>> respHeaders = new HashMap<>();
             for (Header header : response.getAllHeaders()) {
                 respHeaders.computeIfAbsent(header.getName(), k -> new ArrayList<>()).add(header.getValue());
@@ -275,7 +285,7 @@ public class FileServiceImpl implements FileService {
             post.setEntity(new org.apache.http.entity.InputStreamEntity(file, size, ContentType.APPLICATION_OCTET_STREAM));
         }
 
-        try (CloseableHttpResponse response = HTTP_CLIENT.execute(post)) {
+        try (CloseableHttpResponse response = this.httpClient.execute(post)) {
             RawResponse rawResponse = new RawResponse();
             rawResponse.setStatusCode(response.getStatusLine().getStatusCode());
 
