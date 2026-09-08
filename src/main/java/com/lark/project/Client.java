@@ -33,6 +33,8 @@ import com.lark.project.service.comment.CommentService;
 import com.lark.project.service.comment.CommentServiceImpl;
 import com.lark.project.service.field.FieldService;
 import com.lark.project.service.field.FieldServiceImpl;
+import com.lark.project.service.file.FileService;
+import com.lark.project.service.file.FileServiceImpl;
 import com.lark.project.service.measure.MeasureService;
 import com.lark.project.service.measure.MeasureServiceImpl;
 import com.lark.project.service.plugin.PluginService;
@@ -89,6 +91,8 @@ public class Client {
     private RoleConfService roleConf; // 角色
 
     private AttachmentService attachment; //附件
+
+    private FileService file; // 文件
 
     public static Builder newBuilder(String pluginId, String pluginSecret) {
         return new Builder(pluginId, pluginSecret);
@@ -152,6 +156,10 @@ public class Client {
 
     public AttachmentService getAttachmentService() {
         return attachment;
+    }
+
+    public FileService getFileService() {
+        return file;
     }
 
     public static final class Builder {
@@ -241,6 +249,7 @@ public class Client {
             client.measure = new MeasureServiceImpl(config);
             client.roleConf = new RoleConfServiceImpl(config);
             client.attachment = new AttachmentServiceImpl(config);
+            client.file = new FileServiceImpl(config);
             return client;
         }
     }
