@@ -47,6 +47,12 @@ public class Expand {
     @SerializedName("need_sub_workitem_detail")
     private Boolean needSubWorkitemDetail;
 
+    @SerializedName("need_rich_text_mark_down")
+    private Boolean needRichTextMarkDown;
+
+    @SerializedName("need_group_uuid_for_compound")
+    private Boolean needGroupUuidForCompound;
+
     public Boolean getNeedWorkflow() {
         return this.needWorkflow;
     }
@@ -117,5 +123,21 @@ public class Expand {
 
     public void setNeedSubWorkitemDetail(Boolean needSubWorkitemDetail) {
         this.needSubWorkitemDetail = needSubWorkitemDetail;
+    }
+
+    public Boolean getNeedRichTextMarkDown() {
+        return needRichTextMarkDown;
+    }
+
+    public void setNeedRichTextMarkDown(Boolean needRichTextMarkDown) {
+        this.needRichTextMarkDown = needRichTextMarkDown;
+    }
+
+    public Boolean getNeedGroupUuidForCompound() {
+        return needGroupUuidForCompound;
+    }
+
+    public void setNeedGroupUuidForCompound(Boolean needGroupUuidForCompound) {
+        this.needGroupUuidForCompound = needGroupUuidForCompound;
     }
 }

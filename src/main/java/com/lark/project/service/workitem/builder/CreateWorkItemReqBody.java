@@ -18,6 +18,8 @@ package com.lark.project.service.workitem.builder;
 
 import com.google.gson.annotations.SerializedName;
 import com.lark.project.service.field.model.FieldValuePair;
+import com.lark.project.service.workitem.model.ParentProduct;
+import com.lark.project.service.workitem.model.ContainedWorkItems;
 
 import java.util.List;
 
@@ -35,6 +37,10 @@ public class CreateWorkItemReqBody {
     private Integer requiredMode;
     @SerializedName("role_mode")
     private Integer roleMode;
+    @SerializedName("parent_product")
+    private ParentProduct parentProduct;
+    @SerializedName("contained_work_items")
+    private ContainedWorkItems containedWorkItems;
 
     public String getWorkItemTypeKey() {
 
@@ -83,5 +89,21 @@ public class CreateWorkItemReqBody {
 
     public void setRoleMode(Integer roleMode) {
         this.roleMode = roleMode;
+    }
+
+    public ParentProduct getParentProduct() {
+        return parentProduct;
+    }
+
+    public void setParentProduct(ParentProduct parentProduct) {
+        this.parentProduct = parentProduct;
+    }
+
+    public ContainedWorkItems getContainedWorkItems() {
+        return containedWorkItems;
+    }
+
+    public void setContainedWorkItems(ContainedWorkItems containedWorkItems) {
+        this.containedWorkItems = containedWorkItems;
     }
 }

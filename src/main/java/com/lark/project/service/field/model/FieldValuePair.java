@@ -41,6 +41,9 @@ public class FieldValuePair {
     @SerializedName("field_name")
     private String fieldName;
 
+    @SerializedName("field_value_markdown")
+    private FieldValueMarkdown fieldValueMarkdown;
+
     public String getFieldKey() {
         return this.fieldKey;
     }
@@ -95,5 +98,13 @@ public class FieldValuePair {
 
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
+    }
+
+    public FieldValueMarkdown getFieldValueMarkdown() {
+        return fieldValueMarkdown;
+    }
+
+    public void setFieldValueMarkdown(FieldValueMarkdown fieldValueMarkdown) {
+        this.fieldValueMarkdown = fieldValueMarkdown;
     }
 }
