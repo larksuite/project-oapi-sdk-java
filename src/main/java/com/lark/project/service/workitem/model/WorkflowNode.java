@@ -63,8 +63,8 @@ public class WorkflowNode {
     @SerializedName("different_schedule")
     private Boolean differentSchedule;
 
-    @SerializedName("checker")
-    private List<Checker> checker;
+    @SerializedName("checkers")
+    private List<Checker> checkers;
 
     @SerializedName("sub_status")
     private List<Checker> subStatus;
@@ -191,12 +191,12 @@ public class WorkflowNode {
         this.differentSchedule = differentSchedule;
     }
 
-    public List<Checker> getChecker() {
-        return this.checker;
+    public List<Checker> getCheckers() {
+        return this.checkers;
     }
 
-    public void setChecker(List<Checker> checker) {
-        this.checker = checker;
+    public void setCheckers(List<Checker> checkers) {
+        this.checkers = checkers;
     }
 
     public List<Checker> getSubStatus() {
