@@ -17,7 +17,7 @@
 package com.lark.project.service.workitem.model;
 
 import com.google.gson.annotations.SerializedName;
-
+import com.lark.project.service.field.model.FieldValueMarkdown;
 
 public class MultiText {
     @SerializedName("field_key")
@@ -25,6 +25,9 @@ public class MultiText {
 
     @SerializedName("field_value")
     private MultiTextDetail fieldValue;
+
+    @SerializedName("field_value_markdown")
+    private FieldValueMarkdown fieldValueMarkdown;
 
     public String getFieldKey() {
         return this.fieldKey;
@@ -42,4 +45,11 @@ public class MultiText {
         this.fieldValue = fieldValue;
     }
 
+    public FieldValueMarkdown getFieldValueMarkdown() {
+        return fieldValueMarkdown;
+    }
+
+    public void setFieldValueMarkdown(FieldValueMarkdown fieldValueMarkdown) {
+        this.fieldValueMarkdown = fieldValueMarkdown;
+    }
 }

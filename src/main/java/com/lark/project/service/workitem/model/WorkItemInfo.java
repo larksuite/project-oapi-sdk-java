@@ -96,6 +96,12 @@ public class WorkItemInfo {
     @SerializedName("sub_task_parent_info")
     private SubTaskParentInfo subTaskParentInfo;
 
+    @SerializedName("parent_product")
+    private ParentProduct parentProduct;
+
+    @SerializedName("contained_work_items")
+    private ContainedWorkItems containedWorkItems;
+
     public Long getID() {
         return this.id;
     }
@@ -288,4 +294,19 @@ public class WorkItemInfo {
         this.subTaskParentInfo = subTaskParentInfo;
     }
 
+    public ParentProduct getParentProduct() {
+        return parentProduct;
+    }
+
+    public void setParentProduct(ParentProduct parentProduct) {
+        this.parentProduct = parentProduct;
+    }
+
+    public ContainedWorkItems getContainedWorkItems() {
+        return containedWorkItems;
+    }
+
+    public void setContainedWorkItems(ContainedWorkItems containedWorkItems) {
+        this.containedWorkItems = containedWorkItems;
+    }
 }

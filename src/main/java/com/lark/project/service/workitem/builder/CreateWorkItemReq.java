@@ -103,6 +103,16 @@ public class CreateWorkItemReq {
             return this;
         }
 
+        public Builder parentProduct(com.lark.project.service.workitem.model.ParentProduct parentProduct) {
+            this.body.setParentProduct(parentProduct);
+            return this;
+        }
+
+        public Builder containedWorkItems(com.lark.project.service.workitem.model.ContainedWorkItems containedWorkItems) {
+            this.body.setContainedWorkItems(containedWorkItems);
+            return this;
+        }
+
         public CreateWorkItemReq build() {
             return new CreateWorkItemReq(this);
         }
